@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Biswa Ranjan Mishra - Advisor | Never Alone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <style>
+   :root {
+    --primary-color: #174089;
+    --accent-color: #c00000;
+    --dark-color: #333333;
+    --light-color: #f0f7fc;
+    --gray-color: #6c757d;
+    --white-color: #ffffff;
+    --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+    --transition: all 0.3s ease;
+   }
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    font-size: 16px;
+   }
+
+   .header {
+    background: var(--white-color);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+   }
+
+   .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+
+   .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+   }
+
+   .logo img {
+    height: 40px;
+   }
+
+   .brand-text h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+   }
+
+   .brand-text p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin: 0;
+   }
+
+   .back-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+   }
+
+   .back-btn:hover {
+    text-decoration: underline;
+   }
+
+   .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+   }
+
+   .advisor-header {
+    text-align: center;
+    margin-bottom: 50px;
+   }
+
+   .advisor-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: block;
+    object-fit: cover;
+   }
+
+   .name-initials-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0 auto 30px;
+   }
+
+   .advisor-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+   }
+
+   .advisor-title {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    margin-bottom: 5px;
+   }
+
+   .advisor-institution {
+    font-size: 1rem;
+    color: var(--accent-color);
+   }
+
+   .content {
+    line-height: 1.8;
+   }
+
+   h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+   }
+
+   h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 30px 0 15px 0;
+   }
+
+   h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 20px 0 10px 0;
+   }
+
+   p {
+    margin-bottom: 15px;
+    text-align: justify;
+   }
+
+   ul, ol {
+    margin: 15px 0;
+    padding-left: 30px;
+   }
+
+   li {
+    margin-bottom: 8px;
+   }
+
+
+   /* Tablet Styles */
+   @media (max-width: 992px) {
+    .header-content {
+     padding: 0 15px;
+    }
+    
+    .container {
+     padding: 35px 20px;
+    }
+    
+    .advisor-name {
+     font-size: 2.2rem;
+    }
+    
+    .advisor-title {
+     font-size: 1.1rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 130px;
+     height: 130px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.8rem;
+    }
+    
+    h2 {
+     font-size: 1.6rem;
+    }
+   }
+
+   /* Mobile Styles */
+   @media (max-width: 768px) {
+    .header {
+     padding: 15px 0;
+    }
+    
+    .header-content {
+     padding: 0 15px;
+     flex-direction: column;
+     gap: 15px;
+    }
+    
+    .logo {
+     justify-content: center;
+    }
+    
+    .logo img {
+     height: 35px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.3rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.8rem;
+    }
+    
+    .back-btn {
+     font-size: 0.9rem;
+    }
+    
+    .container {
+     padding: 25px 15px;
+    }
+    
+    .advisor-header {
+     margin-bottom: 35px;
+    }
+    
+    .advisor-name {
+     font-size: 1.8rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-title {
+     font-size: 1rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-institution {
+     font-size: 0.9rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 100px;
+     height: 100px;
+     margin-bottom: 20px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.2rem;
+    }
+    
+    h2 {
+     font-size: 1.4rem;
+     margin: 30px 0 15px 0;
+    }
+    
+    h3 {
+     font-size: 1.2rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    h4 {
+     font-size: 1rem;
+     margin: 18px 0 8px 0;
+    }
+    
+    p {
+     margin-bottom: 12px;
+     font-size: 0.95rem;
+     line-height: 1.7;
+     text-align: left;
+    }
+    
+    ul, ol {
+     margin: 12px 0;
+     padding-left: 25px;
+    }
+    
+    li {
+     margin-bottom: 6px;
+     font-size: 0.95rem;
+     line-height: 1.6;
+    }
+   }
+
+   /* Small Mobile Styles */
+   @media (max-width: 480px) {
+    .header-content {
+     padding: 0 10px;
+    }
+    
+    .container {
+     padding: 20px 10px;
+    }
+    
+    .advisor-name {
+     font-size: 1.6rem;
+    }
+    
+    .advisor-title {
+     font-size: 0.95rem;
+    }
+    
+    .advisor-institution {
+     font-size: 0.85rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 90px;
+     height: 90px;
+    }
+    
+    .name-initials-large {
+     font-size: 2rem;
+    }
+    
+    h2 {
+     font-size: 1.3rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    p {
+     font-size: 0.9rem;
+    }
+    
+    li {
+     font-size: 0.9rem;
+    }
+    
+    .logo {
+     flex-direction: column;
+     gap: 8px;
+    }
+    
+    .logo img {
+     height: 30px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.2rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.75rem;
+    }
+   }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+   <div class="header-content">
+    <div class="logo">
+     <img src="../images/logos/neverAloneLogo.jpg" alt="Never Alone Logo" />
+     <div class="brand-text">
+      <h1>NeverAlone</h1>
+      <p>Caring connections</p>
+     </div>
+    </div>
+    <a href="../index.html#advisors" class="back-btn">
+     <i class="fas fa-arrow-left"></i>
+     Back to Advisors
+    </a>
+   </div>
+  </header>
+
+  <div class="container">
+   <div class="advisor-header">
+    <img src="../images/advisors/dr-biswa-ranjan-mishra.jpg" alt="Dr. Biswa Ranjan Mishra" class="advisor-photo" />
+    <h1 class="advisor-name">Dr. Biswa Ranjan Mishra</h1>
+    <p class="advisor-title">Professor of Psychiatry</p>
+    <p class="advisor-institution">All India Institute of Medical Sciences, Bhubaneswar</p>
+   </div>
+
+   <div class="content">
+    <h2>Education</h2>
+    <ul>
+     <li><strong>MBBS</strong> - SCB Medical College and Hospital, Cuttack (1987)</li>
+     <li><strong>MD Psychiatry</strong> - Post Graduate Institute of Medical Education and Research, Chandigarh (1992)</li>
+     <li><strong>DM Psychiatry</strong> - All India Institute of Medical Sciences, New Delhi (2000)</li>
+    </ul>
+
+    <h2>Professional Experience</h2>
+    <ul>
+     <li><strong>Professor, AIIMS Bhubaneswar</strong> (2012 Onwards)</li>
+     <li><strong>Additional Professor, AIIMS New Delhi</strong> (2008-2012)</li>
+     <li><strong>Associate Professor, AIIMS New Delhi</strong> (2004-2008)</li>
+     <li><strong>Assistant Professor, AIIMS New Delhi</strong> (2000-2004)</li>
+     <li><strong>Senior Resident, PGIMER Chandigarh</strong> (1993-1996)</li>
+    </ul>
+
+    <h2>Areas of Specialization</h2>
+    <ul>
+     <li>Geriatric Psychiatry</li>
+     <li>Cognitive Neuroscience</li>
+     <li>Neuropsychiatry</li>
+     <li>Memory Disorders</li>
+     <li>Dementia and Alzheimer's Disease</li>
+     <li>Mood Disorders</li>
+    </ul>
+
+    <h2>Research Interests</h2>
+    <ul>
+     <li>Cognitive assessment and rehabilitation in neuropsychiatric disorders</li>
+     <li>Brain imaging in dementia and depression</li>
+     <li>Biomarkers in neurodegenerative diseases</li>
+     <li>Neuroplasticity and cognitive enhancement</li>
+     <li>Cultural aspects of aging and mental health</li>
+    </ul>
+
+    <h2>Academic and Research Contributions</h2>
+    <p>Dr. Biswa Ranjan Mishra is a renowned expert in geriatric psychiatry and cognitive neuroscience with over three decades of clinical and research experience. He has been at the forefront of research in dementia, Alzheimer's disease, and age-related cognitive disorders.</p>
+    
+    <p>His work focuses on understanding the neurobiological mechanisms underlying cognitive decline in aging and developing innovative assessment and intervention strategies for elderly patients with psychiatric disorders. He has pioneered research in the Indian context on cultural factors affecting mental health in the elderly population.</p>
+
+    <h2>Publications and Research Output</h2>
+    <ul>
+     <li><strong>180+ peer-reviewed publications</strong> in national and international journals</li>
+     <li><strong>15+ book chapters</strong> on geriatric psychiatry and neuropsychiatry</li>
+     <li><strong>Principal Investigator</strong> for multiple ICMR and DST funded projects</li>
+     <li><strong>Editorial Board Member</strong> of several psychiatric journals</li>
+    </ul>
+
+    <h2>Awards and Recognition</h2>
+    <ul>
+     <li><strong>Dr. R.N. Chopra Award</strong> - Indian Psychiatric Society (2015)</li>
+     <li><strong>Life Time Achievement Award</strong> - Indian Association for Geriatric Mental Health (2018)</li>
+     <li><strong>Best Teacher Award</strong> - AIIMS Bhubaneswar (2016)</li>
+     <li><strong>Young Investigator Award</strong> - World Psychiatric Association (1998)</li>
+    </ul>
+
+    <h2>Professional Memberships</h2>
+    <ul>
+     <li>President, Indian Association for Geriatric Mental Health (2017-2019)</li>
+     <li>Executive Committee Member, Indian Psychiatric Society</li>
+     <li>Member, World Psychiatric Association</li>
+     <li>Member, International Psychogeriatric Association</li>
+     <li>Fellow, Indian Psychiatric Society</li>
+    </ul>
+
+    <h2>Current Research Projects</h2>
+    <p>Dr. Mishra is currently leading several research initiatives focused on early detection of cognitive impairment, development of culturally appropriate cognitive assessment tools for Indian elderly, and investigation of neuroprotective strategies in neurodegenerative diseases.</p>
+    
+    <p>His recent work involves collaborative research on biomarker identification for Alzheimer's disease and the development of digital health interventions for cognitive enhancement in aging populations.</p>
+
+   </div>
+  </div>
+</body>
+</html>

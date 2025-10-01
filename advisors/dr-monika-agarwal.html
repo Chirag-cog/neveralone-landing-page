@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Dr. Monika Agarwal - Founder & Director | Never Alone</title>
+ <meta name="description" content="Profile of Dr. Monika Agarwal, Co-Founder and Chief Evangelist of AI4Rx MedBeat HealthConnect - Advisory Committee Member at Never Alone">
+ 
+ <!-- CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+ <style>
+  :root {
+   --primary-color: #174089;
+   --accent-color: #c00000;
+   --dark-color: #333333;
+   --light-color: #f0f7fc;
+   --gray-color: #6c757d;
+   --white-color: #ffffff;
+   --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+   --transition: all 0.3s ease;
+  }
+
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+
+  body {
+   font-family: 'Poppins', sans-serif;
+   line-height: 1.6;
+   color: var(--gray-color);
+  }
+
+  .container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+  }
+
+  /* Header */
+  .header {
+   background-color: var(--white-color);
+   box-shadow: var(--shadow);
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   padding: 15px 0;
+  }
+
+  .header-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+
+  .logo {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+  }
+
+  .logo img {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+  }
+
+  .brand-text {
+   display: flex;
+   flex-direction: column;
+  }
+
+  .tagline {
+   font-size: 0.8rem;
+   color: var(--accent-color);
+   font-weight: 400;
+   margin-bottom: -5px;
+  }
+
+  .brand-name {
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: var(--primary-color);
+   margin: 0;
+  }
+
+  .back-btn {
+   background-color: var(--primary-color);
+   color: var(--white-color);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 25px;
+   text-decoration: none;
+   font-weight: 500;
+   transition: var(--transition);
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+  }
+
+  .back-btn:hover {
+   background-color: var(--accent-color);
+   transform: translateY(-2px);
+  }
+
+  /* Main Content */
+  .main-content {
+   padding: 100px 0 50px;
+   min-height: 100vh;
+  }
+
+  .profile-container {
+   background-color: var(--white-color);
+   border-radius: 20px;
+   box-shadow: var(--shadow);
+   overflow: hidden;
+   margin-bottom: 30px;
+  }
+
+  .profile-header {
+   background-color: var(--primary-color);
+   color: var(--white-color);
+   padding: 40px;
+   text-align: center;
+  }
+
+  .profile-image {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   border: 5px solid var(--white-color);
+   margin: 0 auto 20px;
+   overflow: hidden;
+  }
+
+  .profile-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+  }
+
+  .profile-title h1 {
+   font-size: 2rem;
+   margin-bottom: 10px;
+   color: var(--white-color);
+  }
+
+  .profile-subtitle {
+   font-size: 1.2rem;
+   opacity: 0.9;
+   margin-bottom: 5px;
+  }
+
+  .profile-department {
+   font-size: 1rem;
+   opacity: 0.8;
+  }
+
+  .profile-badge {
+   background-color: var(--light-color);
+   color: var(--primary-color);
+   padding: 8px 16px;
+   border-radius: 20px;
+   display: inline-block;
+   margin-top: 15px;
+   font-size: 0.9rem;
+   font-weight: 500;
+  }
+
+  .profile-content {
+   padding: 40px;
+  }
+
+  .content-section {
+   margin-bottom: 30px;
+  }
+
+  .content-section h3 {
+   color: var(--primary-color);
+   font-size: 1.3rem;
+   margin-bottom: 15px;
+   padding-bottom: 10px;
+   border-bottom: 2px solid var(--light-color);
+  }
+
+  .content-section p {
+   margin-bottom: 15px;
+   line-height: 1.8;
+  }
+
+  .content-section ul {
+   list-style: none;
+   padding-left: 0;
+  }
+
+  .content-section li {
+   padding: 8px 0;
+   padding-left: 25px;
+   position: relative;
+   line-height: 1.7;
+  }
+
+  .content-section li:before {
+   content: "•";
+   color: var(--primary-color);
+   font-weight: bold;
+   position: absolute;
+   left: 0;
+  }
+
+  .stats-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 20px;
+   margin-top: 30px;
+  }
+
+  .stat-item {
+   background-color: var(--light-color);
+   padding: 20px;
+   border-radius: 10px;
+   text-align: center;
+  }
+
+  .stat-number {
+   font-size: 2rem;
+   font-weight: 700;
+   color: var(--primary-color);
+   display: block;
+  }
+
+  .stat-label {
+   font-size: 0.9rem;
+   color: var(--gray-color);
+   margin-top: 5px;
+  }
+
+  .highlight-text {
+   background-color: var(--light-color);
+   padding: 20px;
+   border-radius: 10px;
+   border-left: 4px solid var(--primary-color);
+   margin: 20px 0;
+  }
+
+  .contact-link {
+   color: var(--primary-color);
+   text-decoration: none;
+   font-weight: 500;
+  }
+
+  .contact-link:hover {
+   text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+   .container {
+    padding: 0 15px;
+   }
+
+   .header-content {
+    flex-direction: column;
+    gap: 15px;
+   }
+
+   .profile-header {
+    padding: 30px 20px;
+   }
+
+   .profile-image {
+    width: 120px;
+    height: 120px;
+   }
+
+   .profile-title h1 {
+    font-size: 1.5rem;
+   }
+
+   .profile-subtitle {
+    font-size: 1rem;
+   }
+
+   .profile-content {
+    padding: 30px 20px;
+   }
+
+   .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+   }
+  }
+ </style>
+</head>
+<body>
+ <!-- Header -->
+ <header class="header">
+  <div class="container">
+   <div class="header-content">
+    <div class="logo">
+     <img src="../images/logos/neverAloneLogo.jpg" alt="Never Alone Logo">
+     <div class="brand-text">
+      <p class="tagline">Caring connections</p>
+      <h1 class="brand-name">NeverAlone</h1>
+     </div>
+    </div>
+    <a href="../index.html" class="back-btn">
+     <i class="fas fa-arrow-left"></i>
+     Back to Main Site
+    </a>
+   </div>
+  </div>
+ </header>
+
+ <!-- Main Content -->
+ <main class="main-content">
+  <div class="container">
+   <div class="profile-container" data-aos="fade-up">
+    <div class="profile-header">
+     <div class="profile-image">
+      <img src="../images/advisors/Monika.jpeg" alt="Dr. Monika Agarwal" onerror="this.src='../images/team/avatar.png';">
+     </div>
+     <div class="profile-title">
+      <h1>Dr. Monika Agarwal</h1>
+      <p class="profile-subtitle">Co-Founder & Chief Evangelist</p>
+      <p class="profile-department">AI4Rx MedBeat HealthConnect</p>
+      <span class="profile-badge">Advisory Committee Member</span>
+     </div>
+    </div>
+
+    <div class="profile-content">
+     <div class="highlight-text">
+      <p><strong>Dr. Monika Agarwal</strong> is the Co-Founder and Chief Evangelist of AI4Rx MedBeat HealthConnect. She is an MD with over two decades of experience in healthcare and medical education.</p>
+     </div>
+
+     <div class="content-section">
+      <h3>Professional Experience</h3>
+      <ul>
+       <li>Assistant Professor at Maulana Azad Medical College (2008-2018)</li>
+       <li>Worked with Institute of Clinical Research India</li>
+       <li>Previously worked at Safdarjung Hospital</li>
+       <li>Over 20 years of experience in healthcare and medical education</li>
+      </ul>
+     </div>
+
+     <div class="content-section">
+      <h3>Key Achievements</h3>
+      <ul>
+       <li>Set up Pharmacology Labs and museum</li>
+       <li>Organized numerous workshops on pharmacovigilance, clinical research, and teaching methodology</li>
+       <li>Published multiple papers in peer-reviewed medical journals</li>
+       <li>Developed MedBeat HealthConnect platform using AI for clinical decision support</li>
+      </ul>
+     </div>
+
+     <div class="content-section">
+      <h3>Current Role & Vision</h3>
+      <p>She has developed MedBeat HealthConnect, a healthcare platform using artificial intelligence for clinical decision support. The platform aims to capture comprehensive medical histories more thoroughly than traditional medical consultations.</p>
+      <p>Her professional focus is on leveraging technology to improve medical care and education, with a particular emphasis on using AI to enhance patient information gathering and clinical insights.</p>
+     </div>
+
+     <div class="content-section">
+      <h3>Qualifications</h3>
+      <ul>
+       <li>MD (Doctor of Medicine)</li>
+       <li>Extensive experience in Pharmacology and Medical Education</li>
+       <li>Expertise in Healthcare Technology and AI implementation</li>
+      </ul>
+     </div>
+
+     <div class="content-section">
+      <h3>Contact Information</h3>
+      <p>Email: <a href="mailto:director@ai4rx.co.in" class="contact-link">director@ai4rx.co.in</a></p>
+      <p>Organization: <a href="https://medbeat.ai" target="_blank" class="contact-link">MedBeat HealthConnect</a></p>
+     </div>
+
+     <div class="stats-grid">
+      <div class="stat-item">
+       <span class="stat-number">20+</span>
+       <p class="stat-label">Years Experience</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">10</span>
+       <p class="stat-label">Years in Medical Education</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">1</span>
+       <p class="stat-label">AI Platform Developed</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">Multiple</span>
+       <p class="stat-label">Published Papers</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </main>
+
+ <!-- Scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+ <script>
+  AOS.init({
+   once: true,
+   offset: 100,
+   duration: 800,
+   easing: "ease-in-out"
+  });
+ </script>
+</body>
+</html>

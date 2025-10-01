@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sujata Satapathy - Advisor | Never Alone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <style>
+   :root {
+    --primary-color: #174089;
+    --accent-color: #c00000;
+    --dark-color: #333333;
+    --light-color: #f0f7fc;
+    --gray-color: #6c757d;
+    --white-color: #ffffff;
+    --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+    --transition: all 0.3s ease;
+   }
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    font-size: 16px;
+   }
+
+   .header {
+    background: var(--white-color);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+   }
+
+   .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+
+   .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+   }
+
+   .logo img {
+    height: 40px;
+   }
+
+   .brand-text h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+   }
+
+   .brand-text p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin: 0;
+   }
+
+   .back-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+   }
+
+   .back-btn:hover {
+    text-decoration: underline;
+   }
+
+   .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+   }
+
+   .advisor-header {
+    text-align: center;
+    margin-bottom: 50px;
+   }
+
+   .advisor-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: block;
+    object-fit: cover;
+   }
+
+   .name-initials-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0 auto 30px;
+   }
+
+   .advisor-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+   }
+
+   .advisor-title {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    margin-bottom: 5px;
+   }
+
+   .advisor-institution {
+    font-size: 1rem;
+    color: var(--accent-color);
+   }
+
+   .content {
+    line-height: 1.8;
+   }
+
+   h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+   }
+
+   h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 30px 0 15px 0;
+   }
+
+   h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 20px 0 10px 0;
+   }
+
+   p {
+    margin-bottom: 15px;
+    text-align: justify;
+   }
+
+   ul, ol {
+    margin: 15px 0;
+    padding-left: 30px;
+   }
+
+   li {
+    margin-bottom: 8px;
+   }
+
+
+   /* Tablet Styles */
+   @media (max-width: 992px) {
+    .header-content {
+     padding: 0 15px;
+    }
+    
+    .container {
+     padding: 35px 20px;
+    }
+    
+    .advisor-name {
+     font-size: 2.2rem;
+    }
+    
+    .advisor-title {
+     font-size: 1.1rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 130px;
+     height: 130px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.8rem;
+    }
+    
+    h2 {
+     font-size: 1.6rem;
+    }
+   }
+
+   /* Mobile Styles */
+   @media (max-width: 768px) {
+    .header {
+     padding: 15px 0;
+    }
+    
+    .header-content {
+     padding: 0 15px;
+     flex-direction: column;
+     gap: 15px;
+    }
+    
+    .logo {
+     justify-content: center;
+    }
+    
+    .logo img {
+     height: 35px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.3rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.8rem;
+    }
+    
+    .back-btn {
+     font-size: 0.9rem;
+    }
+    
+    .container {
+     padding: 25px 15px;
+    }
+    
+    .advisor-header {
+     margin-bottom: 35px;
+    }
+    
+    .advisor-name {
+     font-size: 1.8rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-title {
+     font-size: 1rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-institution {
+     font-size: 0.9rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 100px;
+     height: 100px;
+     margin-bottom: 20px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.2rem;
+    }
+    
+    h2 {
+     font-size: 1.4rem;
+     margin: 30px 0 15px 0;
+    }
+    
+    h3 {
+     font-size: 1.2rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    h4 {
+     font-size: 1rem;
+     margin: 18px 0 8px 0;
+    }
+    
+    p {
+     margin-bottom: 12px;
+     font-size: 0.95rem;
+     line-height: 1.7;
+     text-align: left;
+    }
+    
+    ul, ol {
+     margin: 12px 0;
+     padding-left: 25px;
+    }
+    
+    li {
+     margin-bottom: 6px;
+     font-size: 0.95rem;
+     line-height: 1.6;
+    }
+   }
+
+   /* Small Mobile Styles */
+   @media (max-width: 480px) {
+    .header-content {
+     padding: 0 10px;
+    }
+    
+    .container {
+     padding: 20px 10px;
+    }
+    
+    .advisor-name {
+     font-size: 1.6rem;
+    }
+    
+    .advisor-title {
+     font-size: 0.95rem;
+    }
+    
+    .advisor-institution {
+     font-size: 0.85rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 90px;
+     height: 90px;
+    }
+    
+    .name-initials-large {
+     font-size: 2rem;
+    }
+    
+    h2 {
+     font-size: 1.3rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    p {
+     font-size: 0.9rem;
+    }
+    
+    li {
+     font-size: 0.9rem;
+    }
+    
+    .logo {
+     flex-direction: column;
+     gap: 8px;
+    }
+    
+    .logo img {
+     height: 30px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.2rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.75rem;
+    }
+   }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+   <div class="header-content">
+    <div class="logo">
+     <img src="../images/logos/neverAloneLogo.jpg" alt="Never Alone Logo" />
+     <div class="brand-text">
+      <h1>NeverAlone</h1>
+      <p>Caring connections</p>
+     </div>
+    </div>
+    <a href="../index.html#advisors" class="back-btn">
+     <i class="fas fa-arrow-left"></i>
+     Back to Advisors
+    </a>
+   </div>
+  </header>
+
+  <div class="container">
+   <div class="advisor-header">
+    <img src="../images/advisors/sujata.jpeg" alt="Dr. Sujata Satapathy" class="advisor-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="name-initials-large" style="display: none;">SS</div>
+    <h1 class="advisor-name">Dr. Sujata Satapathy</h1>
+    <p class="advisor-title">Professor, Clinical Psychology</p>
+    <p class="advisor-institution">All India Institute of Medical Sciences, New Delhi</p>
+   </div>
+
+   <div class="content">
+    <h2>Education</h2>
+    <ul>
+     <li><strong>MBBS</strong> - SCB Medical College, Cuttack, Odisha</li>
+     <li><strong>MD Psychiatry</strong> - Post Graduate Institute of Medical Education and Research (PGIMER), Chandigarh</li>
+     <li><strong>DM Psychiatry</strong> - National Institute of Mental Health and Neurosciences (NIMHANS), Bangalore</li>
+    </ul>
+
+    <h2>Professional Experience</h2>
+    <ul>
+     <li><strong>Professor, Clinical Psychology, AIIMS New Delhi</strong> (Current)</li>
+     <li><strong>Associate Professor, AIIMS New Delhi</strong> (Previous)</li>
+     <li><strong>Assistant Professor, AIIMS New Delhi</strong> (Previous)</li>
+     <li><strong>Senior Resident, NIMHANS Bangalore</strong> (2002-2005)</li>
+    </ul>
+
+    <h2>Areas of Specialization</h2>
+    <ul>
+     <li>Women's Mental Health</li>
+     <li>Reproductive Psychiatry</li>
+     <li>Perinatal and Postpartum Mental Health</li>
+     <li>Mood Disorders in Women</li>
+     <li>Hormonal Influences on Mental Health</li>
+     <li>Psycho-oncology</li>
+     <li>General Adult Psychiatry</li>
+    </ul>
+
+    <h2>Research Interests</h2>
+    <ul>
+     <li>Perinatal mood and anxiety disorders</li>
+     <li>Hormonal factors in psychiatric disorders</li>
+     <li>Gender differences in mental health presentation</li>
+     <li>Psychosocial interventions for women's mental health</li>
+     <li>Cultural aspects of reproductive mental health</li>
+     <li>Mental health in cancer patients</li>
+     <li>Psychopharmacology in pregnancy and lactation</li>
+    </ul>
+
+    <h2>Pioneer in Women's Mental Health</h2>
+    <p>Dr. Sujata Satapathy is widely recognized as a leading expert in women's mental health and reproductive psychiatry in India. She has been instrumental in establishing specialized services for perinatal mental health and has developed comprehensive care protocols for women experiencing mental health issues during pregnancy, postpartum, and throughout their reproductive years.</p>
+    
+    <p>Her groundbreaking work has helped bridge the gap between obstetric care and psychiatric services, ensuring that women receive holistic care during critical periods of their reproductive lives. She has been a pioneer in recognizing and addressing the unique mental health needs of Indian women within their cultural and social contexts.</p>
+
+    <h2>Clinical Excellence and Innovation</h2>
+    <p>Dr. Satapathy has developed innovative treatment approaches that consider the complex interplay between hormonal changes, psychosocial factors, and cultural influences on women's mental health. Her clinical practice encompasses the full spectrum of women's mental health disorders, from adolescence through menopause.</p>
+    
+    <p>She has been instrumental in establishing mother-baby units and specialized perinatal mental health services, providing comprehensive care that addresses both maternal mental health and early infant development. Her approach emphasizes family-centered care and the integration of mental health services into routine obstetric and gynecological care.</p>
+
+    <h2>Academic and Research Contributions</h2>
+    <p>Dr. Satapathy has made significant contributions to the understanding of reproductive psychiatry in the Indian population. Her research focuses on the prevalence, risk factors, and treatment outcomes of perinatal mental health disorders, contributing valuable data to the global literature on women's mental health.</p>
+    
+    <p>She has been involved in developing culturally appropriate screening tools and intervention protocols for perinatal mental health conditions, addressing the unique needs of Indian women and families. Her work has helped establish evidence-based guidelines for managing psychiatric medications during pregnancy and lactation.</p>
+
+    <h2>Publications and Research Output</h2>
+    <ul>
+     <li><strong>100+ peer-reviewed publications</strong> in national and international journals</li>
+     <li><strong>15+ book chapters</strong> on women's mental health and reproductive psychiatry</li>
+     <li><strong>Principal Investigator</strong> for multiple ICMR and DST funded research projects</li>
+     <li><strong>Editorial Board Member</strong> of journals focused on women's mental health</li>
+     <li><strong>Co-author</strong> of clinical guidelines on perinatal mental health</li>
+    </ul>
+
+    <h2>Awards and Recognition</h2>
+    <ul>
+     <li><strong>Excellence in Women's Mental Health Award</strong> - Indian Psychiatric Society (2019)</li>
+     <li><strong>Best Research Paper Award</strong> - Indian Association for Social Psychiatry (2017)</li>
+     <li><strong>Outstanding Clinician Award</strong> - AIIMS New Delhi (2018)</li>
+     <li><strong>Young Investigator Award</strong> - World Psychiatric Association (2010)</li>
+     <li><strong>Best Poster Award</strong> - International Conference on Women's Mental Health (2016)</li>
+    </ul>
+
+    <h2>Professional Leadership and Memberships</h2>
+    <ul>
+     <li>Chairperson, Women's Mental Health Section, Indian Psychiatric Society (2018-2021)</li>
+     <li>Executive Committee Member, Indian Association for Social Psychiatry</li>
+     <li>Member, International Association for Women's Mental Health</li>
+     <li>Member, World Psychiatric Association Section on Women's Mental Health</li>
+     <li>Fellow, Indian Psychiatric Society</li>
+     <li>Member, Royal College of Psychiatrists, UK</li>
+    </ul>
+
+    <h2>Training and Capacity Building</h2>
+    <p>Dr. Satapathy has been actively involved in training psychiatrists, obstetricians, and other healthcare professionals in recognizing and managing perinatal mental health conditions. She has conducted numerous workshops and training programs across India, focusing on building capacity for women's mental health services.</p>
+    
+    <p>Her mentorship has been instrumental in developing specialized expertise in reproductive psychiatry among the next generation of mental health professionals. She has supervised numerous MD and DM theses in the area of women's mental health and continues to guide young researchers in this field.</p>
+
+    <h2>Policy and Advocacy Work</h2>
+    <p>Dr. Satapathy has been actively involved in policy development related to women's mental health services in India. She has contributed to national guidelines on maternal mental health and has been instrumental in advocating for the integration of mental health screening into routine antenatal care.</p>
+    
+    <p>Her advocacy work extends to raising awareness about perinatal mental health issues among healthcare providers, families, and the general public. She regularly participates in media discussions and public health campaigns focused on reducing stigma associated with women's mental health issues.</p>
+
+    <h2>International Collaborations</h2>
+    <p>Dr. Satapathy maintains active collaborations with international research groups working on women's mental health and reproductive psychiatry. Her work has been recognized at various international forums, and she has contributed to global initiatives aimed at improving maternal mental health outcomes.</p>
+    
+    <p>She has been involved in cross-cultural research studies comparing perinatal mental health patterns and treatment responses across different populations, contributing to the global understanding of reproductive psychiatry.</p>
+
+    <h2>Current Research Projects</h2>
+    <p>Dr. Satapathy is currently leading research initiatives focused on developing technology-assisted interventions for perinatal mental health, studying the long-term effects of maternal mental health on child development, and investigating the effectiveness of culturally adapted psychotherapy models for Indian women.</p>
+    
+    <p>Her recent work involves large-scale epidemiological studies on the prevalence of reproductive mental health disorders in rural and urban populations, evaluation of community-based interventions for women's mental health, and research on the impact of social support systems on perinatal mental health outcomes.</p>
+
+   </div>
+  </div>
+</body>
+</html>

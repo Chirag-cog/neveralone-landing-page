@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Prof. (Dr.) Rajinder K. Dhamija - Director IHBAS | Never Alone</title>
+ <meta name="description" content="Profile of Prof. (Dr.) Rajinder K. Dhamija, Director IHBAS - Distinguished Neurologist and Advisory Committee Member at Never Alone">
+ 
+ <!-- CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+ <style>
+  :root {
+   --primary-color: #174089;
+   --accent-color: #c00000;
+   --dark-color: #333333;
+   --light-color: #f0f7fc;
+   --gray-color: #6c757d;
+   --white-color: #ffffff;
+   --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+   --transition: all 0.3s ease;
+  }
+
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+
+  body {
+   font-family: 'Poppins', sans-serif;
+   line-height: 1.6;
+   color: var(--gray-color);
+  }
+
+  .container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+  }
+
+  /* Header */
+  .header {
+   background-color: var(--white-color);
+   box-shadow: var(--shadow);
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   padding: 15px 0;
+  }
+
+  .header-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+
+  .logo {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+  }
+
+  .logo img {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+  }
+
+  .brand-text {
+   display: flex;
+   flex-direction: column;
+  }
+
+  .tagline {
+   font-size: 0.8rem;
+   color: var(--accent-color);
+   font-weight: 400;
+   margin-bottom: -5px;
+  }
+
+  .brand-name {
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: var(--primary-color);
+   margin: 0;
+  }
+
+  .back-btn {
+   background-color: var(--primary-color);
+   color: var(--white-color);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 25px;
+   text-decoration: none;
+   font-weight: 500;
+   transition: var(--transition);
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+  }
+
+  .back-btn:hover {
+   background-color: var(--accent-color);
+   transform: translateY(-2px);
+  }
+
+  /* Main Content */
+  .main-content {
+   padding: 100px 0 50px;
+   min-height: 100vh;
+  }
+
+  .profile-container {
+   background-color: var(--white-color);
+   border-radius: 20px;
+   box-shadow: var(--shadow);
+   overflow: hidden;
+   margin-bottom: 30px;
+  }
+
+  .profile-header {
+   background-color: var(--primary-color);
+   color: var(--white-color);
+   padding: 40px;
+   text-align: center;
+  }
+
+  .profile-image {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   border: 5px solid var(--white-color);
+   margin: 0 auto 20px;
+   overflow: hidden;
+  }
+
+  .profile-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+  }
+
+  .profile-title h1 {
+   font-size: 2rem;
+   margin-bottom: 10px;
+   color: var(--white-color);
+  }
+
+  .profile-subtitle {
+   font-size: 1.2rem;
+   opacity: 0.9;
+   margin-bottom: 5px;
+  }
+
+  .profile-department {
+   font-size: 1rem;
+   opacity: 0.8;
+  }
+
+  .profile-badge {
+   background-color: var(--light-color);
+   color: var(--primary-color);
+   padding: 8px 16px;
+   border-radius: 20px;
+   display: inline-block;
+   margin-top: 15px;
+   font-size: 0.9rem;
+   font-weight: 500;
+  }
+
+  .profile-content {
+   padding: 40px;
+  }
+
+  .content-section {
+   margin-bottom: 30px;
+  }
+
+  .content-section h3 {
+   color: var(--primary-color);
+   font-size: 1.3rem;
+   margin-bottom: 15px;
+   padding-bottom: 10px;
+   border-bottom: 2px solid var(--light-color);
+  }
+
+  .content-section p {
+   margin-bottom: 15px;
+   line-height: 1.8;
+  }
+
+  .content-section ul {
+   list-style: none;
+   padding-left: 0;
+  }
+
+  .content-section li {
+   padding: 8px 0;
+   padding-left: 25px;
+   position: relative;
+   line-height: 1.7;
+  }
+
+  .content-section li:before {
+   content: "•";
+   color: var(--primary-color);
+   font-weight: bold;
+   position: absolute;
+   left: 0;
+  }
+
+  .stats-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 20px;
+   margin-top: 30px;
+  }
+
+  .stat-item {
+   background-color: var(--light-color);
+   padding: 20px;
+   border-radius: 10px;
+   text-align: center;
+  }
+
+  .stat-number {
+   font-size: 2rem;
+   font-weight: 700;
+   color: var(--primary-color);
+   display: block;
+  }
+
+  .stat-label {
+   font-size: 0.9rem;
+   color: var(--gray-color);
+   margin-top: 5px;
+  }
+
+  .highlight-text {
+   background-color: var(--light-color);
+   padding: 20px;
+   border-radius: 10px;
+   border-left: 4px solid var(--primary-color);
+   margin: 20px 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+   .container {
+    padding: 0 15px;
+   }
+
+   .header-content {
+    flex-direction: column;
+    gap: 15px;
+   }
+
+   .profile-header {
+    padding: 30px 20px;
+   }
+
+   .profile-image {
+    width: 120px;
+    height: 120px;
+   }
+
+   .profile-title h1 {
+    font-size: 1.5rem;
+   }
+
+   .profile-subtitle {
+    font-size: 1rem;
+   }
+
+   .profile-content {
+    padding: 30px 20px;
+   }
+
+   .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+   }
+  }
+ </style>
+</head>
+<body>
+ <!-- Header -->
+ <header class="header">
+  <div class="container">
+   <div class="header-content">
+    <div class="logo">
+     <img src="../images/logos/neverAloneLogo.jpg" alt="Never Alone Logo">
+     <div class="brand-text">
+      <p class="tagline">Caring connections</p>
+      <h1 class="brand-name">NeverAlone</h1>
+     </div>
+    </div>
+    <a href="../index.html" class="back-btn">
+     <i class="fas fa-arrow-left"></i>
+     Back to Main Site
+    </a>
+   </div>
+  </div>
+ </header>
+
+ <!-- Main Content -->
+ <main class="main-content">
+  <div class="container">
+   <div class="profile-container" data-aos="fade-up">
+    <div class="profile-header">
+     <div class="profile-image">
+      <img src="../images/advisors/rajinder.jpg" alt="Prof. (Dr.) Rajinder K. Dhamija" onerror="this.src='../images/team/avatar.png';">
+     </div>
+     <div class="profile-title">
+      <h1>Prof. (Dr.) Rajinder K. Dhamija</h1>
+      <p class="profile-subtitle">Director IHBAS</p>
+      <p class="profile-department">Institute of Human Behavior and Allied Sciences</p>
+      <span class="profile-badge">Advisory Committee Member</span>
+     </div>
+    </div>
+
+    <div class="profile-content">
+     <div class="highlight-text">
+      <p><strong>Prof. Rajinder K. Dhamija</strong> is a distinguished Neurologist, Professor of Neurology and Director at the Institute of Human Behavior and Allied Sciences, New Delhi, India with a rich academic background, including MD and DNB ( Neurology ) from India and FRACP from Melbourne. He was also WHO fellow at National Institute of Epidemiology.</p>
+     </div>
+
+     <div class="content-section">
+      <h3>Professional Experience</h3>
+      <p>Prof Dhamija brings about 30 years of extensive experience and exceptional accomplishments in Neurology and Public Health. He has led pioneering research in Neurology especially in field of Stroke and Movement Disorders which is well recognised internationally.</p>
+     </div>
+
+     <div class="content-section">
+      <h3>Career Highlights</h3>
+      <p>Prof. Dhamija established the Neurology Department at Lady Harding Medical College and served as its Head before assuming the role of Director IHBAS. He was Addl. Personal Physician to Honble Prime Minister of India. Recognized for his scholarly contributions, he has received numerous awards, including the S. Radhakrishnan Memorial National Medical Teacher Award and National Award for Science and Technology 2021 by Govt of India</p>
+     </div>
+
+     <div class="content-section">
+      <h3>International Recognition</h3>
+      <p>He is Chair of Movement Disorders at World Federation of Neurorehabiltation (WFNR) and international advisor for Royal College of Physicians (London). He has published more than 140 peer reviewed publications and book chapters. A sought after advisor, he has contributed to prestigious organisations globally. Prof. Dhamija's impact extends across borders shaping Neurology and medical education worldwide.</p>
+     </div>
+
+     <div class="content-section">
+      <h3>Qualifications</h3>
+      <ul>
+       <li>MD (Doctor of Medicine)</li>
+       <li>DNB (Neurology) from India</li>
+       <li>FRACP from Melbourne</li>
+       <li>WHO Fellow at National Institute of Epidemiology</li>
+      </ul>
+     </div>
+
+     <div class="content-section">
+      <h3>Key Positions</h3>
+      <ul>
+       <li>Director, Institute of Human Behavior and Allied Sciences (IHBAS)</li>
+       <li>Professor of Neurology</li>
+       <li>Former Head, Neurology Department, Lady Harding Medical College</li>
+       <li>Former Additional Personal Physician to Hon'ble Prime Minister of India</li>
+       <li>Chair of Movement Disorders, World Federation of Neurorehabiltation (WFNR)</li>
+       <li>International Advisor for Royal College of Physicians (London)</li>
+      </ul>
+     </div>
+
+     <div class="content-section">
+      <h3>Awards & Recognition</h3>
+      <ul>
+       <li>S. Radhakrishnan Memorial National Medical Teacher Award</li>
+       <li>National Award for Science and Technology 2021 by Govt of India</li>
+      </ul>
+     </div>
+
+     <div class="stats-grid">
+      <div class="stat-item">
+       <span class="stat-number">140+</span>
+       <p class="stat-label">Publications & Book Chapters</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">30+</span>
+       <p class="stat-label">Years Experience</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">2</span>
+       <p class="stat-label">National Awards</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">1</span>
+       <p class="stat-label">WHO Fellowship</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </main>
+
+ <!-- Scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+ <script>
+  AOS.init({
+   once: true,
+   offset: 100,
+   duration: 800,
+   easing: "ease-in-out"
+  });
+ </script>
+</body>
+</html>

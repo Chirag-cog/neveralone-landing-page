@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Rajesh Sagar - Advisor | Never Alone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <style>
+   :root {
+    --primary-color: #174089;
+    --accent-color: #c00000;
+    --dark-color: #333333;
+    --light-color: #f0f7fc;
+    --gray-color: #6c757d;
+    --white-color: #ffffff;
+    --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+    --transition: all 0.3s ease;
+   }
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    font-size: 16px;
+   }
+
+   .header {
+    background: var(--white-color);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+   }
+
+   .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+
+   .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+   }
+
+   .logo img {
+    height: 40px;
+   }
+
+   .brand-text h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+   }
+
+   .brand-text p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin: 0;
+   }
+
+   .back-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+   }
+
+   .back-btn:hover {
+    text-decoration: underline;
+   }
+
+   .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+   }
+
+   .advisor-header {
+    text-align: center;
+    margin-bottom: 50px;
+   }
+
+   .advisor-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: block;
+    object-fit: cover;
+   }
+
+   .name-initials-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0 auto 30px;
+   }
+
+   .advisor-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+   }
+
+   .advisor-title {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    margin-bottom: 5px;
+   }
+
+   .advisor-institution {
+    font-size: 1rem;
+    color: var(--accent-color);
+   }
+
+   .content {
+    line-height: 1.8;
+   }
+
+   h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+   }
+
+   h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 30px 0 15px 0;
+   }
+
+   h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 20px 0 10px 0;
+   }
+
+   p {
+    margin-bottom: 15px;
+    text-align: justify;
+   }
+
+   ul, ol {
+    margin: 15px 0;
+    padding-left: 30px;
+   }
+
+   li {
+    margin-bottom: 8px;
+   }
+
+
+   /* Tablet Styles */
+   @media (max-width: 992px) {
+    .header-content {
+     padding: 0 15px;
+    }
+    
+    .container {
+     padding: 35px 20px;
+    }
+    
+    .advisor-name {
+     font-size: 2.2rem;
+    }
+    
+    .advisor-title {
+     font-size: 1.1rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 130px;
+     height: 130px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.8rem;
+    }
+    
+    h2 {
+     font-size: 1.6rem;
+    }
+   }
+
+   /* Mobile Styles */
+   @media (max-width: 768px) {
+    .header {
+     padding: 15px 0;
+    }
+    
+    .header-content {
+     padding: 0 15px;
+     flex-direction: column;
+     gap: 15px;
+    }
+    
+    .logo {
+     justify-content: center;
+    }
+    
+    .logo img {
+     height: 35px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.3rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.8rem;
+    }
+    
+    .back-btn {
+     font-size: 0.9rem;
+    }
+    
+    .container {
+     padding: 25px 15px;
+    }
+    
+    .advisor-header {
+     margin-bottom: 35px;
+    }
+    
+    .advisor-name {
+     font-size: 1.8rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-title {
+     font-size: 1rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-institution {
+     font-size: 0.9rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 100px;
+     height: 100px;
+     margin-bottom: 20px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.2rem;
+    }
+    
+    h2 {
+     font-size: 1.4rem;
+     margin: 30px 0 15px 0;
+    }
+    
+    h3 {
+     font-size: 1.2rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    h4 {
+     font-size: 1rem;
+     margin: 18px 0 8px 0;
+    }
+    
+    p {
+     margin-bottom: 12px;
+     font-size: 0.95rem;
+     line-height: 1.7;
+     text-align: left;
+    }
+    
+    ul, ol {
+     margin: 12px 0;
+     padding-left: 25px;
+    }
+    
+    li {
+     margin-bottom: 6px;
+     font-size: 0.95rem;
+     line-height: 1.6;
+    }
+   }
+
+   /* Small Mobile Styles */
+   @media (max-width: 480px) {
+    .header-content {
+     padding: 0 10px;
+    }
+    
+    .container {
+     padding: 20px 10px;
+    }
+    
+    .advisor-name {
+     font-size: 1.6rem;
+    }
+    
+    .advisor-title {
+     font-size: 0.95rem;
+    }
+    
+    .advisor-institution {
+     font-size: 0.85rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 90px;
+     height: 90px;
+    }
+    
+    .name-initials-large {
+     font-size: 2rem;
+    }
+    
+    h2 {
+     font-size: 1.3rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    p {
+     font-size: 0.9rem;
+    }
+    
+    li {
+     font-size: 0.9rem;
+    }
+    
+    .logo {
+     flex-direction: column;
+     gap: 8px;
+    }
+    
+    .logo img {
+     height: 30px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.2rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.75rem;
+    }
+   }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+   <div class="header-content">
+    <div class="logo">
+     <img src="../images/logos/neverAloneLogo.jpg" alt="Never Alone Logo" />
+     <div class="brand-text">
+      <h1>NeverAlone</h1>
+      <p>Caring connections</p>
+     </div>
+    </div>
+    <a href="../index.html#advisors" class="back-btn">
+     <i class="fas fa-arrow-left"></i>
+     Back to Advisors
+    </a>
+   </div>
+  </header>
+
+  <div class="container">
+   <div class="advisor-header">
+    <div class="name-initials-large">RS</div>
+    <h1 class="advisor-name">Dr. Rajesh Sagar</h1>
+    <p class="advisor-title">Professor of Psychiatry</p>
+    <p class="advisor-institution">All India Institute of Medical Sciences, New Delhi</p>
+   </div>
+
+   <div class="content">
+    <h2>Education</h2>
+    <ul>
+     <li><strong>MBBS</strong> - Maulana Azad Medical College, University of Delhi (1985)</li>
+     <li><strong>MD Psychiatry</strong> - All India Institute of Medical Sciences, New Delhi (1990)</li>
+     <li><strong>Post-Doctoral Fellowship</strong> - University of Pittsburgh, USA (1996-1997)</li>
+     <li><strong>Advanced Training</strong> - Johns Hopkins University, Baltimore, USA (1997-1998)</li>
+    </ul>
+
+    <h2>Professional Experience</h2>
+    <ul>
+     <li><strong>Professor, AIIMS New Delhi</strong> (2007 Onwards)</li>
+     <li><strong>Additional Professor, AIIMS New Delhi</strong> (2002-2007)</li>
+     <li><strong>Associate Professor, AIIMS New Delhi</strong> (1998-2002)</li>
+     <li><strong>Assistant Professor, AIIMS New Delhi</strong> (1995-1998)</li>
+     <li><strong>Senior Resident, AIIMS New Delhi</strong> (1990-1995)</li>
+    </ul>
+
+    <h2>Administrative Leadership</h2>
+    <ul>
+     <li><strong>Head of Department</strong> - Psychiatry, AIIMS New Delhi (2015-2020)</li>
+     <li><strong>Chairman</strong> - Ethics Committee, AIIMS New Delhi (2018-2021)</li>
+     <li><strong>Member</strong> - Academic Committee, AIIMS New Delhi (2010-2015)</li>
+     <li><strong>Coordinator</strong> - Student Wellness Programme, AIIMS (2012-2018)</li>
+    </ul>
+
+    <h2>Areas of Specialization</h2>
+    <ul>
+     <li>Adolescent and Youth Mental Health</li>
+     <li>Suicide Prevention and Research</li>
+     <li>Mood Disorders and Bipolar Disorder</li>
+     <li>Student Mental Health and Wellness</li>
+     <li>Emergency Psychiatry</li>
+     <li>Community Psychiatry</li>
+     <li>Psychopharmacology</li>
+    </ul>
+
+    <h2>Research Interests</h2>
+    <ul>
+     <li>Epidemiology of suicide and self-harm behavior</li>
+     <li>Mental health in medical students and healthcare workers</li>
+     <li>Early intervention in psychotic disorders</li>
+     <li>Cultural aspects of mental health</li>
+     <li>Digital mental health interventions</li>
+     <li>Psychosocial rehabilitation in serious mental illness</li>
+    </ul>
+
+    <h2>Pioneer in Student Mental Health</h2>
+    <p>Dr. Rajesh Sagar is widely recognized as a pioneer in addressing mental health issues among medical students and healthcare professionals in India. As the Coordinator of the Student Wellness Programme at AIIMS, he has developed comprehensive support systems that have become models for medical institutions across the country.</p>
+    
+    <p>His groundbreaking work in this area has led to the establishment of dedicated mental health services for medical students, recognition of burnout and stress-related disorders among healthcare professionals, and development of preventive mental health strategies in medical education settings.</p>
+
+    <h2>Suicide Prevention and Research Leadership</h2>
+    <p>Dr. Sagar has been at the forefront of suicide prevention research and intervention in India. His extensive research on the epidemiology of suicide, risk factors, and protective factors has contributed significantly to understanding suicide patterns in the Indian population.</p>
+    
+    <p>He has been instrumental in developing evidence-based suicide prevention strategies and has worked closely with government agencies and NGOs to implement national suicide prevention programs. His work has helped reduce stigma associated with suicide and improved access to mental health services for at-risk populations.</p>
+
+    <h2>Academic and Research Excellence</h2>
+    <p>With over three decades of experience in psychiatry, Dr. Sagar has made substantial contributions to psychiatric research, particularly in the areas of mood disorders, adolescent mental health, and community psychiatry. His research focuses on developing culturally appropriate interventions for mental health problems in the Indian context.</p>
+    
+    <p>He has been involved in numerous national and international collaborative research projects, contributing to the global understanding of mental health issues in developing countries. His work bridges the gap between academic research and practical clinical applications.</p>
+
+    <h2>Publications and Research Output</h2>
+    <ul>
+     <li><strong>200+ peer-reviewed publications</strong> in national and international journals</li>
+     <li><strong>20+ book chapters</strong> on psychiatry and mental health</li>
+     <li><strong>Principal Investigator</strong> for multiple ICMR, WHO, and DST funded projects</li>
+     <li><strong>Editorial Board Member</strong> of several leading psychiatric journals</li>
+     <li><strong>5+ books</strong> on student mental health and suicide prevention</li>
+    </ul>
+
+    <h2>Awards and Recognition</h2>
+    <ul>
+     <li><strong>National Award for Excellence in Mental Health</strong> - Ministry of Health, Government of India (2019)</li>
+     <li><strong>Dr. J.K. Trivedi Oration Award</strong> - Indian Psychiatric Society (2018)</li>
+     <li><strong>Outstanding Contribution to Medical Education Award</strong> - AIIMS (2017)</li>
+     <li><strong>WHO Recognition Award</strong> for Suicide Prevention Work (2016)</li>
+     <li><strong>Life Time Achievement Award</strong> - Indian Association for Social Psychiatry (2020)</li>
+    </ul>
+
+    <h2>Professional Leadership and Memberships</h2>
+    <ul>
+     <li>President, Indian Association for Social Psychiatry (2016-2018)</li>
+     <li>Executive Committee Member, World Psychiatric Association</li>
+     <li>Chairman, National Committee on Suicide Prevention, Indian Psychiatric Society</li>
+     <li>Member, WHO Expert Advisory Panel on Mental Health</li>
+     <li>Fellow, Indian Psychiatric Society</li>
+     <li>Fellow, Indian Academy of Medical Sciences</li>
+    </ul>
+
+    <h2>International Collaborations</h2>
+    <p>Dr. Sagar has extensive international experience and has collaborated with leading institutions worldwide. His fellowship and training experiences at University of Pittsburgh and Johns Hopkins University have enriched his research perspective and clinical expertise.</p>
+    
+    <p>He continues to maintain active collaborations with international research groups working on suicide prevention, youth mental health, and global mental health initiatives. His work has been recognized by international organizations including WHO and World Psychiatric Association.</p>
+
+    <h2>Policy and Advocacy Work</h2>
+    <p>Dr. Sagar has been actively involved in mental health policy development and advocacy at national and state levels. He has contributed to the formulation of the Mental Healthcare Act 2017 and has been instrumental in developing guidelines for mental health services in educational institutions.</p>
+    
+    <p>His advocacy work extends to reducing stigma associated with mental illness, improving access to mental health services, and integrating mental health into primary healthcare systems. He regularly contributes to media discussions on mental health issues and public awareness campaigns.</p>
+
+    <h2>Current Research Projects</h2>
+    <p>Dr. Sagar is currently leading several research initiatives focused on digital mental health interventions, effectiveness of peer support programs in medical education, and development of culturally adapted psychotherapy models for Indian populations.</p>
+    
+    <p>His recent work involves large-scale epidemiological studies on mental health in young adults, evaluation of community-based mental health programs, and research on the mental health impact of social media and technology use among adolescents and young adults.</p>
+
+   </div>
+  </div>
+</body>
+</html>

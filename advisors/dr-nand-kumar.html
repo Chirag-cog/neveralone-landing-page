@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Prof. (Dr) Nand Kumar - Chairman Advisory Committee | Never Alone</title>
+ <meta name="description" content="Profile of Prof. (Dr) Nand Kumar, Chairman Advisory Committee at Never Alone - Professor, Department of Psychiatry, AIIMS New Delhi">
+ 
+ <!-- CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+ <style>
+  :root {
+   --primary-color: #174089;
+   --accent-color: #c00000;
+   --dark-color: #333333;
+   --light-color: #f0f7fc;
+   --gray-color: #6c757d;
+   --white-color: #ffffff;
+   --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+   --transition: all 0.3s ease;
+  }
+
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+
+  body {
+   font-family: 'Poppins', sans-serif;
+   line-height: 1.6;
+   color: var(--gray-color);
+  }
+
+  .container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+  }
+
+  /* Header */
+  .header {
+   background-color: var(--white-color);
+   box-shadow: var(--shadow);
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   padding: 15px 0;
+  }
+
+  .header-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+
+  .logo {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+  }
+
+  .logo img {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+  }
+
+  .brand-text {
+   display: flex;
+   flex-direction: column;
+  }
+
+  .tagline {
+   font-size: 0.8rem;
+   color: var(--accent-color);
+   font-weight: 400;
+   margin-bottom: -5px;
+  }
+
+  .brand-name {
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: var(--primary-color);
+   margin: 0;
+  }
+
+  .back-btn {
+   background-color: var(--primary-color);
+   color: var(--white-color);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 25px;
+   text-decoration: none;
+   font-weight: 500;
+   transition: var(--transition);
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+  }
+
+  .back-btn:hover {
+   background-color: var(--accent-color);
+   transform: translateY(-2px);
+  }
+
+  /* Main Content */
+  .main-content {
+   padding: 100px 0 50px;
+   min-height: 100vh;
+  }
+
+  .profile-container {
+   background-color: var(--white-color);
+   border-radius: 20px;
+   box-shadow: var(--shadow);
+   overflow: hidden;
+   margin-bottom: 30px;
+  }
+
+  .profile-header {
+   background-color: var(--primary-color);
+   color: var(--white-color);
+   padding: 40px;
+   text-align: center;
+  }
+
+  .profile-image {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   border: 5px solid var(--white-color);
+   margin: 0 auto 20px;
+   overflow: hidden;
+  }
+
+  .profile-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+  }
+
+  .profile-title h1 {
+   font-size: 2rem;
+   margin-bottom: 10px;
+   color: var(--white-color);
+  }
+
+  .profile-subtitle {
+   font-size: 1.2rem;
+   opacity: 0.9;
+   margin-bottom: 5px;
+  }
+
+  .profile-department {
+   font-size: 1rem;
+   opacity: 0.8;
+  }
+
+  .profile-badge {
+   background-color: var(--light-color);
+   color: var(--primary-color);
+   padding: 8px 16px;
+   border-radius: 20px;
+   display: inline-block;
+   margin-top: 15px;
+   font-size: 0.9rem;
+   font-weight: 500;
+  }
+
+  .profile-content {
+   padding: 40px;
+  }
+
+  .content-section {
+   margin-bottom: 30px;
+  }
+
+  .content-section h3 {
+   color: var(--primary-color);
+   font-size: 1.3rem;
+   margin-bottom: 15px;
+   padding-bottom: 10px;
+   border-bottom: 2px solid var(--light-color);
+  }
+
+  .content-section p {
+   margin-bottom: 15px;
+   line-height: 1.8;
+  }
+
+  .content-section ul {
+   list-style: none;
+   padding-left: 0;
+  }
+
+  .content-section li {
+   padding: 8px 0;
+   padding-left: 25px;
+   position: relative;
+   line-height: 1.7;
+  }
+
+  .content-section li:before {
+   content: "•";
+   color: var(--primary-color);
+   font-weight: bold;
+   position: absolute;
+   left: 0;
+  }
+
+  .stats-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 20px;
+   margin-top: 30px;
+  }
+
+  .stat-item {
+   background-color: var(--light-color);
+   padding: 20px;
+   border-radius: 10px;
+   text-align: center;
+  }
+
+  .stat-number {
+   font-size: 2rem;
+   font-weight: 700;
+   color: var(--primary-color);
+   display: block;
+  }
+
+  .stat-label {
+   font-size: 0.9rem;
+   color: var(--gray-color);
+   margin-top: 5px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+   .container {
+    padding: 0 15px;
+   }
+
+   .header-content {
+    flex-direction: column;
+    gap: 15px;
+   }
+
+   .profile-header {
+    padding: 30px 20px;
+   }
+
+   .profile-image {
+    width: 120px;
+    height: 120px;
+   }
+
+   .profile-title h1 {
+    font-size: 1.5rem;
+   }
+
+   .profile-subtitle {
+    font-size: 1rem;
+   }
+
+   .profile-content {
+    padding: 30px 20px;
+   }
+
+   .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+   }
+  }
+ </style>
+</head>
+<body>
+ <!-- Header -->
+ <header class="header">
+  <div class="container">
+   <div class="header-content">
+    <div class="logo">
+     <img src="../images/logos/neverAloneLogo.jpg" alt="Never Alone Logo">
+     <div class="brand-text">
+      <p class="tagline">Caring connections</p>
+      <h1 class="brand-name">NeverAlone</h1>
+     </div>
+    </div>
+    <a href="../index.html" class="back-btn">
+     <i class="fas fa-arrow-left"></i>
+     Back to Main Site
+    </a>
+   </div>
+  </div>
+ </header>
+
+ <!-- Main Content -->
+ <main class="main-content">
+  <div class="container">
+   <div class="profile-container" data-aos="fade-up">
+    <div class="profile-header">
+     <div class="profile-image">
+      <img src="../images/team/nandkumar.png" alt="Prof. (Dr) Nand Kumar" onerror="this.src='../images/team/avatar.png';">
+     </div>
+     <div class="profile-title">
+      <h1>Prof. (Dr) Nand Kumar</h1>
+      <p class="profile-subtitle">Professor, Department of Psychiatry</p>
+      <p class="profile-department">AIIMS New Delhi</p>
+      <span class="profile-badge">Chairman Advisory Committee</span>
+     </div>
+    </div>
+
+    <div class="profile-content">
+     <div class="content-section">
+      <h3>Professional Overview</h3>
+      <p>Dr. Nand Kumar is a Professor at the Department of Psychiatry, AIIMS New Delhi, with specialization in Neurobiology, Neuropsychiatry, and Bio Psychosocial community psychiatry.</p>
+     </div>
+
+     <div class="content-section">
+      <h3>Key Professional Highlights</h3>
+      <ul>
+       <li>Prof. In charge of ICMR CARE in Neuromodulation for Mental Health</li>
+       <li>Sub-Dean (Exams) at AIIMS Delhi from 2011-2015</li>
+       <li>Chairman of physical treatment committee, Indian Psychiatric Society</li>
+       <li>Founding President of Neuromodulation Society (India)</li>
+       <li>Vice chair of National Network of Depression Centers INDIA</li>
+      </ul>
+     </div>
+
+     <div class="content-section">
+      <h3>Research Expertise</h3>
+      <ul>
+       <li>Conducted numerous research projects on brain stimulation techniques</li>
+       <li>Principal Investigator for multiple ICMR and DST funded projects</li>
+       <li>Focus on repetitive transcranial magnetic stimulation (rTMS)</li>
+       <li>Extensive research in psychiatric disorders, including schizophrenia, depression, and obsessive-compulsive disorder</li>
+      </ul>
+     </div>
+
+     <div class="content-section">
+      <h3>Publications & Academic Contributions</h3>
+      <ul>
+       <li>Over 50 publications in peer-reviewed journals</li>
+       <li>Published research on brain stimulation, psychiatric disorders, and mental health interventions</li>
+       <li>Authored a manual on "Prison Mental Health in India"</li>
+       <li>Supervised 8 MD theses as chief guide</li>
+       <li>Co-guided 10 additional theses</li>
+       <li>Published 1 book</li>
+       <li>Member of multiple national and international professional committees</li>
+      </ul>
+     </div>
+
+     <div class="content-section">
+      <h3>Research Focus</h3>
+      <p>His research primarily focuses on innovative neurological and psychiatric treatment techniques, with a strong emphasis on non-invasive brain stimulation methods.</p>
+     </div>
+
+     <div class="stats-grid">
+      <div class="stat-item">
+       <span class="stat-number">50+</span>
+       <p class="stat-label">Publications</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">18</span>
+       <p class="stat-label">Theses Supervised</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">30+</span>
+       <p class="stat-label">Years Experience</p>
+      </div>
+      <div class="stat-item">
+       <span class="stat-number">1</span>
+       <p class="stat-label">Published Book</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </main>
+
+ <!-- Scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+ <script>
+  AOS.init({
+   once: true,
+   offset: 100,
+   duration: 800,
+   easing: "ease-in-out"
+  });
+ </script>
+</body>
+</html>

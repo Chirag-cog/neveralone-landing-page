@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Vijender Singh - Advisor | Never Alone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <style>
+   :root {
+    --primary-color: #174089;
+    --accent-color: #c00000;
+    --dark-color: #333333;
+    --light-color: #f0f7fc;
+    --gray-color: #6c757d;
+    --white-color: #ffffff;
+    --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+    --transition: all 0.3s ease;
+   }
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    font-size: 16px;
+   }
+
+   .header {
+    background: var(--white-color);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+   }
+
+   .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+
+   .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+   }
+
+   .logo img {
+    height: 40px;
+   }
+
+   .brand-text h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+   }
+
+   .brand-text p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin: 0;
+   }
+
+   .back-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+   }
+
+   .back-btn:hover {
+    text-decoration: underline;
+   }
+
+   .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+   }
+
+   .advisor-header {
+    text-align: center;
+    margin-bottom: 50px;
+   }
+
+   .advisor-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: block;
+    object-fit: cover;
+   }
+
+   .name-initials-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0 auto 30px;
+   }
+
+   .advisor-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+   }
+
+   .advisor-title {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    margin-bottom: 5px;
+   }
+
+   .advisor-institution {
+    font-size: 1rem;
+    color: var(--accent-color);
+   }
+
+   .content {
+    line-height: 1.8;
+   }
+
+   h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+   }
+
+   h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 30px 0 15px 0;
+   }
+
+   h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 20px 0 10px 0;
+   }
+
+   p {
+    margin-bottom: 15px;
+    text-align: justify;
+   }
+
+   ul, ol {
+    margin: 15px 0;
+    padding-left: 30px;
+   }
+
+   li {
+    margin-bottom: 8px;
+   }
+
+
+   /* Tablet Styles */
+   @media (max-width: 992px) {
+    .header-content {
+     padding: 0 15px;
+    }
+    
+    .container {
+     padding: 35px 20px;
+    }
+    
+    .advisor-name {
+     font-size: 2.2rem;
+    }
+    
+    .advisor-title {
+     font-size: 1.1rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 130px;
+     height: 130px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.8rem;
+    }
+    
+    h2 {
+     font-size: 1.6rem;
+    }
+   }
+
+   /* Mobile Styles */
+   @media (max-width: 768px) {
+    .header {
+     padding: 15px 0;
+    }
+    
+    .header-content {
+     padding: 0 15px;
+     flex-direction: column;
+     gap: 15px;
+    }
+    
+    .logo {
+     justify-content: center;
+    }
+    
+    .logo img {
+     height: 35px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.3rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.8rem;
+    }
+    
+    .back-btn {
+     font-size: 0.9rem;
+    }
+    
+    .container {
+     padding: 25px 15px;
+    }
+    
+    .advisor-header {
+     margin-bottom: 35px;
+    }
+    
+    .advisor-name {
+     font-size: 1.8rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-title {
+     font-size: 1rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-institution {
+     font-size: 0.9rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 100px;
+     height: 100px;
+     margin-bottom: 20px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.2rem;
+    }
+    
+    h2 {
+     font-size: 1.4rem;
+     margin: 30px 0 15px 0;
+    }
+    
+    h3 {
+     font-size: 1.2rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    h4 {
+     font-size: 1rem;
+     margin: 18px 0 8px 0;
+    }
+    
+    p {
+     margin-bottom: 12px;
+     font-size: 0.95rem;
+     line-height: 1.7;
+     text-align: left;
+    }
+    
+    ul, ol {
+     margin: 12px 0;
+     padding-left: 25px;
+    }
+    
+    li {
+     margin-bottom: 6px;
+     font-size: 0.95rem;
+     line-height: 1.6;
+    }
+   }
+
+   /* Small Mobile Styles */
+   @media (max-width: 480px) {
+    .header-content {
+     padding: 0 10px;
+    }
+    
+    .container {
+     padding: 20px 10px;
+    }
+    
+    .advisor-name {
+     font-size: 1.6rem;
+    }
+    
+    .advisor-title {
+     font-size: 0.95rem;
+    }
+    
+    .advisor-institution {
+     font-size: 0.85rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 90px;
+     height: 90px;
+    }
+    
+    .name-initials-large {
+     font-size: 2rem;
+    }
+    
+    h2 {
+     font-size: 1.3rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    p {
+     font-size: 0.9rem;
+    }
+    
+    li {
+     font-size: 0.9rem;
+    }
+    
+    .logo {
+     flex-direction: column;
+     gap: 8px;
+    }
+    
+    .logo img {
+     height: 30px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.2rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.75rem;
+    }
+   }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+   <div class="header-content">
+    <div class="logo">
+     <img src="../images/logos/neverAloneLogo.jpg" alt="Never Alone Logo" />
+     <div class="brand-text">
+      <h1>NeverAlone</h1>
+      <p>Caring connections</p>
+     </div>
+    </div>
+    <a href="../index.html#advisors" class="back-btn">
+     <i class="fas fa-arrow-left"></i>
+     Back to Advisors
+    </a>
+   </div>
+  </header>
+
+  <div class="container">
+   <div class="advisor-header">
+    <img src="../images/advisors/dr-vijender-singh.jpg" alt="Dr. Vijender Singh" class="advisor-photo" />
+    <h1 class="advisor-name">Dr. Vijender Singh</h1>
+    <p class="advisor-title">Professor of Psychiatry</p>
+    <p class="advisor-institution">All India Institute of Medical Sciences, New Delhi</p>
+   </div>
+
+   <div class="content">
+    <h2>Professional Profile</h2>
+    <p>Dr. Vijender Singh is a distinguished Professor of Psychiatry at the All India Institute of Medical Sciences (AIIMS), New Delhi. With extensive experience in clinical psychiatry, research, and academic leadership, he has made significant contributions to the field of mental health in India.</p>
+
+    <h2>Areas of Expertise</h2>
+    <ul>
+     <li>Clinical Psychiatry</li>
+     <li>Psychiatric Research</li>
+     <li>Mental Health Care</li>
+     <li>Academic Medicine</li>
+     <li>Medical Education</li>
+    </ul>
+
+    <h2>Academic and Clinical Excellence</h2>
+    <p>As a Professor at AIIMS New Delhi, one of India's premier medical institutions, Dr. Singh brings decades of experience in patient care, medical education, and psychiatric research. His work encompasses the full spectrum of psychiatric disorders and their treatment modalities.</p>
+
+    <p>Dr. Singh has been instrumental in advancing psychiatric care standards and has contributed to the training of numerous psychiatrists and mental health professionals who now serve across India and internationally.</p>
+
+    <h2>Research and Publications</h2>
+    <p>Dr. Singh has been actively involved in psychiatric research, contributing to the understanding of mental health conditions and their treatment approaches. His research work has been published in various medical and psychiatric journals, adding to the body of knowledge in the field of psychiatry.</p>
+
+    <h2>Professional Contributions</h2>
+    <p>Throughout his career, Dr. Singh has been committed to improving mental health care delivery and reducing the stigma associated with mental illness. He has participated in various professional activities, conferences, and academic forums to share knowledge and best practices in psychiatric care.</p>
+
+    <p>His dedication to the field of psychiatry extends beyond clinical practice to include mentorship of young doctors and continuous professional development in the rapidly evolving landscape of mental health care.</p>
+
+    <h2>Academic Leadership</h2>
+    <p>At AIIMS New Delhi, Dr. Singh has played an important role in shaping the curriculum and training programs for psychiatry residents and medical students. His educational contributions have helped prepare the next generation of mental health professionals for the challenges of modern psychiatric practice.</p>
+
+   </div>
+  </div>
+</body>
+</html>

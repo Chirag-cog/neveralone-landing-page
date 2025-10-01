@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Gagan Hans - Advisor | Never Alone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <style>
+   :root {
+    --primary-color: #174089;
+    --accent-color: #c00000;
+    --dark-color: #333333;
+    --light-color: #f0f7fc;
+    --gray-color: #6c757d;
+    --white-color: #ffffff;
+    --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+    --transition: all 0.3s ease;
+   }
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    font-size: 16px;
+   }
+
+   .header {
+    background: var(--white-color);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+   }
+
+   .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+
+   .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+   }
+
+   .logo img {
+    height: 40px;
+   }
+
+   .brand-text h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+   }
+
+   .brand-text p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin: 0;
+   }
+
+   .back-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+   }
+
+   .back-btn:hover {
+    text-decoration: underline;
+   }
+
+   .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+   }
+
+   .advisor-header {
+    text-align: center;
+    margin-bottom: 50px;
+   }
+
+   .advisor-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: block;
+    object-fit: cover;
+   }
+
+   .name-initials-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0 auto 30px;
+   }
+
+   .advisor-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+   }
+
+   .advisor-title {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    margin-bottom: 5px;
+   }
+
+   .advisor-institution {
+    font-size: 1rem;
+    color: var(--accent-color);
+   }
+
+   .content {
+    line-height: 1.8;
+   }
+
+   h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+   }
+
+   h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 30px 0 15px 0;
+   }
+
+   h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 20px 0 10px 0;
+   }
+
+   p {
+    margin-bottom: 15px;
+    text-align: justify;
+   }
+
+   ul, ol {
+    margin: 15px 0;
+    padding-left: 30px;
+   }
+
+   li {
+    margin-bottom: 8px;
+   }
+
+
+   /* Tablet Styles */
+   @media (max-width: 992px) {
+    .header-content {
+     padding: 0 15px;
+    }
+    
+    .container {
+     padding: 35px 20px;
+    }
+    
+    .advisor-name {
+     font-size: 2.2rem;
+    }
+    
+    .advisor-title {
+     font-size: 1.1rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 130px;
+     height: 130px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.8rem;
+    }
+    
+    h2 {
+     font-size: 1.6rem;
+    }
+   }
+
+   /* Mobile Styles */
+   @media (max-width: 768px) {
+    .header {
+     padding: 15px 0;
+    }
+    
+    .header-content {
+     padding: 0 15px;
+     flex-direction: column;
+     gap: 15px;
+    }
+    
+    .logo {
+     justify-content: center;
+    }
+    
+    .logo img {
+     height: 35px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.3rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.8rem;
+    }
+    
+    .back-btn {
+     font-size: 0.9rem;
+    }
+    
+    .container {
+     padding: 25px 15px;
+    }
+    
+    .advisor-header {
+     margin-bottom: 35px;
+    }
+    
+    .advisor-name {
+     font-size: 1.8rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-title {
+     font-size: 1rem;
+     margin-bottom: 8px;
+    }
+    
+    .advisor-institution {
+     font-size: 0.9rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 100px;
+     height: 100px;
+     margin-bottom: 20px;
+    }
+    
+    .name-initials-large {
+     font-size: 2.2rem;
+    }
+    
+    h2 {
+     font-size: 1.4rem;
+     margin: 30px 0 15px 0;
+    }
+    
+    h3 {
+     font-size: 1.2rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    h4 {
+     font-size: 1rem;
+     margin: 18px 0 8px 0;
+    }
+    
+    p {
+     margin-bottom: 12px;
+     font-size: 0.95rem;
+     line-height: 1.7;
+     text-align: left;
+    }
+    
+    ul, ol {
+     margin: 12px 0;
+     padding-left: 25px;
+    }
+    
+    li {
+     margin-bottom: 6px;
+     font-size: 0.95rem;
+     line-height: 1.6;
+    }
+   }
+
+   /* Small Mobile Styles */
+   @media (max-width: 480px) {
+    .header-content {
+     padding: 0 10px;
+    }
+    
+    .container {
+     padding: 20px 10px;
+    }
+    
+    .advisor-name {
+     font-size: 1.6rem;
+    }
+    
+    .advisor-title {
+     font-size: 0.95rem;
+    }
+    
+    .advisor-institution {
+     font-size: 0.85rem;
+    }
+    
+    .advisor-photo,
+    .name-initials-large {
+     width: 90px;
+     height: 90px;
+    }
+    
+    .name-initials-large {
+     font-size: 2rem;
+    }
+    
+    h2 {
+     font-size: 1.3rem;
+     margin: 25px 0 12px 0;
+    }
+    
+    p {
+     font-size: 0.9rem;
+    }
+    
+    li {
+     font-size: 0.9rem;
+    }
+    
+    .logo {
+     flex-direction: column;
+     gap: 8px;
+    }
+    
+    .logo img {
+     height: 30px;
+    }
+    
+    .brand-text h1 {
+     font-size: 1.2rem;
+    }
+    
+    .brand-text p {
+     font-size: 0.75rem;
+    }
+   }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+   <div class="header-content">
+    <div class="logo">
+     <img src="../images/logos/neverAloneLogo.jpg" alt="Never Alone Logo" />
+     <div class="brand-text">
+      <h1>NeverAlone</h1>
+      <p>Caring connections</p>
+     </div>
+    </div>
+    <a href="../index.html#advisors" class="back-btn">
+     <i class="fas fa-arrow-left"></i>
+     Back to Advisors
+    </a>
+   </div>
+  </header>
+
+  <div class="container">
+   <div class="advisor-header">
+    <img src="../images/advisors/dr-gagan-hans.jpg" alt="Dr. Gagan Hans" class="advisor-photo" />
+    <h1 class="advisor-name">Dr. Gagan Hans</h1>
+    <p class="advisor-title">Additional Professor of Psychiatry</p>
+    <p class="advisor-institution">All India Institute of Medical Sciences, New Delhi</p>
+   </div>
+
+   <div class="content">
+    <h2>Education</h2>
+    <ul>
+     <li><strong>MBBS</strong> - Govt. Medical College, Srinagar (2001-2007)</li>
+     <li><strong>MD Psychiatry</strong> - Govt. Medical College, Srinagar (2009-2012)</li>
+    </ul>
+
+    <h2>Professional Experience</h2>
+    <ul>
+     <li><strong>Additional Professor, AIIMS, New Delhi</strong> (July 2023 Onwards)</li>
+     <li><strong>Associate Professor, AIIMS, New Delhi</strong> (July 2020-July 2023)</li>
+     <li><strong>Assistant Professor, AIIMS, New Delhi</strong> (Nov 2016-July 2020)</li>
+     <li><strong>Assistant Professor, North Delhi Municipal Corporation Medical College</strong> (Feb-Nov 2016)</li>
+     <li><strong>Senior Residency, Lady Hardinge Medical College</strong> (Jan 2013 – Jan 2016)</li>
+    </ul>
+
+    <h2>Areas of Interest</h2>
+    <ul>
+     <li>Common Mental Disorders</li>
+     <li>Psycho-Radiology</li>
+     <li>Genetics and genomics in Psychiatry</li>
+     <li>Community Psychiatry</li>
+    </ul>
+
+    <h2>Key Achievements and Awards</h2>
+    <ul>
+     <li><strong>Young Psychiatrist Track Award 2016</strong></li>
+     <li><strong>Travel Scholarship Award (2017)</strong></li>
+     <li><strong>Invited Co-Editor</strong> for Indian Journal of Social Psychiatry</li>
+     <li><strong>ICMR Project Grant Principal Investigator</strong> (2023-2026)</li>
+    </ul>
+
+    <h2>Research and Academic Contributions</h2>
+    <p>Dr. Gagan Hans specializes in cutting-edge research in neuroimaging in psychiatry, metabolic abnormalities in depression, and Magnetic Resonance Spectroscopy studies. His work bridges the gap between neuroscience and clinical psychiatry, contributing to a deeper understanding of mental health conditions.</p>
+    
+    <p>His research focuses on psycho-radiology and the application of neuroimaging techniques in understanding psychiatric disorders. He has made significant contributions to the field of genetics and genomics in psychiatry, exploring the biological underpinnings of mental health conditions.</p>
+
+    <h2>Community and Professional Contributions</h2>
+    <p>Dr. Hans is actively involved in public mental health education through public lectures, organizing conferences and CME programs, student wellness initiatives, and media contributions on mental health awareness. His commitment extends beyond clinical practice to fostering a broader understanding of mental health in society.</p>
+    
+    <p>He has been instrumental in community psychiatry initiatives and has contributed to various mental health awareness programs. His work in the field of common mental disorders has helped bridge the gap between specialized psychiatric care and community-based mental health services.</p>
+
+    <h2>Editorial and Academic Roles</h2>
+    <p>As an Invited Co-Editor for the Indian Journal of Social Psychiatry, Dr. Hans contributes to the advancement of psychiatric knowledge and research dissemination in the Indian context. His editorial work focuses on promoting research in social psychiatry and community mental health.</p>
+
+    <h2>Current Research Projects</h2>
+    <p>Dr. Hans is currently serving as Principal Investigator for an ICMR Project Grant (2023-2026), which demonstrates his continued commitment to advancing psychiatric research and evidence-based practice in India.</p>
+   </div>
+  </div>
+</body>
+</html>

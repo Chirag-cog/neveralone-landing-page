@@ -1,0 +1,2722 @@
+```html
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+ <head>
+  <meta charset="UTF-8" />
+  <meta
+   name="viewport"
+   content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <title>Never Alone | Caring Connections</title>
+
+  <!-- Google Fonts -->
+  <link
+   href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+   rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+   rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
+  <!-- AOS Library for Scroll Animations -->
+  <link
+   rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+  />
+
+  <style>
+   :root {
+    --primary-color: #174089;
+    --accent-color: #c00000;
+    --dark-color: #333333;
+    --light-color: #f0f7fc;
+    --gray-color: #6c757d;
+    --white-color: #ffffff;
+    --shadow: 0 4px 12px rgba(82, 169, 217, 0.15);
+    --transition: all 0.3s ease;
+   }
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    overflow-x: hidden;
+    background-color: var(--white-color);
+    margin: 0px;
+    padding: 0px;
+   }
+
+   /* Typography */
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+   }
+
+   h1 {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--primary-color);
+   }
+
+   h2 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+   }
+
+   h2:after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 0;
+    border-radius: 3px;
+   }
+
+   h3 {
+    font-size: 1.5rem;
+   }
+
+   p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: var(--gray-color);
+    line-height: 1.8;
+   }
+
+   a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+   }
+
+   a:hover {
+    color: var(--accent-color);
+   }
+
+   /* Container & Wrapper */
+   .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+   }
+
+   /* Header */
+   .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    padding: 15px 0;
+    transition: var(--transition);
+   }
+
+   .header.scrolled {
+    padding: 10px 0;
+   }
+
+   .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+   }
+
+   .logo-container {
+    display: flex;
+    align-items: center;
+   }
+
+   .logo-container img {
+    height: 30px;
+    width: auto;
+   }
+
+   .logo-text {
+    margin-left: 15px;
+   }
+
+   .tagline {
+    font-size: 0.8rem;
+    color: var(--gray-color);
+    margin: 0;
+   }
+
+   .brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-color);
+   }
+
+   .nav-menu {
+    display: flex;
+    gap: 30px;
+   }
+
+   .nav-item {
+    font-weight: 500;
+    position: relative;
+   }
+
+   .nav-item:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: var(--transition);
+    border-radius: 2px;
+   }
+
+   .nav-item:hover:after {
+    width: 100%;
+   }
+
+   .cta-button {
+    background-color: #4caf50;
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: var(--transition);
+   }
+
+   .cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 67, 192, 0.2);
+   }
+
+   .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: var(--transition);
+   }
+
+   .mobile-menu-btn:hover {
+    background-color: var(--light-color);
+   }
+
+   .mobile-menu-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+   }
+
+   /* Hero Section */
+   .hero-section {
+    padding: 150px 0 80px;
+   }
+
+   .hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+   }
+
+   .hero-text {
+    flex: 1;
+   }
+
+   .hero-image {
+    flex: 1;
+    text-align: center;
+   }
+
+   .hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+   }
+
+   /* About Section */
+   .about-section {
+    padding: 80px 0;
+    background-image: linear-gradient(
+     to bottom right,
+     rgba(82, 169, 217, 0.05),
+     rgba(255, 255, 255, 0)
+    );
+   }
+
+   .about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+   }
+
+   .about-text {
+    flex: 1;
+   }
+
+   .about-image {
+    flex: 1;
+    text-align: center;
+   }
+
+   .about-image img {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+   }
+
+   .emphasized {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--primary-color);
+   }
+
+   /* Foundation Section */
+   .foundation-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+   }
+
+   .foundation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .foundation-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+   }
+
+   .foundation-logo {
+    height: 60px;
+    transition: var(--transition);
+   }
+
+   .foundation-logo:hover {
+    transform: scale(1.1);
+   }
+
+   .university-highlight {
+    margin-top: 40px;
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--accent-color);
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+   }
+
+   .university-highlight:hover {
+    transform: translateY(-5px);
+   }
+
+   /* Team Section */
+   .team-section {
+    padding: 80px 0;
+    background-image: linear-gradient(
+     to bottom left,
+     rgba(82, 169, 217, 0.05),
+     rgba(255, 255, 255, 0)
+    );
+   }
+
+   .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   .team-card {
+    background-color: var(--white-color);
+    overflow: hidden;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+   }
+
+   .team-card:hover {
+    transform: translateY(-5px);
+   }
+
+   .team-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 20px auto 10px;
+    overflow: hidden;
+    border: 3px solid var(--light-color);
+   }
+
+   .team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+
+   /* Name Initial Placeholders */
+   .name-initials {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px auto 10px;
+    border: 3px solid var(--light-color);
+   }
+
+   .team-info {
+    padding: 0 15px 20px;
+   }
+
+   .team-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+   }
+
+   .team-role {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+   }
+
+   .team-category-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+   }
+
+   /* Advisor Cards Specific Styling */
+   .advisor-card {
+    cursor: pointer;
+    position: relative;
+   }
+
+   .advisor-card .team-expertise {
+    font-size: 0.75rem;
+    color: var(--gray-color);
+    margin-top: 5px;
+    font-style: italic;
+   }
+
+   .advisor-card:hover {
+    background-color: var(--light-color);
+   }
+
+   .advisor-card .team-category-label {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+   }
+
+   /* Team Member Modal */
+   .team-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+   }
+
+   .team-modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 50px 0;
+    animation: fadeIn 0.4s forwards;
+   }
+
+   .team-modal-content {
+    background-color: var(--white-color);
+    max-width: 800px;
+    width: 90%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+    animation: scaleUp 0.4s forwards;
+    margin: auto;
+    position: relative;
+   }
+
+   .team-modal-header {
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+   .team-modal-header h3 {
+    margin: 0;
+    color: var(--white-color);
+    font-size: 1.5rem;
+   }
+
+   .team-modal-close {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--white-color);
+    cursor: pointer;
+    transition: var(--transition);
+   }
+
+   .team-modal-close:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+   }
+
+   .team-modal-body {
+    padding: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+   }
+
+   .team-profile {
+    display: flex;
+    flex-direction: column;
+   }
+
+   .team-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+   }
+
+   .team-profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--light-color);
+    box-shadow: var(--shadow);
+   }
+
+   .team-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+
+   .team-profile-title {
+    flex: 1;
+   }
+
+   .team-profile-title h4 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+   }
+
+   .team-profile-title p {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+   }
+
+   .team-profile-content p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+   }
+
+   /* We Are Proud Section */
+   .proud-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+   }
+
+   .proud-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .proud-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+   }
+
+   .stat-item {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+   }
+
+   .stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(82, 169, 217, 0.2);
+   }
+
+   .stat-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .stat-icon i {
+    font-size: 30px;
+    color: var(--primary-color);
+   }
+
+   .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+   }
+
+   .stat-title {
+    color: var(--gray-color);
+    font-size: 1rem;
+   }
+
+   .proud-highlight {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    padding: 40px;
+    width: 90%;
+    box-shadow: var(--shadow);
+    position: relative;
+    margin-top: 20px;
+   }
+
+   .highlight-content {
+    position: relative;
+    text-align: center;
+   }
+
+   .highlight-content i.fa-quote-left {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 30px;
+    color: var(--primary-color);
+    opacity: 0.5;
+   }
+
+   .highlight-content i.fa-quote-right {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    font-size: 30px;
+    color: var(--primary-color);
+    opacity: 0.5;
+   }
+
+   .highlight-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--primary-color);
+    font-style: italic;
+    font-weight: 500;
+   }
+
+   /* Offerings Section */
+   .offerings-section {
+    padding: 80px 0;
+    background-image: linear-gradient(
+     to bottom right,
+     rgba(82, 169, 217, 0.05),
+     rgba(255, 255, 255, 0)
+    );
+   }
+
+   .offering-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding: 20px;
+    border-radius: 20px;
+    transition: var(--transition);
+   }
+
+   .offering-item:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow);
+   }
+
+   .offering-item:nth-child(even) {
+    flex-direction: row-reverse;
+   }
+
+   .offering-image {
+    flex: 1;
+    text-align: center;
+   }
+
+   .offering-image img {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+   }
+
+   .offering-item:hover .offering-image img {
+    transform: scale(1.03);
+   }
+
+   .offering-text {
+    flex: 1;
+   }
+
+   .offering-text h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+   }
+
+   .offering-text h3:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+   }
+
+   /* Contact Us Section */
+   .contact-section {
+    padding: 80px 0;
+    background-image: linear-gradient(
+     to bottom right,
+     rgba(82, 169, 217, 0.05),
+     rgba(255, 255, 255, 0)
+    );
+   }
+
+   .contact-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 40px;
+    margin-top: 30px;
+   }
+
+   .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+   }
+
+   .contact-form, 
+   .contact-whatsapp {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+   }
+
+   .contact-form:hover, 
+   .contact-whatsapp:hover,
+   .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(82, 169, 217, 0.15);
+   }
+
+   .contact-form h3,
+   .contact-whatsapp h3,
+   .contact-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+   }
+
+   .contact-form p,
+   .contact-whatsapp p {
+    color: var(--gray-color);
+    margin-bottom: 20px;
+   }
+
+   .form-group {
+    display: flex;
+    margin-top: 20px;
+   }
+
+   .form-group input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+   }
+
+   .form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+   }
+
+   .submit-btn {
+    padding: 0 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+   }
+
+   .submit-btn:hover {
+    background-color: var(--accent-color);
+   }
+
+   .whatsapp-options {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+   }
+
+   .qr-container {
+    flex: 1;
+    min-width: 150px;
+   }
+
+   .qr-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #f5f5f5;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-color);
+   }
+
+   .whatsapp-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   }
+
+   .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    transition: var(--transition);
+   }
+
+   .whatsapp-btn i {
+    font-size: 20px;
+    margin-right: 10px;
+   }
+
+   .whatsapp-btn:hover {
+    background-color: #128C7E;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+   }
+
+   .whatsapp-number {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+   }
+
+   .contact-card {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 100%;
+    transition: var(--transition);
+   }
+
+   .contact-card-header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+   }
+
+   .contact-card-header i {
+    font-size: 30px;
+    margin-bottom: 10px;
+   }
+
+   .contact-card-header h3 {
+    color: var(--white-color);
+    margin-bottom: 0;
+   }
+
+   .contact-info-list {
+    padding: 25px;
+   }
+
+   .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+   }
+
+   .contact-info-item:last-of-type {
+    border-bottom: none;
+   }
+
+   .contact-info-item i {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    margin-right: 15px;
+    flex-shrink: 0;
+   }
+
+   .contact-info-item h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+   }
+
+   .contact-info-item a {
+    color: var(--accent-color);
+    transition: var(--transition);
+   }
+
+   .contact-info-item a:hover {
+    color: var(--primary-color);
+   }
+
+   .contact-info-item p {
+    margin-bottom: 0;
+    color: var(--gray-color);
+   }
+
+   .contact-urgency {
+    background-color: #FFF8E1;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #FFC107;
+    margin-top: 20px;
+   }
+
+   .contact-urgency p {
+    margin-bottom: 10px;
+    color: #5D4037;
+   }
+
+   .urgency-btn {
+    display: inline-block;
+    background-color: #FFC107;
+    color: #5D4037;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+   }
+
+   .urgency-btn:hover {
+    background-color: #FFB300;
+    transform: translateY(-2px);
+    color: #5D4037;
+   }
+
+   .success-message {
+    background-color: #E8F5E9;
+    padding: 15px;
+    border-radius: 8px;
+    color: #2E7D32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+   }
+
+   .success-message i {
+    margin-right: 10px;
+    font-size: 18px;
+   }
+
+   /* Footer */
+   .footer {
+    background-color: var(--white-color);
+    padding: 60px 0 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+   }
+
+   .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+   }
+
+   .footer-logo {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+   }
+
+   .footer-logo img {
+    height: 50px;
+    margin-right: 18px;
+    padding-right: 18px;
+    border-right: 1px solid #ddd;
+   }
+
+   .contact-info {
+    margin-bottom: 20px;
+   }
+
+   .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+   }
+
+   .contact-item i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-right: 10px;
+   }
+
+   .partners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+   }
+
+   .partner-logo {
+    height: 60px;
+    margin: 10px;
+    transition: var(--transition);
+   }
+
+   .partner-logo:hover {
+    transform: scale(1.1);
+   }
+
+   .copyright {
+    background: url("images/hero/footer.svg") no-repeat center center;
+    background-size: cover;
+    padding: 50px 0 30px;
+    color: var(--white-color);
+    text-align: center;
+   }
+
+   .copyright-links a {
+    color: var(--white-color);
+    margin: 0 10px;
+   }
+
+   .copyright-links a:hover {
+    color: var(--accent-color);
+   }
+
+   #gotoTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(82, 169, 217, 0.3);
+   }
+
+   #gotoTop.active {
+    opacity: 1;
+    visibility: visible;
+    animation: pulse 2s infinite;
+   }
+
+   #gotoTop:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(192, 0, 0, 0.3);
+    animation: none;
+   }
+
+   @keyframes pulse {
+    0% {
+     box-shadow: 0 0 0 0 rgba(82, 169, 217, 0.4);
+    }
+    70% {
+     box-shadow: 0 0 0 10px rgba(82, 169, 217, 0);
+    }
+    100% {
+     box-shadow: 0 0 0 0 rgba(82, 169, 217, 0);
+    }
+   }
+
+   /* Video Modal Styles */
+   .video-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+   }
+
+   .video-modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s forwards;
+   }
+
+   .video-modal-content {
+    background-color: var(--white-color);
+    max-width: 800px;
+    width: 90%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+    animation: scaleUp 0.4s forwards;
+   }
+
+   .video-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+   }
+
+   .video-modal-header h3 {
+    margin: 0;
+    color: var(--white-color);
+   }
+
+   .video-modal-close {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--white-color);
+    cursor: pointer;
+    transition: var(--transition);
+   }
+
+   .video-modal-close:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+   }
+
+   .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+   }
+
+   .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   }
+
+   @keyframes fadeIn {
+    from {
+     opacity: 0;
+    }
+    to {
+     opacity: 1;
+    }
+   }
+
+   @keyframes scaleUp {
+    from {
+     transform: scale(0.8);
+    }
+    to {
+     transform: scale(1);
+    }
+   }
+
+   @keyframes scaleDown {
+    from {
+     transform: scale(1);
+    }
+    to {
+     transform: scale(0.8);
+    }
+   }
+
+   .closing {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+   }
+
+   .closing .video-modal-content {
+    animation: scaleDown 0.3s forwards;
+   }
+
+   /* Service Cards Hover Effects */
+   .service-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+   }
+
+   /* Workshop Cards Hover Effects */
+   .workshop-card:hover {
+    transform: translateX(10px);
+    background: #ffffff !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+   }
+
+   /* Hide hero quote image on mobile */
+   @media (max-width: 768px) {
+    .hero-quote-image {
+     display: none !important;
+    }
+    .hero-content .hero-text {
+     text-align: center;
+    }
+   }
+
+   /* Responsive Styles */
+   @media (max-width: 992px) {
+    .nav-menu {
+     position: fixed;
+     top: 70px;
+     right: -100%;
+     flex-direction: column;
+     background-color: var(--white-color);
+     width: 250px;
+     height: calc(100vh - 70px);
+     padding: 30px;
+     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+     transition: var(--transition);
+     align-items: flex-start;
+     gap: 20px;
+    }
+
+    .nav-menu.active {
+     right: 0;
+    }
+
+    .mobile-menu-btn {
+     display: block;
+    }
+
+    .cta-button {
+     display: none;
+    }
+
+    .offering-item,
+    .offering-item:nth-child(even) {
+     flex-direction: column;
+     text-align: center;
+    }
+
+    .about-content {
+     flex-direction: column-reverse;
+     text-align: center;
+    }
+
+    .about-text h2:after,
+    .offering-text h3:after {
+     left: 50%;
+     transform: translateX(-50%);
+    }
+
+    /* Keep hero section horizontal even on mobile */
+    .hero-content {
+     flex-direction: row;
+     flex-wrap: wrap;
+     text-align: left;
+    }
+
+    .hero-text,
+    .offering-text {
+     order: 1;
+    }
+
+    .hero-image,
+    .offering-image {
+     order: 0;
+     margin-bottom: 30px;
+    }
+
+    h1 {
+     font-size: 2rem;
+    }
+
+    h2 {
+     font-size: 1.8rem;
+    }
+
+    h2:after {
+     left: 50%;
+     transform: translateX(-50%);
+    }
+
+    .footer-content {
+     grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+     grid-template-columns: 1fr;
+    }
+  
+    .contact-methods {
+     order: 2;
+    }
+  
+    .contact-details {
+     order: 1;
+     margin-bottom: 30px;
+    }
+  
+    .proud-highlight {
+     width: 100%;
+    }
+  
+    .team-profile-header {
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+    }
+   }
+
+   @media (max-width: 768px) {
+    .partners {
+     justify-content: center;
+    }
+    
+    .proud-stats {
+     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+  
+    .whatsapp-options {
+     flex-direction: column;
+     align-items: center;
+    }
+  
+    .whatsapp-link {
+     align-items: center;
+     text-align: center;
+     margin-top: 20px;
+    }
+  
+    .highlight-content p {
+     font-size: 1rem;
+    }
+   }
+   
+   /* Mobile First Enhanced Responsive Design */
+   
+   /* Extra Small Devices (phones, 575px and down) */
+   @media (max-width: 575px) {
+    .container {
+     padding: 0 15px;
+    }
+
+    /* Typography Mobile Optimization */
+    .hero-text h1 {
+     font-size: 1.5rem !important;
+     line-height: 1.3;
+     margin-bottom: 15px;
+    }
+
+    .hero-text p {
+     font-size: 0.9rem;
+     line-height: 1.5;
+    }
+
+    .section-title h2 {
+     font-size: 1.5rem;
+     margin-bottom: 20px;
+     text-align: center;
+    }
+
+    /* Services Section Mobile */
+    .offering-item {
+     flex-direction: column !important;
+     text-align: center !important;
+     padding: 20px;
+     margin-bottom: 30px;
+    }
+
+    .offering-item:nth-child(even) {
+     flex-direction: column !important;
+    }
+
+    .offering-text h3 {
+     font-size: 1.2rem;
+     margin-bottom: 15px;
+    }
+
+    .offering-text p {
+     font-size: 0.9rem;
+     line-height: 1.6;
+    }
+
+    .offering-image img {
+     max-width: 280px;
+     width: 100%;
+    }
+
+    /* Advisory Grid Mobile */
+    .advisory-grid {
+     grid-template-columns: 1fr !important;
+     gap: 20px !important;
+    }
+    
+    .chairman-card {
+     grid-row: span 1 !important;
+     margin-bottom: 20px;
+    }
+    .team-grid {
+     grid-template-columns: 1fr !important;
+     gap: 8px;
+     max-width: 100%;
+    }
+
+    .team-card {
+     padding: 10px;
+     margin: 0 auto;
+     max-width: 280px;
+    }
+
+    .team-name {
+     font-size: 0.95rem;
+    }
+
+    .team-role {
+     font-size: 0.8rem;
+    }
+
+    /* Chairman Card Mobile */
+    .team-card[data-advisor="dr-nand-kumar"] {
+     max-width: 320px !important;
+     padding: 10px !important;
+     margin: 0 auto;
+    }
+
+    .team-card[data-advisor="dr-nand-kumar"] .team-image {
+     width: 100px !important;
+     height: 100px !important;
+    }
+
+    .team-card[data-advisor="dr-nand-kumar"] .team-name {
+     font-size: 1.2rem !important;
+    }
+
+    /* Allied Institutions Mobile */
+    .institutions-grid {
+     grid-template-columns: 1fr !important;
+     gap: 20px;
+    }
+
+    .institution-card {
+     padding: 25px 20px !important;
+    }
+
+    .institution-card div:first-child {
+     width: 100px !important;
+     height: 100px !important;
+     margin: 0 auto 20px !important;
+    }
+
+    .institution-card h3 {
+     font-size: 1.1rem !important;
+    }
+
+    .institution-card p {
+     font-size: 0.9rem !important;
+    }
+
+    /* Launch Section Mobile */
+    #launch-hero {
+     padding: 30px 15px !important;
+     flex-direction: column !important;
+     text-align: center !important;
+     gap: 25px !important;
+     min-height: auto !important;
+    }
+
+    #launch-hero p {
+     font-size: 1rem !important;
+     margin-bottom: 20px !important;
+    }
+
+    #launch-hero div:last-child {
+     width: 150px !important;
+     height: 150px !important;
+     margin: 0 auto;
+    }
+
+    /* About Section Mobile */
+    .about-content {
+     flex-direction: column-reverse !important;
+     text-align: center !important;
+     gap: 30px !important;
+    }
+
+    .about-image img {
+     max-width: 150px !important;
+     margin: 0 auto;
+    }
+
+    .about-text p {
+     font-size: 0.95rem;
+     line-height: 1.6;
+     text-align: left;
+    }
+
+    /* Modal Mobile Optimization */
+    .team-modal-content {
+     width: 95% !important;
+     margin: 10px !important;
+     max-height: 85vh;
+     overflow-y: auto;
+    }
+
+    .team-modal-body {
+     padding: 15px !important;
+     font-size: 0.9rem;
+    }
+
+    .team-profile-header {
+     flex-direction: column !important;
+     text-align: center !important;
+     gap: 15px !important;
+    }
+
+    .team-profile-image {
+     width: 100px !important;
+     height: 100px !important;
+    }
+
+    .team-modal-header h3 {
+     font-size: 1.2rem;
+    }
+
+    /* Footer Mobile */
+    .footer-content {
+     flex-direction: column !important;
+     text-align: center !important;
+     gap: 30px;
+    }
+
+    .footer-info {
+     margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+     max-width: 60px;
+    }
+   }
+
+   /* Small Devices (landscape phones, 576px - 767px) */
+   @media (min-width: 576px) and (max-width: 767px) {
+    .container {
+     padding: 0 25px;
+    }
+
+    .hero-text h1 {
+     font-size: 1.8rem !important;
+    }
+
+    .section-title h2 {
+     font-size: 1.8rem;
+    }
+
+    .advisory-grid {
+     grid-template-columns: repeat(2, 1fr) !important;
+     gap: 15px !important;
+    }
+    
+    .chairman-card {
+     grid-row: span 1 !important;
+     grid-column: 1 / -1;
+     margin-bottom: 20px;
+    }
+
+    .institutions-grid {
+     grid-template-columns: 1fr !important;
+     gap: 25px;
+    }
+
+    .offering-item {
+     flex-direction: column !important;
+     text-align: center !important;
+    }
+
+    .offering-item:nth-child(even) {
+     flex-direction: column !important;
+    }
+
+    #launch-hero {
+     padding: 40px 20px !important;
+     flex-direction: column !important;
+     text-align: center !important;
+     gap: 30px !important;
+    }
+   }
+
+   /* Medium Devices (tablets, 768px - 991px) */
+   @media (min-width: 768px) and (max-width: 991px) {
+    .hero-text h1 {
+     font-size: 2rem !important;
+    }
+
+    .hero-text p {
+     font-size: 1rem;
+    }
+
+    .section-title h2 {
+     font-size: 2rem;
+    }
+
+    .offering-text h3 {
+     font-size: 1.4rem;
+    }
+    
+    .advisory-grid {
+     grid-template-columns: repeat(3, 1fr) !important;
+     gap: 15px !important;
+    }
+    
+    .chairman-card {
+     grid-row: span 1 !important;
+     grid-column: 1 / -1;
+    }
+
+    .team-grid {
+     grid-template-columns: repeat(3, 1fr) !important;
+     gap: 25px;
+    }
+
+    .institutions-grid {
+     grid-template-columns: repeat(2, 1fr) !important;
+     gap: 30px;
+    }
+
+    .about-content {
+     flex-direction: column-reverse !important;
+     text-align: center !important;
+     gap: 40px;
+    }
+
+    .hero-content {
+     flex-direction: column !important;
+     text-align: center !important;
+     gap: 40px;
+    }
+
+    .offering-item,
+    .offering-item:nth-child(even) {
+     flex-direction: column !important;
+     text-align: center !important;
+     gap: 30px;
+    }
+
+    #launch-hero {
+     padding: 50px 30px !important;
+     flex-direction: column !important;
+     text-align: center !important;
+     gap: 35px !important;
+    }
+   }
+
+   /* Large Devices (desktops, 992px - 1199px) */
+   @media (min-width: 992px) and (max-width: 1199px) {
+    .team-grid {
+     grid-template-columns: repeat(4, 1fr) !important;
+     gap: 30px;
+    }
+
+    .institutions-grid {
+     grid-template-columns: repeat(3, 1fr) !important;
+     gap: 35px;
+    }
+   }
+
+   /* Updated 480px breakpoint */
+   @media (max-width: 480px) {
+    .form-group {
+     flex-direction: column;
+    }
+  
+    .form-group input {
+     border-radius: 8px;
+     margin-bottom: 10px;
+    }
+  
+    .submit-btn {
+     border-radius: 8px;
+     width: 100%;
+     padding: 12px;
+    }
+
+    .qr-placeholder {
+     width: 120px !important;
+     height: 120px !important;
+    }
+   }
+
+   
+  </style>
+ </head>
+
+ <body>
+  <!-- Header -->
+  <header class="header">
+   <div class="header-content">
+    <div class="logo-container">
+     <a href="index.html">
+      <img
+       style="
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        justify-items: center;
+       "
+       src="images/logos/neverAloneLogo.jpg"
+       alt="Never Alone Logo"
+      />
+     </a>
+     <div class="logo-text">
+      <p class="tagline">Caring connections</p>
+      <h1 class="brand-name">NeverAlone</h1>
+     </div>
+    </div>
+
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+     <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="nav-menu">
+     <a href="#about" class="nav-item">About Us</a>
+     <a href="#foundation" class="nav-item">Our Foundation</a>
+     <a href="#services" class="nav-item">Services</a>
+     <a href="#advisors" class="nav-item">Our Advisors</a>
+    </nav>
+   </div>
+  </header>
+
+  <!-- Hero Section with Deepak Quote Flow -->
+  <section class="hero-section" id="home" style="background-color: #ffffff; padding: 50px 0 40px; height: 100vh; display: flex; align-items: center;">
+   <div class="container">
+    <!-- Deepak Chopra Quote as Hero Opener -->
+    <div class="hero-quote" style="text-align: center; margin-bottom: 35px;" data-aos="fade-down" data-aos-duration="1000">
+      <p style="font-family: 'Georgia', serif; font-size: 1.6rem; font-style: italic; color: #555; margin: 0 0 20px; font-weight: 400; max-width: 900px; margin: 0 auto 20px;">"Awakening is not changing Who You Are. But Discarding Who You Are Not." – <span style="color: var(--primary-color); font-weight: 500;">Deepak Chopra</span></p>
+      <div style="width: 50px; height: 2px; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); margin: 0 auto; opacity: 0.8;"></div>
+    </div>
+    
+    <!-- Main Hero Content -->
+    <div class="hero-content" style="display: flex; align-items: center; gap: 30px; margin-left: 20px;">
+     <div class="hero-text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" style="flex: 1; padding-top: 0;">
+      <h1 style="font-size: 2.2rem; font-weight: 600; color: var(--primary-color); line-height: 1.3; margin-bottom: 30px;">
+       Revolutionizing<br>
+       Mental Health Support
+      </h1>
+      <p style="font-size: 1.2rem; line-height: 1.5; color: var(--gray-color); margin-bottom: 20px; font-weight: 400;">
+       Revolutionizing Mental & Emotional Wellness through support at the Blink of your Eye.
+      </p>
+      <p style="font-size: 1.1rem; line-height: 1.5; color: var(--gray-color); margin-bottom: 0; font-weight: 400;">
+       Whenever you feel Emotionally Suffocated, Physically Drained, 
+       Socially Left Out and Mentally Indecisive; 
+       Connect to us as your Holistic Wellness is our Priority.
+      </p>
+     </div>
+     <div class="hero-image hero-quote-image" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+      <img src="images/hero_one.png" style="max-width: 320px; width: 100%; height: auto; border: none; box-shadow: none; max-height: 350px;" alt="Never Alone Mental Health Support" />
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Launch -->
+
+  <div id="launch-hero" style="background: linear-gradient(135deg, #174089 0%, #4a6fba 100%); padding: 60px 20vw; display: flex; justify-content: space-between; align-items: center; min-height: 300px; font-family: 'Poppins', sans-serif; line-height: 1.6; color: #ffffff;">
+    <div style="max-width: 600px;">
+      <p style="line-height: 1.6; color: #ffffff; margin: 0 0 30px; font-weight: 400;">
+        <span style="font-size: 1.5rem; font-weight: 500;">Feeling overwhelmed?</span> 🌱 <span style="font-size: 1.2rem;">With NeverAlone, get instant AI insights</span> 🧠 <span style="font-size: 1.1rem;">on WhatsApp and connect with certified experts</span> 👨‍⚕️ <span style="font-size: 1rem;">anytime, anywhere.</span> 👉 <span style="font-size: 1.3rem; font-weight: 500;">Begin Now</span>
+      </p>
+      
+      <a href="https://wa.me/917042649777?text=Hello" style="display: inline-block; background-color: #4caf50; color: #ffffff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; border: none; cursor: pointer; font-size: 16px; transition: all 0.3s ease;">BEGIN YOUR WELLNESS JOURNEY</a>
+    </div>
+    
+    <div style="width: 180px; height: 180px; background-color: #fff; border-radius: 8px;">
+      <img src="images/qr_neverlaone.jpeg" alt="QR Code for WhatsApp" width="100%" height="100%" style="border-radius: 8px;">
+    </div>
+  </div>
+
+  <!-- About Never Alone Section -->
+  <section class="about-section" id="about">
+   <div class="container">
+    <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+     <h2>About Never Alone</h2>
+    </div>
+    <div class="about-content">
+     <div class="about-text" data-aos="fade-right" data-aos-duration="800">
+      <p>
+       Never Alone is a Beautiful Amalgamation of the Power of HI (Human Insights) with AI (Artificial Intelligence) and HA (Human Affection) to bridge the Gap between Feeling the Issue, Identifying it Objectively, Solving it Resourcefully and helping to Sustain the Positive Motivation to overcome at various intervals of life with Purpose towards Peak Mental Wellbeing of Individuals.
+      </p>
+     </div>
+     <div class="about-image" data-aos="fade-left" data-aos-duration="800">
+      <img
+       src="images/free-bird.png"
+       alt="About Never Alone"
+       style="max-width: 180px; width: 100%; height: auto;"
+      />
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- Deepak Chopra Quote 1 -->
+  <section style="padding: 60px 0; text-align: center; background-color: #f8fafc;">
+    <div class="container">
+      <p style="font-family: 'Georgia', serif; font-size: 1.5rem; font-style: italic; color: #666; margin: 0 0 15px; font-weight: 400; max-width: 900px; margin: 0 auto;">"Awareness is all about Restoring your Freedom to Choose What you Want instead of What your past Imposes on You." – <span style="color: var(--primary-color); font-weight: 500;">Deepak Chopra</span></p>
+    </div>
+  </section>
+
+  <!-- Our Solution Section (Commented - Content moved to Hero) -->
+<!--
+  <section class="solution-section" id="solution" style="padding: 80px 0; background-color: var(--white-color);">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+        <h2>Our Solution</h2>
+      </div>
+      <div class="solution-content" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <div data-aos="fade-up" data-aos-duration="800" style="background-color: var(--light-color); border-radius: 20px; padding: 50px; box-shadow: var(--shadow);">
+          <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 30px; line-height: 1.4;">
+            Revolutionizing Mental & Emotional Wellness through support at the Blink of your Eye
+          </h3>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray-color); margin-bottom: 0;">
+            Whenever you feel <span style="color: var(--primary-color); font-weight: 500;">Emotionally Suffocated</span>, 
+            <span style="color: var(--primary-color); font-weight: 500;">Physically Drained</span>, 
+            <span style="color: var(--primary-color); font-weight: 500;">Socially Left Out</span> and 
+            <span style="color: var(--primary-color); font-weight: 500;">Mentally Indecisive</span>; 
+            Connect to us as your <strong style="color: var(--accent-color);">Holistic Wellness is our Priority</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
+
+  <!-- Allied Institutions Section -->
+  <section class="allied-institutions-section" style="padding: 80px 0; background-color: var(--white-color);">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+        <h2>Our Allied Institutions</h2>
+      </div>
+      
+      <div class="institutions-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 50px;">
+        
+        <!-- AIIMS Delhi -->
+        <div class="institution-card" data-aos="fade-up" data-aos-delay="100" style="background-color: var(--white-color); padding: 30px 20px; text-align: center; transition: transform 0.3s ease;">
+          <div style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="images/aiims.png" alt="AIIMS Delhi" style="max-width: 90px; max-height: 90px; width: auto; height: auto;" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color: var(--primary-color); font-weight: 600; font-size: 0.8rem;\'>AIIMS<br>DELHI</span>';">
+          </div>
+          <h3 style="font-size: 1.2rem; color: var(--primary-color); margin-bottom: 8px;">AIIMS</h3>
+          <p style="color: var(--gray-color); font-size: 0.95rem; margin: 0;">New Delhi</p>
+        </div>
+        
+        <!-- AIIMS Bhubaneswar -->
+        <div class="institution-card" data-aos="fade-up" data-aos-delay="200" style="background-color: var(--white-color); padding: 30px 20px; text-align: center; transition: transform 0.3s ease;">
+          <div style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="images/aiims-bhu-logo.svg" alt="AIIMS Bhubaneswar" style="max-width: 90px; max-height: 90px; width: auto; height: auto;" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color: var(--primary-color); font-weight: 600; font-size: 0.8rem;\'>AIIMS<br>BBSR</span>';">
+          </div>
+          <h3 style="font-size: 1.2rem; color: var(--primary-color); margin-bottom: 8px;">AIIMS</h3>
+          <p style="color: var(--gray-color); font-size: 0.95rem; margin: 0;">Bhubaneswar</p>
+        </div>
+        
+        <!-- IHBAS -->
+        <div class="institution-card" data-aos="fade-up" data-aos-delay="300" style="background-color: var(--white-color); padding: 30px 20px; text-align: center; transition: transform 0.3s ease;">
+          <div style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="images/logos/ihbas-logo.png" alt="IHBAS" style="max-width: 90px; max-height: 90px; width: auto; height: auto;" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color: var(--primary-color); font-weight: 600; font-size: 0.8rem;\'>IHBAS</span>';">
+          </div>
+          <h3 style="font-size: 1.2rem; color: var(--primary-color); margin-bottom: 8px;">IHBAS</h3>
+          <p style="color: var(--gray-color); font-size: 0.95rem; margin: 0;">Shahdara, New Delhi</p>
+        </div>
+        
+        <!-- Galgotias University -->
+        <div class="institution-card" data-aos="fade-up" data-aos-delay="400" style="background-color: var(--white-color); padding: 30px 20px; text-align: center; transition: transform 0.3s ease;">
+          <div style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="images/galgotia-logo.jpg" alt="Galgotias University" style="max-width: 90px; max-height: 90px; width: auto; height: auto;" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color: var(--primary-color); font-weight: 600; font-size: 0.8rem;\'>GALGOTIAS<br>UNIVERSITY</span>';">
+          </div>
+          <h3 style="font-size: 1.2rem; color: var(--primary-color); margin-bottom: 8px;">Galgotias University</h3>
+          <p style="color: var(--gray-color); font-size: 0.95rem; margin: 0;">Greater Noida, U.P.</p>
+          <p style="color: #4caf50; font-size: 0.85rem; margin-top: 10px; font-weight: 500;">Trusted by 50,000+ Students</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advisors Section -->
+  <section class="team-section" id="advisors">
+   <div class="container">
+    <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+     <h2>Our Advisory Committee</h2>
+    </div>
+    
+    <!-- Advisory Committee Layout: Uniform Grid System -->
+    <div class="advisory-layout" style="margin-top: 50px;">
+     
+     <!-- Uniform Advisory Grid -->
+     <div class="advisory-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; align-items: start;" data-aos="fade-up" data-aos-duration="800">
+      
+      <!-- Chairman Card - First Column -->
+      <div class="chairman-card" style="grid-row: span 2;">
+       <div class="team-card advisor-card" data-advisor="dr-nand-kumar" style="padding: 5px; background-color: var(--white-color); border-radius: 12px; border: 1px solid var(--primary-color); height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <div class="team-image" style="width: 110px; height: 110px; margin: 0 auto 15px;">
+         <img
+          src="images/team/nandkumar.png"
+          alt="Dr. Nand Kumar"
+          onerror="this.src='images/team/avatar.png';"
+         />
+        </div>
+        <div class="team-info" style="text-align: center; min-width: 180px;">
+         <p class="team-category-label" style="background-color: var(--primary-color); color: var(--white-color); font-size: 0.7rem; padding: 3px 8px; font-weight: 600; margin-bottom: 10px;">Chairman</p>
+         <h4 class="team-name" style="font-size: 1.1rem; margin-bottom: 5px; min-width: 100px; display: inline-block;">Dr. Nand Kumar</h4>
+         <p class="team-role" style="font-size: 0.8rem; color: var(--accent-color); margin-bottom: 3px;">Professor, Psychiatry</p>
+         <p class="team-expertise" style="font-size: 0.75rem;">AIIMS New Delhi</p>
+        </div>
+       </div>
+      </div>
+      
+      <!-- Row 1 Advisors -->
+      <div class="team-card advisor-card" data-advisor="dr-gagan-hans" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
+       <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
+        <img
+         src="images/advisors/dr-gagan-hans.jpg"
+         alt="Dr. Gagan Hans"
+         onerror="this.src='images/team/avatar.png';"
+        />
+       </div>
+       <div class="team-info" style="text-align: center;">
+        <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;">Dr. Gagan Hans</h4>
+        <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Additional Professor</p>
+        <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS New Delhi</p>
+       </div>
+      </div>
+      
+      <div class="team-card advisor-card" data-advisor="dr-biswa-ranjan-mishra" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
+       <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
+        <img
+         src="images/advisors/dr-biswa-ranjan-mishra.jpg"
+         alt="Dr. Biswa Ranjan Mishra"
+         onerror="this.src='images/team/avatar.png';"
+        />
+       </div>
+       <div class="team-info" style="text-align: center;">
+        <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;">Dr. Biswa Ranjan Mishra</h4>
+        <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Professor & Head</p>
+        <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS Bhubaneswar</p>
+       </div>
+      </div>
+      
+      <div class="team-card advisor-card" data-advisor="dr-puneet-misra" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
+       <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
+        <img
+         src="images/advisors/puneet.jpeg"
+         alt="Dr. Puneet Misra"
+         onerror="this.src='images/team/avatar.png';"
+        />
+       </div>
+       <div class="team-info" style="text-align: center;">
+        <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;">Dr. Puneet Misra</h4>
+        <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Professor</p>
+        <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS New Delhi</p>
+       </div>
+      </div>
+      
+      <div class="team-card advisor-card" data-advisor="dr-vijender-singh" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
+       <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
+        <img
+         src="images/advisors/dr-vijender-singh.jpg"
+         alt="Dr. Vijender Singh"
+         onerror="this.src='images/team/avatar.png';"
+        />
+       </div>
+       <div class="team-info" style="text-align: center;">
+        <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;">Dr. Vijender Singh</h4>
+        <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Professor & HOD</p>
+        <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS Bhopal</p>
+       </div>
+      </div>
+      
+      <!-- Row 2 Advisors -->
+      <div class="team-card advisor-card" data-advisor="dr-sujata-satapathy" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
+       <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
+        <img
+         src="images/advisors/sujata.jpeg"
+         alt="Dr. Sujata Satapathy"
+         onerror="this.src='images/team/avatar.png';"
+        />
+       </div>
+       <div class="team-info" style="text-align: center;">
+        <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;">Dr. Sujata Satapathy</h4>
+        <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Professor, Clinical Psychology</p>
+        <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS New Delhi</p>
+       </div>
+      </div>
+      
+      <div class="team-card advisor-card" data-advisor="dr-monika-agarwal" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
+       <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
+        <img
+         src="images/advisors/Monika.jpeg"
+         alt="Dr. Monika Agarwal"
+         onerror="this.src='images/team/avatar.png';"
+        />
+       </div>
+       <div class="team-info" style="text-align: center;">
+        <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;">Dr. Monika Agarwal</h4>
+        <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Founder & Director</p>
+        <p class="team-expertise" style="font-size: 0.65rem; margin: 0;"><a href="https://medbeat.ai" target="_blank" style="color: var(--primary-color); text-decoration: none;">Medbeat.ai</a></p>
+       </div>
+      </div>
+      
+      <div class="team-card advisor-card" data-advisor="dr-rajinder-dhamija" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
+       <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
+        <img
+         src="images/advisors/rajinder.jpg"
+         alt="Dr. Rajinder K. Dhamija"
+         onerror="this.src='images/team/avatar.png';"
+        />
+       </div>
+       <div class="team-info" style="text-align: center;">
+        <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;">Dr. Rajinder K. Dhamija</h4>
+        <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Director, IHBAS</p>
+        <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">Professor of Neurology</p>
+       </div>
+      </div>
+      
+      <!-- Empty slot for symmetry -->
+      <div></div>
+      
+     </div>
+   </div>
+  </section>
+
+
+  <!-- Team Member Modal -->
+  <div id="teamModal" class="team-modal">
+    <div class="team-modal-content">
+      <div class="team-modal-header">
+        <h3>Team Member Profile</h3>
+        <span class="team-modal-close">&times;</span>
+      </div>
+      <div class="team-modal-body">
+        <!-- Content will be loaded dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Deepak Chopra Quote 2 -->
+  <section style="padding: 60px 0; text-align: center; background-color: #f8fafc;">
+    <div class="container">
+      <p style="font-family: 'Georgia', serif; font-size: 1.5rem; font-style: italic; color: #666; margin: 0 0 15px; font-weight: 400; max-width: 900px; margin: 0 auto;">"When you make a Choice, you Change the Future." – <span style="color: var(--primary-color); font-weight: 500;">Deepak Chopra</span></p>
+    </div>
+  </section>
+
+  <!-- Offerings Section -->
+<section class="offerings-section" id="services">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+      <h2>Our Services</h2>
+    </div>
+
+    <!-- Offering 1 -->
+    <div class="offering-item" data-aos="fade-right" data-aos-duration="800">
+      <div class="offering-image" data-aos="zoom-in" data-aos-delay="200" data-aos-anchor-placement="center-bottom">
+        <img src="images/screening.png" alt="Screening & Wellness Support" style="box-shadow: none; border: none; max-height: 280px;" />
+      </div>
+      <div class="offering-text">
+        <h3>Screening & Wellness Support</h3>
+        <p>
+          AI-guided screening tailored to you 🌱. Get instant recommendations, expert consultations, and trusted resources to support your wellness journey.
+        </p>
+      </div>
+    </div>
+
+    <!-- Offering 2 -->
+    <div class="offering-item" data-aos="fade-left" data-aos-duration="800">
+      <div class="offering-image" data-aos="zoom-in" data-aos-delay="200" data-aos-anchor-placement="center-bottom">
+        <img src="images/in-person.png" alt="In-Person Counseling Sessions"  style="box-shadow: none; border: none; max-height: 280px;" />
+      </div>
+      <div class="offering-text">
+        <h3>In-Person Counseling Sessions</h3>
+        <p>
+          Connect with psychologists and wellness experts to overcome challenges, heal emotionally, and build lasting self-empowerment.
+        </p>
+      </div>
+    </div>
+
+    <!-- Offering 3 -->
+    <div class="offering-item" data-aos="fade-right" data-aos-duration="800">
+      <div class="offering-image" data-aos="zoom-in" data-aos-delay="200" data-aos-anchor-placement="center-bottom">
+        <img src="images/consultations-psy.png" alt="Psychiatric Consultations" />
+      </div>
+      <div class="offering-text">
+        <h3>Psychiatric Consultations</h3>
+        <p>
+          Get trusted, professional psychiatric care with guidance on medication, ongoing support, and integrated wellness resources for lasting mental health.
+        </p>
+      </div>
+    </div>
+
+    <!-- Offering 4 -->
+    <div class="offering-item" data-aos="fade-left" data-aos-duration="800">
+      <div class="offering-image" data-aos="zoom-in" data-aos-delay="200" data-aos-anchor-placement="center-bottom">
+        <img src="images/workshop.png" alt="Training Programmes & Workshops"  style="box-shadow: none; border: none; max-height: 280px;"/>
+      </div>
+      <div class="offering-text">
+        <h3>Training Programmes & Workshops</h3>
+        <p>
+          NeverAlone trains university faculty, volunteers, and psychologists to deliver student consultations and mental health support as our Wellbeing Partners. We also conduct on-campus workshops to build awareness, resilience, and emotional wellbeing among students.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Screening and Support Additional Content (Commented out) -->
+    <!--
+    <div class="offering-item" style="margin-top: 60px; background-color: var(--light-color); padding: 40px; border-radius: 20px;">
+      <div class="offering-image" data-aos="zoom-in" data-aos-duration="800">
+        <img src="images/screening.png" alt="Screening and Support Services" style="max-width: 400px; width: 100%; height: auto; border-radius: 16px;" />
+      </div>
+      <div class="offering-text" data-aos="fade-left" data-aos-duration="800">
+        <h3>Comprehensive Screening and Support</h3>
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+          Our easy AI-guided screening, built on trusted DSM standards, gives you quick insights into your well-being and points you toward the right support.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+          Expert-led consultations are conducted by GCIH-certified counsellors, offering compassionate support to students through one-on-one sessions.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          <strong style="color: var(--primary-color);">Empowerment through training:</strong> We equip university faculty with counselling skills via our workshops and structured training programs.
+        </p>
+      </div>
+    </div>
+    -->
+      
+      <!-- Workshops Section (Commented out) -->
+      <!--
+      <div style="background-color: var(--white-color); border-radius: 20px; padding: 50px; box-shadow: var(--shadow);">
+        <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 40px; text-align: center;">
+          Top 5 Workshops & Programs (MHFI/GCIH)
+        </h3>
+        
+        <div class="workshops-list" style="display: flex; flex-direction: column; gap: 30px;">
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="100" style="border-left: 4px solid var(--primary-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">MATE – Mind Activation Through Education</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">A specialized adolescent-centric program combining an online platform with interactive workshops for students, parents, and counselors to prevent future mental health issues.</p>
+          </div>
+          
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="200" style="border-left: 4px solid var(--accent-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">Psychological First Aid for Prison (PFA-P)</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">A pioneering workshop with manuals and screening tools tailored for prison mental health—first of its kind in India, second globally.</p>
+          </div>
+          
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="300" style="border-left: 4px solid var(--primary-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">Mental Health Awareness, Prevention & Treatment Programs</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">Comprehensive workshops, talks, and discussions designed for communities to foster awareness, early intervention, and well-being.</p>
+          </div>
+          
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="400" style="border-left: 4px solid var(--accent-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">Calm Care Initiative</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">A workplace mental wellness workshop aimed at enhancing employee mental health, mindfulness, and productivity through tailored sessions.</p>
+          </div>
+          
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="500" style="border-left: 4px solid var(--primary-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">Summer Internship Programme & School Projects</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">Practical, hands-on training programs and workshops in schools and communities; internships that empower volunteers and students in psycho-education and mental health outreach.</p>
+          </div>
+        </div>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- Our Foundation Section -->
+  <section class="foundation-section" id="foundation">
+   <div class="container">
+    <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+     <h2>Our Foundation</h2>
+    </div>
+    <div class="foundation-content">
+     <div class="foundation-text" data-aos="fade-up" data-aos-duration="800">
+      <p>
+       Global Centre for Integrative Health has been formed with Collaborative Vision of All India Institute of Medical Sciences, New Delhi; The Chopra Foundation, USA and Mental Health Foundation (India). In this synergistic relationship, these apex institutions intent to unite for Research, Education and Wellness Activities, with a particular focus on Mental Health and Well-Being of AIIMS students in addition to Other Educational Institutions. As an outcome of the MoU signed on 10th July, 2023, the Parties have agreed to implement a Mental Health and Wellness Service titled caring connections "Never Alone" which will provide Al-driven, Confidential, Accessible Mental Health Consultations and Wellness Services for students using a digital platform via WhatsApp. The Chopra Foundation will support the initiative by providing wellness content for the service and MHF (India) shall implement "Never Alone" mental health service and AIIMS Delhi will Provide logistical support as necessary to facilitate the integration of the service.
+      </p>
+     </div>
+     <!-- <div class="foundation-logos" data-aos="fade-up" data-aos-delay="200">
+      <img
+       src="images/testimonials/partner1.png"
+       alt="Chopra Foundation"
+       class="foundation-logo"
+      />
+      <img
+       src="images/testimonials/partner3.png"
+       alt="MHFI"
+       class="foundation-logo"
+      />
+      <img
+       src="images/logos/aiims_logo.png"
+       alt="AIIMS New Delhi"
+       class="foundation-logo"
+       onerror="this.style.display='none';"
+      />
+     </div> -->
+     
+     
+    </div>
+   </div>
+  </section>
+
+  <!-- Screening and Support Section (Commented - Content moved to Services) -->
+<!--
+  <section class="screening-support-section" id="screening-support" style="padding: 80px 0; background-color: var(--light-color);">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+        <h2>Screening and Support</h2>
+      </div>
+      
+      <div style="background-color: var(--white-color); border-radius: 20px; padding: 50px; box-shadow: var(--shadow); margin-bottom: 50px;" data-aos="fade-up" data-aos-duration="800">
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px; color: var(--gray-color);">
+          Our easy AI-guided screening, built on trusted DSM standards, gives you quick insights into your well-being and points you toward the right support.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px; color: var(--gray-color);">
+          Expert-led consultations are conducted by GCIH-certified counsellors, offering compassionate support to students through one-on-one sessions.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 0; color: var(--gray-color);">
+          <strong style="color: var(--primary-color);">Empowerment through training:</strong> We equip university faculty with counselling skills via our workshops and structured training programs.
+        </p>
+      </div>
+      
+      <div style="background-color: var(--white-color); border-radius: 20px; padding: 50px; box-shadow: var(--shadow);">
+        <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 40px; text-align: center;">
+          Top 5 Workshops & Programs (MHFI/GCIH)
+        </h3>
+        
+        <div class="workshops-list" style="display: flex; flex-direction: column; gap: 30px;">
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="100" style="border-left: 4px solid var(--primary-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">MATE – Mind Activation Through Education</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">A specialized adolescent-centric program combining an online platform with interactive workshops for students, parents, and counselors to prevent future mental health issues.</p>
+          </div>
+          
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="200" style="border-left: 4px solid var(--accent-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">Psychological First Aid for Prison (PFA-P)</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">A pioneering workshop with manuals and screening tools tailored for prison mental health—first of its kind in India, second globally.</p>
+          </div>
+          
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="300" style="border-left: 4px solid var(--primary-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">Mental Health Awareness, Prevention & Treatment Programs</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">Comprehensive workshops, talks, and discussions designed for communities to foster awareness, early intervention, and well-being.</p>
+          </div>
+          
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="400" style="border-left: 4px solid var(--accent-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">Calm Care Initiative</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">A workplace mental wellness workshop aimed at enhancing employee mental health, mindfulness, and productivity through tailored sessions.</p>
+          </div>
+          
+          <div class="workshop-item" data-aos="fade-up" data-aos-delay="500" style="border-left: 4px solid var(--primary-color); padding-left: 25px;">
+            <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px;">Summer Internship Programme & School Projects</h4>
+            <p style="margin-bottom: 0; color: var(--gray-color); line-height: 1.6;">Practical, hands-on training programs and workshops in schools and communities; internships that empower volunteers and students in psycho-education and mental health outreach.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
+  <!-- Contact Us Section (Commented out) -->
+  <!--
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up" data-aos-duration="800">
+        <h2>Contact Us</h2>
+      </div>
+      
+      <div style="text-align: center; padding: 40px 0;" data-aos="fade-up" data-aos-duration="800">
+        <a href="mailto:hello@neveralone.in" style="font-size: 1.5rem; color: var(--primary-color); text-decoration: none; font-weight: 500;">
+          hello@neveralone.in
+        </a>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- Footer -->
+  <footer class="footer">
+   <div class="container">
+    <div class="footer-content">
+     <div class="footer-info">
+      <div class="footer-logo">
+       <img src="images/logos/neverAloneLogo.jpg" alt="Never Alone Logo" />
+       <p>
+        Supporting better health outcomes and clinical excellence with
+        <strong>intelligent technology</strong>.
+       </p>
+      </div>
+     </div>
+
+     <div class="contact-info">
+      <div class="contact-item">
+       <i class="far fa-envelope"></i>
+       <div>
+        <span>Email us:</span>
+        <h3><a href="mailto:hello@neveralone.in">hello@neveralone.in</a></h3>
+       </div>
+      </div>
+      <div class="contact-item">
+       <i class="fab fa-whatsapp"></i>
+       <div>
+        <h3>
+         <a href="https://wa.me/917042649777?text=Hello">Connect with us</a>
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: center; padding: 40px 20px; background-color: #fafafa; border-radius: 16px;">
+  
+  <a href="https://choprafoundation.org/"
+     data-aos="zoom-in"
+     data-aos-duration="800">
+    <img
+      src="images/testimonials/partner1.png"
+      alt="Chopra Foundation"
+      class="partner-logo"
+      style="max-height: 80px; object-fit: contain; transition: transform 0.3s ease; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));" />
+  </a>
+
+  <a href="https://mhfi.in/"
+     data-aos="zoom-in"
+     data-aos-duration="800"
+     data-aos-delay="100">
+    <img
+      src="images/testimonials/partner3.png"
+      alt="MHFI"
+      class="partner-logo"
+      style="max-height: 80px; object-fit: contain; transition: transform 0.3s ease; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));" />
+  </a>
+
+  <a href="https://medbeat.ai/"
+     data-aos="zoom-in"
+     data-aos-duration="800"
+     data-aos-delay="200">
+    <img
+      src="images/testimonials/partner2.png"
+      alt="Medbeat AI"
+      class="partner-logo"
+      style="max-height: 80px; object-fit: contain; transition: transform 0.3s ease; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));" />
+  </a>
+
+  <!-- <a href="#"
+     style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; background-color: #ffffff; padding: 16px 20px; margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); text-decoration: none; color: inherit; max-width: 500px; width: 100%;">
+    <img
+      src="images/testimonials/bar.png"
+      alt="Bridge And Roof Company (India) Limited"
+      style="height: 48px; object-fit: contain;" />
+    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">
+      Supported by <strong>Bridge And Roof Company (India) Limited</strong> under CSR initiative
+    </p>
+  </a> -->
+
+</div>
+
+   </div>
+
+   <div class="copyright">
+    <div class="container">
+     <!-- <p>Copyrights &copy; 2024 All Rights Reserved by ai4rx Healthcare.</p> -->
+     <div class="copyright-links">
+      <a href="disclaimer.html">Disclaimer</a> /
+      <a href="privacy-policy.html">Privacy Policy</a>/
+      <a href="faqs.html">FAQs</a>
+
+     </div>
+    </div>
+   </div>
+  </footer>
+
+  <!-- Go To Top Button -->
+  <div id="gotoTop">
+   <i class="fas fa-angle-up"></i>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="video-modal">
+   <div class="video-modal-content">
+    <div class="video-modal-header">
+     <h3>How NeverAlone Works</h3>
+     <span class="video-modal-close">&times;</span>
+    </div>
+    <div class="video-container">
+     <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+   </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+   // Team member data
+   const teamMembers = {
+    "dr-nand-kumar": {
+      name: "Prof (Dr) Nand Kumar",
+      position: "Professor & Chairman Advisory Committee, Department of Psychiatry, AIIMS New Delhi",
+      image: "images/team/nandkumar.png",
+      bio: "<strong>Qualifications:</strong> MBBS, MD (Psychiatry)<br><br><strong>Current Position:</strong> Professor and Prof. In-charge, ICMR CARE in Neuromodulation for Mental Health, Department of Psychiatry, AIIMS New Delhi<br><br><strong>Specialization:</strong> Neurobiology and Neuropsychiatry, Bio Psychosocial model in community psychiatry<br><br><strong>Research Focus:</strong> Innovative brain stimulation techniques including Repetitive Transcranial Magnetic Stimulation (rTMS) for treating psychiatric disorders, with emphasis on schizophrenia, depression, and cognitive dysfunction.<br><br><strong>Key Achievements:</strong><br>• Over 50 peer-reviewed publications<br>• Founding President of Neuromodulation Society (India)<br>• Principal Investigator of multiple research projects<br>• Supervised 18 thesis students (8 MD, 10 co-guide)<br>• Established 1st ICMR Centre for Advanced Research & Excellence on Neuromodulation in Mental Health at AIIMS Delhi<br><br><strong>Leadership Roles:</strong><br>• Chairman of Physical Treatment Sub-committee, Indian Psychiatric Society<br>• Chairman CME Committee, Indian Psychiatry Society (North Zone)<br>• Executive Council Member, National Institute of Mentally Handicapped<br>• Hon. President, Mental Health Foundation (India)<br><br><strong>Community Impact:</strong><br>• Conceived and mentored Psychological First Aid-Prison (PFA-P) program for Tihar prison - first of its kind in India, second globally<br>• Founded Project MATE for school mental health and wellness<br>• Mentor of the Never Alone program for comprehensive mental health solutions<br><br><strong>Professional Memberships:</strong><br>• Life Fellow, Indian Psychiatry Society<br>• Life Fellow, Indian Association of Social Psychiatry<br>• Member of multiple national expert committees"
+    },
+    "dr-sanjay-kumar": {
+      name: "Dr. Sanjay Kumar",
+      position: "Advisory Team Member",
+      image: "images/team/dr-sanjay-kumar.jpg",
+      bio: "Dr. Sanjay Kumar is a key advisory team member of the Never Alone initiative. With extensive experience in the field of mental health, Dr. Kumar contributes valuable insights to the development and implementation of the program's core services."
+    },
+    "meeta-mishra": {
+      name: "Ms. Meeta Mishra",
+      position: "Hon. Director, Mental Health Foundation (India)",
+      image: "images/team/meeta.png",
+      bio: "Ms. Meeta Mishra is an accomplished personality with over a decade of experience in clinical psychology, Administration, Delivery of Projects, Managing Workshops, Training, Developing Content with the Ability to Convey Information with Clarity and Patience in Mental Health and Organisational Settings. She has completed her education in Bachelors of Psychology (Honours) from Delhi University, Masters in Psychology from Delhi University with specialization in Organizational Behaviour. Her Outstanding Work as a Research Associate with Management Development Institute (MDI) she has developed case studies on crisis communication and assisted in research and writing papers. During an Experiential Internship with United Nations Development Program (UNDP) her remarkable contribution to create a database on the various resources for psychosocial support and care in disaster management and Designing a training module for volunteers of psychosocial support in disaster affected areas. She was associated With IL&FS Education and Technology Services Limited as a Consultant with the CEO's office overseeing their Footprints project & PMGDISHA project, Looking into the Business Analytics Unit: Responsible for creating a centralised database and a decision support system, creating customer profile for estimating potentiality gap analysis and identifying value propositions for leveraging already available resources of the organization. Her experience in implementing digital program is reflected by her association with the Pradhan Mantri Gramin Digital Saksharta Abhiyan (PMGDISHA): Overseeing the implementation of the digital literacy project, studying feasibility, conducting training sessions, coordination with various stakeholders by Designing the Impact Assessment modules for the Organizations Education and Skills Initiatives. Meeta, developed a model for financial and market access for small, micro & medium women entrepreneurs while she was associated with IEF Entrepreneurship Foundation. The objective of the project is to create a platform for access to finance and markets for women entrepreneurs creating a link between the demand and supply side with a focus on reducing the impediments that hinder the access with key responsibilities of - Stakeholder Management, Data collection & Analysis, Developing communication strategies, Learning & Development. In her role of an Assistant Manager at CSC e-Governance Services India Limited; her vision and guidance to the Education Team overseeing projects and programmes focusing on digital and financial literacy have been a real gamechanger. The Eminent projects comprise of National Digital Literacy Mission (NDLM)/ Digital Saksharta Abhiyan (DISHA), NABARD/ State & National Level Programmes & Workshops on Financial Literacy Project, E- Inclusion: IT Training for SC/ST beneficiaries. She contributed immensely in the development of the Project MATE as Research Assistant in All India Institute of Medical Sciences (AIIMS )New Delhi under the guidance of Dr Nand Kumar. Meeta Mishra is Hon. Director of Not for Profit registered organisation Mental Health Foundation (India) since 2023."
+    },
+    "dr-deepika": {
+      name: "Dr. Deepika Dahima",
+      position: "Scientist, Dept. of Psychiatry, AIIMS",
+      image: "images/team/dr-deepika.jpg",
+      bio: "Dr. Deepika Dahima's Journey as a Counselling Psychologist for more than a decade, has been an Intriguing and Challenging one. She is a Unique Blend of Modern Psychology and Ancient Scientific Wisdom. Her Remarkable Ability to develop Instant Powerful Emotional Connect with a wide spectrum of people from the age of 14 to 70 years with varied intellect and issues has been the backbone of her therapeutic assistance over the years. Her experience in listening to the issues, that Disturb the Equilibrium of Client's Lives Making Them Feel Emotionally & Mentally Overwhelmed and Question Themselves or Relationships Around to bring in Clarity and Self Belief has been Intense yet Gratifying. Her Interactions on Themes such as Anxiety, Depression, Overcoming Fears, Adolescent Identity Issues, Parent – Child Relationship Hurdles, Navigating Tender Relationships, Self-Inhibiting Issues, Family Issues, Standing Up Bullying, Developing Communication & Confidence, Rising above Peer Pressure, Parental Issues, Social Media Addiction, Sexuality Concerns, Social Barriers to Achievement, Academic & Professional Hardships for Students in numerous Schools and Colleges have been Witty, Impactful and Path Breaking. Her Noteworthy initiative of developing Mindful Leaders & Training established ones on Bridging the Gap between the Young Volatile Mindset & Undeterred Focus towards Self Discovery leading to Mindful Leadership with Deans of Engineering Colleges from Andhra Pradesh has garnered appreciation at National Institute of Educational Planning and Administration (NIEPA). She has also conducted workshops with Adolescents at State Institute of Capacity Building, Karfectar, South Sikkim. Dr Deepika's Approach and Contribution is Truly Outstanding in the field of Mental Health and wellness, possessing the Gift of Gab Intellectually and Emotionally not only for Client Assistance or Interactive Trainings but also to organise Residential Mindfulness Retreats at historic sites at Hampi, Sikkim, Leh, etc… Dr Deepika's work has been recognised by the United Nation for her outstanding contribution for mental health. The world peace Institute (approved by Govt of India) have conferred on degree of Doctorate (PhD) in mental health of the united nations to her. Currently she is working as Scientist in Dept of Psychiatry AIIMS New Delhi and Hon. consultant to MHF (India)."
+    },
+    "deepti-mahalwal": {
+      name: "Deepti Mahalwal",
+      position: "Project Lead, Never Alone",
+      image: "images/team/deepti-mahalwal.jpg",
+      bio: "Deepti Mahalwal is a Hard Working and Talented Psychologist with an Explorative work experience of 8 years including her work as an Academic Developer and training associate at WACP, as a psychologist, counsellor, NLP practitioner at Army School, New Delhi, Worked as TGT Social science at Army Public School, Shankar Vihar, New Delhi. She worked as a Program Coordinator with NGO Roko Cancer Trust, lead a team under her supervision and coordinated various activities for detection of Breast Cancer. The scope of work included identifying place for conduct of camps, information dissemination, coordination with doctors, patients, and technicians etc. Deepti has remarkable organising skill and ability reflected by her intense engagement in organizing various inter school competition for the holistic development of students. She has Facilitated psycho educational workshops on topics such as Stress Management & Coping. Her contribution to Collaborate with multidisciplinary team to ensure comprehensive client care. She has also been actively engaged in community welfare work in her initiatives of education children from under privileged background. Her Role in the Research project in Defense Institute of Psychological Research (DIPR) has been a crucial one. She is a Certified NLP trainer & Hypnosis in Psychotherapy & Therapeutic Interventions. She has Qualified Central Teachers Eligibility Test (CTET) in the year 2012 & 2016. Her Individual and Group Counselling skills, her Empathy, Active Listening, Cultural Competence and Interpersonal skills are an asset to every organisation. Currently Deepti is Project lead for the Never Alone program."
+    },
+    "anuj-gupta": {
+      name: "Anuj Gupta",
+      position: "Ex CEO, AI4Rx",
+      image: "images/team/anuj.jpg",
+      bio: "A software architect with more than three decades of experience, Anuj Gupta, is the Founder Director of two start-ups: AI4Rx and Cognitive Garage. He is also the Chief Technology Officer at EasyGov, an Aadhar full stack aggregator of Government Welfare Schemes, that is now a part of JIO Platform. AI4Rx is a high quality medical care platform which uses AI in Healthcare. AI4RX is the parent company that has created the MedBeat HealthConnect brand. Anuj's role in AI4RX, besides designing the products, is to define the vision and strategy of their areas of operation. In addition, he is responsible for defining the product roadmap and developing pipeline and partner eco-systems. Prior to setting up his startups, he was the Executive Architect, AI and Automation, India Software Lab at IBM. As part of a global team, he was responsible for defining the technical and GTM strategy, co-develop product integrations, solutions and Architecture. He led a 50 members team of Architects with deep skills in IBM Automation, RPA, Integration, Workflow/Rule engine, data virtualization, data governance, Machine learning, Automation and AI. Anuj has a proven track record of product development, passion for customer success and deriving innovation. He was responsible for product development of IBM Portal and Social Software which included 7 development teams. In his 18 years at IBM, he filed for 4 parents and was recognized as a specialist on Data and AI trends, speaking at various Indian and Global forums. Prior to joining IBM, Anuj has worked with Perot Systems, American Express, Ericsson, Tata Consultancy Services(TCS) and Defense Research & Development organization (DRDO) in roles that have focused on development of resilient and proven products and systems. Anuj has a Masters in Computer Science from University of Allahabad and a Bachelor's in Physics from University of Delhi. In all his roles, Anuj has built and led strong business oriented, high performance teams that specialize in cutting edge technology and processes in India and across the world. A people's person, he is a strong leader, motivator and a visionary."
+    },
+    "dr-monika-agarwal": {
+      name: "Dr. Monika Agarwal",
+      position: "Co-Founder, AI4Rx",
+      image: "images/team/avatar.png",
+      bio: "An MD with over 2 decades of experience, Dr. Monika Agarwal is the Co-Founder and Chief Evangelist for AI4Rx, a high quality medical care platform which uses AI in Healthcare. AI4RX is the parent company that has created the MedBeat HealthConnect brand. Dr. Monika Agarwal is a passionate teacher and researcher in the field of pharmacology and clinical trials with over two decades of post qualification experience. In MedBeat HealthConnect, she has put together a strong medical care platform that asks all the relevant question and takes in-depth medical history that a normal medical care professional is unable to, due to the sheer volume of patients and paucity of time. Backed by her own experience in hospitals, Dr. Monika Agarwal understands the criticality of this information. Dr. Monika Agarwal has been working on MedBeat HealthConnect since 2018 and quit her position at Maulana Azad Medical College, where from 2008 to 2018, she was an Assistant Professor, engaged in teaching Postgraduate & Undergraduate Medical, Dental, Nursing and MLT(Medical Laboratory Technology) Students. In addition, she was involved with research projects and organized many medical workshops. Prior to this, she's worked with Institute of Clinical Research India, where she has focused on clinical research and teaching. Before that, at Safdarjung Hospital, she has set up Pharmacology Labs and museum as well. Dr. Monika Agarwal has organized scores of workshops on topics ranging from pharma co-vigilance, to clinical research trials, to teaching methodology and evaluation. She has also published many papers in peer reviewed medical journals during her tenure."
+    }
+   };
+
+   $(document).ready(function () {
+    // Video modal functionality
+    const videoModal = $("#videoModal");
+    const videoFrame = $("#videoFrame");
+    const videoSrc =
+     "https://drive.google.com/file/d/1KOb6qh2LbMmm5jc_d-uQU99SyH9EIJkF/preview";
+
+    // Open modal when clicking "See how it works" buttons
+    $(".video-btn").on("click", function (e) {
+     e.preventDefault();
+     videoFrame.attr("src", videoSrc);
+     videoModal.addClass("show");
+     $("body").css("overflow", "hidden"); // Prevent scrolling
+    });
+
+    // Team Modal functionality
+    const teamModal = $("#teamModal");
+    const teamModalBody = $(".team-modal-body");
+
+    // Handle advisor card clicks - redirect to detail pages
+    $(".advisor-card").on("click", function() {
+      const advisor = $(this).data("advisor");
+      
+      // All advisors redirect to their respective detail pages
+      const advisorPages = {
+        "dr-nand-kumar": "advisors/dr-nand-kumar.html",
+        "dr-gagan-hans": "advisors/dr-gagan-hans.html",
+        "dr-biswa-ranjan-mishra": "advisors/dr-biswa-ranjan-mishra.html",
+        "dr-puneet-misra": "advisors/dr-puneet-misra.html",
+        "dr-rajesh-sagar": "advisors/dr-rajesh-sagar.html",
+        "dr-vijender-singh": "advisors/dr-vijender-singh.html",
+        "dr-sujata-satapathy": "advisors/dr-sujata-satapathy.html",
+        "dr-monika-agarwal": "advisors/dr-monika-agarwal.html",
+        "dr-rajinder-dhamija": "advisors/dr-rajinder-dhamija.html"
+      };
+      
+      if (advisorPages[advisor]) {
+        window.location.href = advisorPages[advisor];
+      }
+    });
+
+    // Open team member modal when clicking on team cards (but not advisor cards)
+    $(".team-card:not(.advisor-card)").on("click", function() {
+      const member = $(this).data("member");
+      const memberData = teamMembers[member];
+
+      if (memberData) {
+        // Populate modal with member data
+        let modalContent = `
+          <div class="team-profile">
+            <div class="team-profile-header">
+              <div class="team-profile-image">
+                <img src="images/team/avatar.png" alt="${memberData.name}" onerror="this.src='/api/placeholder/300/300'; this.onerror='';" />
+              </div>
+              <div class="team-profile-title">
+                <h4>${memberData.name}</h4>
+                <p>${memberData.position}</p>
+              </div>
+            </div>
+            <div class="team-profile-content">
+              ${memberData.bio.split('\n').map(para => `<p>${para}</p>`).join('')}
+            </div>
+          </div>
+        `;
+
+        teamModalBody.html(modalContent);
+        teamModal.addClass("show");
+        $("body").css("overflow", "hidden");
+      }
+    });
+
+    // Handle email form submission
+    $("#emailForm").submit(function(e) {
+      e.preventDefault();
+      
+      // Get the email value
+      const email = $("#email").val();
+      
+      // Here you would typically send this to your server
+      // This is a placeholder - replace with your actual form submission logic
+      
+      // Show success message
+      const formGroup = $(this).find('.form-group');
+      formGroup.html('<div class="success-message"><i class="fas fa-check-circle"></i> Thank you! We will connect with you shortly</div>');
+      
+      // Reset form after 3 seconds
+      setTimeout(function() {
+        formGroup.html(`
+          <input type="email" id="email" name="email" placeholder="Your email address" required>
+          <button type="submit" class="submit-btn">Subscribe</button>
+        `);
+      }, 3000);
+    });
+
+    // Close modals when clicking X or outside
+    $(".video-modal-close, .video-modal, .team-modal-close, .team-modal").on("click", function (e) {
+     if (e.target === this || $(this).hasClass("video-modal-close") || $(this).hasClass("team-modal-close")) {
+      // Close video modal
+      if (videoModal.hasClass("show")) {
+       videoModal.addClass("closing");
+       setTimeout(function () {
+        videoModal.removeClass("show closing");
+        $("body").css("overflow", "");
+        videoFrame.attr("src", "");
+       }, 300);
+      }
+      
+      // Close team modal
+      if (teamModal.hasClass("show") && (e.target === this || $(this).hasClass("team-modal-close"))) {
+        teamModal.removeClass("show");
+        $("body").css("overflow", "");
+      }
+     }
+    });
+
+    // Close modal with ESC key
+    $(document).on("keydown", function (e) {
+     if (e.key === "Escape") {
+      if (videoModal.hasClass("show")) {
+       videoModal.addClass("closing");
+       setTimeout(function () {
+        videoModal.removeClass("show closing");
+        $("body").css("overflow", "");
+        videoFrame.attr("src", "");
+       }, 300);
+      }
+      
+      if (teamModal.hasClass("show")) {
+        teamModal.removeClass("show");
+        $("body").css("overflow", "");
+      }
+     }
+    });
+
+    // Initialize AOS
+    AOS.init({
+     once: false,
+     offset: 100,
+     duration: 800,
+     easing: "ease-in-out",
+     mirror: true,
+    });
+
+    // Toggle mobile menu
+    $(".mobile-menu-btn").on("click", function () {
+     $(".nav-menu").toggleClass("active");
+    });
+
+    // Shrink header on scroll
+    $(window).scroll(function () {
+     if ($(this).scrollTop() > 50) {
+      $(".header").addClass("scrolled");
+      $("#gotoTop").addClass("active");
+     } else {
+      $(".header").removeClass("scrolled");
+      $("#gotoTop").removeClass("active");
+     }
+    });
+
+    // Close mobile menu when clicking outside
+    $(document).click(function (e) {
+     if (!$(e.target).closest(".nav-menu, .mobile-menu-btn").length) {
+      $(".nav-menu").removeClass("active");
+     }
+    });
+
+    // Smooth scroll for anchor links
+    $('a[href^="#"]').on("click", function (e) {
+     if ($(this).hasClass("video-btn")) return;
+     
+     e.preventDefault();
+     var target = this.hash;
+     var $target = $(target);
+
+     $("html, body").animate(
+      {
+       scrollTop: $target.offset().top - 80,
+      },
+      800,
+      "swing"
+     );
+
+     $(".nav-menu").removeClass("active");
+    });
+
+    // Go to top
+    $("#gotoTop").on("click", function () {
+     $("html, body").animate(
+      {
+       scrollTop: 0,
+      },
+      800
+     );
+    });
+   });
+  </script>
+ </body>
+</html>
