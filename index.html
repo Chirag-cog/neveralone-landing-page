@@ -819,6 +819,29 @@
             font-weight: 500;
         }
 
+        /* Algorithm Credit */
+        .algorithm-credit {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(44, 62, 80, 0.05);
+            border-radius: 12px;
+            border-left: 3px solid var(--primary-sage);
+        }
+
+        .algorithm-logo {
+            height: 30px;
+            opacity: 0.9;
+        }
+
+        .algorithm-text {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
         /* Mobile Demo Styles */
         .demo-mobile {
             position: relative;
@@ -1405,13 +1428,13 @@
                             Expert Psychiatric Care
                         </div>
                         <h3 class="feature-demo-title">Online Consultation with Psychiatrists</h3>
-                        <p class="feature-demo-desc">Get expert psychiatric care through secure video calls with MHFI certified psychiatrists. Professional help from the comfort of your home.</p>
+                        <p class="feature-demo-desc">Get expert psychiatric care through secure video calls with certified psychiatrists. Professional help from the comfort of your home.</p>
                         <div class="feature-highlights">
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">MHFI certified psychiatrists</span>
+                                <span class="highlight-text">Certified psychiatrists</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
@@ -1425,6 +1448,12 @@
                                 </div>
                                 <span class="highlight-text">Home comfort</span>
                             </div>
+                        </div>
+                        
+                        <!-- MHFI Collaboration Credit -->
+                        <div class="algorithm-credit">
+                            <img src="https://mhfi.in/wp-content/uploads/2023/12/Untitled-3-1.png" alt="MHFI" class="algorithm-logo">
+                            <span class="algorithm-text">In collaboration with Mental Health Foundation of India</span>
                         </div>
                     </div>
                     <div class="demo-mobile">
@@ -1456,7 +1485,7 @@
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">AIIMS Delhi developed</span>
+                                <span class="highlight-text">Evidence-based questions</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
@@ -1464,6 +1493,12 @@
                                 </div>
                                 <span class="highlight-text">Instant results</span>
                             </div>
+                        </div>
+                        
+                        <!-- AIIMS Delhi Algorithm Credit -->
+                        <div class="algorithm-credit">
+                            <img src="assets/images/aiims-delhi-logo.png" alt="AIIMS Delhi" class="algorithm-logo">
+                            <span class="algorithm-text">Algorithm Developed with AIIMS Delhi</span>
                         </div>
                     </div>
                     <div class="browser-demo">
@@ -1478,9 +1513,9 @@
                         <div class="browser-content">
                             <div class="chatbot-interface">
                                 <div class="chatbot-header">
-                                    <img src="assets/images/aiims-delhi-logo.png" alt="AIIMS Delhi" style="height: 20px; margin-bottom: 5px;">
+                                    <img src="assets/images/logos/neverAloneLogo.jpg" alt="NeverAlone" style="height: 24px; margin-bottom: 8px; border-radius: 4px;">
                                     <div class="chatbot-title">NeverAlone AI Assistant</div>
-                                    <div class="chatbot-subtitle">Developed with AIIMS Delhi</div>
+                                    <div class="chatbot-subtitle">Smart Mental Health Screening</div>
                                 </div>
                                 <div class="chatbot-messages" id="chatbotDemo">
                                     <!-- Messages will be added here -->
