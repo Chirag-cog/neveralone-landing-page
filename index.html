@@ -5,449 +5,1075 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Never Alone - Your Mental Wellness Companion</title>
     
-    <!-- Google Fonts - Research-based for mental wellness -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- AOS Animation Library -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
     
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fafbfc;
+            color: #2d3436;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Therapeutic color palette for mental health */
+        :root {
+            --primary-sage: #87A96B;
+            --soft-lavender: #B8A9C9;
+            --warm-gray: #8B8680;
+            --cream-white: #FAF7F0;
+            --muted-teal: #6B9B9E;
+            --soft-coral: #E8B4A0;
+            --deep-navy: #2C3E50;
+            --text-dark: #2C3E50;
+            --text-light: #8B8680;
+            --bg-white: #FAF7F0;
+            --bg-light: #F5F2EB;
+            --accent-green: #7A9B7A;
+            --trust-blue: #A4B8C4;
+            --calm-purple: #C8BFDC;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-sage);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--primary-sage);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .cta-button {
+            background: var(--soft-coral);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(232, 180, 160, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 180, 160, 0.4);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-content nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .cta-button {
+                display: none;
+            }
+            
+            .mobile-nav .cta-button {
+                display: inline-flex;
+                margin-top: 10px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--cream-white) 50%, #F0EDE5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-title .highlight {
+            color: var(--primary-sage);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .partnership-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .partnership-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .logo-item {
+            height: 40px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+        }
+
+        .features-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            background: var(--bg-white);
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+            border-left: 3px solid var(--primary-sage);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 1.2rem;
+            color: var(--primary-sage);
+            margin-bottom: 0;
+            flex-shrink: 0;
+        }
+
+        .feature-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0;
+        }
+
+        .feature-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .primary-cta {
+            background: var(--soft-coral);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(232, 180, 160, 0.25);
+        }
+
+        .primary-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(232, 180, 160, 0.35);
+        }
+
+        .secondary-cta {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .secondary-cta:hover {
+            color: var(--primary-sage);
+        }
+
+        /* Mobile Device Mockup */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .phone-mockup {
+            position: relative;
+            width: 320px;
+            height: 640px;
+            background: #000000;
+            border-radius: 45px;
+            padding: 8px;
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.25),
+                0 0 0 2px #000000,
+                inset 0 1px 0 rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            border-radius: 37px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-header {
+            background: #00a884;
+            padding: 18px 20px 12px;
+            border-radius: 37px 37px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .doctor-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .doctor-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .doctor-info h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 2px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .doctor-info p {
+            color: rgba(255,255,255,0.85);
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .chat-container {
+            flex: 1;
+            padding: 25px 18px;
+            background: #f7f3f0;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .demo-indicator {
+            background: rgba(0, 168, 132, 0.1);
+            border: 1px solid #00a884;
+            color: #00a884;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 14px 18px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(20px);
+            position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        .message.user {
+            background: #dcf8c6;
+            color: #111b21;
+            align-self: flex-end;
+            border-radius: 18px 18px 4px 18px;
+        }
+
+        .message.bot {
+            background: white;
+            color: #111b21;
+            align-self: flex-start;
+            border-radius: 18px 18px 18px 4px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .message-time {
+            font-size: 10px;
+            color: #667781;
+            margin-top: 4px;
+            text-align: right;
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px 8px 8px 2px;
+            max-width: 80px;
+            align-self: flex-start;
+            opacity: 0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #8696a0;
+            border-radius: 50%;
+            animation: typingPulse 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+
+        .appointment-card {
+            background: white;
+            border: 2px solid var(--muted-teal);
+            border-radius: 12px;
+            padding: 14px;
+            margin: 8px 0;
+            opacity: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .appointment-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .calendar-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--soft-coral);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .appointment-time {
+            color: #111b21;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .appointment-details {
+            font-size: 12px;
+            color: #667781;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .doctor-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 8px;
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+            font-size: 11px;
+        }
+
+        .rating-text {
+            font-size: 10px;
+            color: #667781;
+        }
+
+        .confirm-button {
+            background: var(--primary-sage);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .confirm-button:hover {
+            background: #7A9B7A;
+        }
+
+        .partnership-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(135, 169, 107, 0.1);
+            border: 1px solid var(--primary-sage);
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin: 6px 0;
+        }
+
+        .badge-icon {
+            width: 18px;
+            height: 18px;
+            background: var(--primary-sage);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .badge-text {
+            font-size: 11px;
+            color: var(--primary-sage);
+            font-weight: 600;
+        }
+
+        @keyframes typingPulse {
+            0%, 60%, 100% { transform: scale(1); opacity: 0.5; }
+            30% { transform: scale(1.2); opacity: 1; }
+        }
+
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFeature {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .features-preview {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-mockup {
+                width: 250px;
+                height: 500px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .partnership-logos {
+                justify-content: center;
+            }
+
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header" id="header">
+    <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="assets/images/logos/neverAloneLogo.jpg" alt="Never Alone Logo" class="logo-image">
+                    <img src="assets/images/logos/neverAloneLogo.jpg" alt="Never Alone Logo">
                     <div class="logo-text">
                         <h1>Never Alone</h1>
-                        <span class="tagline">Your mental wellness companion</span>
+                        <p class="tagline">Mental Wellness Companion</p>
                     </div>
                 </div>
                 
-                <button class="mobile-menu-btn" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <nav class="nav-menu">
-                    <a href="#how-it-works" class="nav-item">How It Works</a>
-                    <a href="#support" class="nav-item">Support Options</a>
-                    <a href="#about" class="nav-item">About</a>
-                    <a href="#start" class="nav-item cta-nav">Get Started</a>
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
                 </nav>
+                
+                <a href="#" class="cta-button">
+                    <i class="fab fa-whatsapp"></i>
+                    Get Started
+                </a>
+                
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="cta-button">
+                    <i class="fab fa-whatsapp"></i>
+                    Get Started
+                </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="hero-background">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Peaceful nature background" class="hero-bg-image">
-            <div class="hero-overlay"></div>
-            <div class="hero-particles">
-                <div class="particle particle-1"></div>
-                <div class="particle particle-2"></div>
-                <div class="particle particle-3"></div>
-                <div class="particle particle-4"></div>
-                <div class="particle particle-5"></div>
-                <div class="particle particle-6"></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
-                <div class="hero-badge" data-aos="fade-down" data-aos-delay="600">
-                    <i class="fas fa-stethoscope"></i>
-                    <span>Mental health support from AIIMS Delhi allied institute</span>
-                </div>
-                
-                <h1 data-aos="fade-up" data-aos-delay="800">
-                    <span class="hero-title-main">Never</span>
-                    <span class="hero-title-accent">Alone</span>
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <!-- Left Side - Content -->
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="highlight">Neveralone</span> Core
                 </h1>
-                
-                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="1000">
-                    Mental wellness support, whenever you need it.
+                <p class="hero-subtitle">
+                    Mental health support that fits in your pocket. Get personalized care through WhatsApp, AI-powered screening, and expert consultations.
                 </p>
-                
-                <div class="hero-cta" data-aos="fade-up" data-aos-delay="1200">
-                    <a href="https://wa.me/917042649777?text=Hello, I need support" class="cta-button primary">
-                        <i class="fab fa-whatsapp cta-icon"></i>
-                        <span class="cta-main">Get Support</span>
-                        <i class="fas fa-arrow-right cta-arrow"></i>
+
+                <!-- Partnership Logos -->
+                <div class="partnership-logos">
+                    <span class="partnership-text">Developed with</span>
+                    <img src="assets/images/aiims-delhi-logo.png" alt="AIIMS Delhi" class="logo-item">
+                    <img src="https://mhfi.in/wp-content/uploads/2023/12/Untitled-3-1.png" alt="MHFI" class="logo-item">
+                    <img src="https://choprafoundation.org/wp-content/themes/chopra-home-new/dist/images/CF-BLUE-logo.png" alt="Deepak Chopra Foundation" class="logo-item">
+                </div>
+
+                <!-- Features Preview -->
+                <div class="features-preview">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="feature-title">WhatsApp-based mental health support</div>
+                        <div class="feature-desc"></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="feature-title">Smart Screening</div>
+                        <div class="feature-desc"></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="feature-title">AI Chatbot</div>
+                        <div class="feature-desc"></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="feature-title">Easy Scheduling</div>
+                        <div class="feature-desc"></div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta">
+                    <a href="#" class="primary-cta">
+                        <i class="fab fa-whatsapp"></i>
+                        Start Your Journey
                     </a>
+                    <a href="#" class="secondary-cta">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side - Mobile Mockup -->
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <!-- WhatsApp Header -->
+                        <div class="whatsapp-header">
+                            <div class="doctor-avatar">
+                                <img src="assets/images/logos/neverAloneLogo.jpg" alt="NeverAlone Logo">
+                            </div>
+                            <div class="doctor-info">
+                                <h4>NeverAlone</h4>
+                                <p>Online now</p>
+                            </div>
+                        </div>
+
+                        <!-- Chat Container -->
+                        <div class="chat-container" id="chatContainer">
+                            <!-- Messages will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!toggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // WhatsApp Chat Animation
+        function initChatAnimation() {
+            const chatContainer = document.getElementById('chatContainer');
+            let messageIndex = 0;
+
+            const conversationFlow = [
+                {
+                    type: 'demo',
+                    text: "Interactive Demo - See how NeverAlone works",
+                    delay: 1
+                },
+                {
+                    type: 'user',
+                    text: "I'm having panic attacks again 😰",
+                    delay: 2
+                },
+                {
+                    type: 'typing',
+                    delay: 1.5
+                },
+                {
+                    type: 'bot',
+                    text: "I hear you, and I'm here to help. You're not alone right now.",
+                    delay: 3
+                },
+                {
+                    type: 'bot',
+                    text: "Take your time. I'm here to listen. Would you like me to help you connect with professional support?",
+                    delay: 3
+                },
+                {
+                    type: 'user',
+                    text: "Yes, please help me",
+                    delay: 2
+                },
+                {
+                    type: 'typing',
+                    delay: 2
+                },
+                {
+                    type: 'bot',
+                    text: "I'll run a quick assessment to understand what type of support would be most helpful for you.",
+                    delay: 3
+                },
+                {
+                    type: 'typing',
+                    delay: 3
+                },
+                {
+                    type: 'bot',
+                    text: "Based on your input, I recommend connecting with Dr. Priya Sharma, a psychiatrist at AIIMS Delhi who specializes in anxiety disorders.",
+                    delay: 4
+                },
+                {
+                    type: 'appointment',
+                    delay: 2
+                },
+                {
+                    type: 'user',
+                    text: "This looks good, can I book this?",
+                    delay: 2
+                },
+                {
+                    type: 'typing',
+                    delay: 1.5
+                },
+                {
+                    type: 'partnership',
+                    delay: 2
+                },
+                {
+                    type: 'bot',
+                    text: "Appointment confirmed! Dr. Sharma will see you today. You've taken an important step. 💚",
+                    delay: 3
+                }
+            ];
+
+            function addMessage(message) {
+                const messageEl = document.createElement('div');
+                
+                if (message.type === 'demo') {
+                    messageEl.className = 'demo-indicator';
+                    messageEl.innerHTML = message.text;
+                } else if (message.type === 'typing') {
+                    messageEl.className = 'typing-indicator';
+                    messageEl.innerHTML = `
+                        <div class="typing-dots">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    `;
+                } else if (message.type === 'appointment') {
+                    messageEl.className = 'appointment-card';
+                    messageEl.innerHTML = `
+                        <div class="appointment-header">
+                            <div class="calendar-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="appointment-time">Today 4:00 PM</div>
+                        </div>
+                        <div class="appointment-details">
+                            <strong>Dr. Priya Sharma, MD</strong><br>
+                            Psychiatrist • AIIMS Delhi<br>
+                            Specializes in Anxiety & Panic Disorders
+                        </div>
+                        <div class="doctor-rating">
+                            <span class="rating-stars">★★★★★</span>
+                            <span class="rating-text">4.9 • 200+ patients helped</span>
+                        </div>
+                        <button class="confirm-button">Book Emergency Consultation</button>
+                    `;
+                } else if (message.type === 'partnership') {
+                    messageEl.className = 'partnership-badge';
+                    messageEl.innerHTML = `
+                        <div class="badge-icon">✓</div>
+                        <div class="badge-text">Verified by AIIMS Delhi & MHFI</div>
+                    `;
+                } else {
+                    messageEl.className = `message ${message.type}`;
+                    messageEl.innerHTML = `
+                        ${message.text}
+                        <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+                    `;
+                }
+
+                chatContainer.appendChild(messageEl);
+
+                // Animate message appearance
+                gsap.fromTo(messageEl, 
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+                );
+
+                // Auto-scroll to bottom
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+
+                // Remove typing indicator after a delay
+                if (message.type === 'typing') {
+                    setTimeout(() => {
+                        messageEl.remove();
+                    }, 3000);
+                }
+            }
+
+            function playConversation() {
+                if (messageIndex < conversationFlow.length) {
+                    const message = conversationFlow[messageIndex];
                     
-                    <div class="hero-trust-indicators">
-                        <div class="trust-badge">
-                            <i class="fas fa-shield-check"></i>
-                            <span>100% Private</span>
-                        </div>
-                        <div class="trust-badge">
-                            <i class="fas fa-clock"></i>
-                            <span>24/7 Available</span>
-                        </div>
-                        <div class="trust-badge">
-                            <i class="fas fa-university"></i>
-                            <span>Allied Institute Standards</span>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
+                    setTimeout(() => {
+                        addMessage(message);
+                        messageIndex++;
+                        playConversation();
+                    }, message.delay * 1000);
+                } else {
+                    // Restart conversation after 15 seconds
+                    setTimeout(() => {
+                        chatContainer.innerHTML = '';
+                        messageIndex = 0;
+                        playConversation();
+                    }, 15000);
+                }
+            }
 
-    <!-- Our Services Section -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Our Services</h2>
-                <p>Comprehensive mental health support from AIIMS Delhi allied institute</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="AI Screening and Wellness Support">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                    <h3>Screening & Wellness Support</h3>
-                    <p>AI-guided screening tailored to you 🌱. Get instant recommendations, expert consultations, and trusted resources to support your wellness journey.</p>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="In-Person Counseling Sessions">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <h3>In-Person Counseling Sessions</h3>
-                    <p>Connect with psychologists and wellness experts to overcome challenges, heal emotionally, and build lasting self-empowerment.</p>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Psychiatric Consultations">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <h3>Psychiatric Consultations</h3>
-                    <p>Get trusted, professional psychiatric care with guidance on medication, ongoing support, and integrated wellness resources for lasting mental health.</p>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Training Programmes and Workshops">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Training Programmes & Workshops</h3>
-                    <p>NeverAlone trains university faculty, volunteers, and psychologists to deliver student consultations and mental health support as our Wellbeing Partners. We also conduct on-campus workshops to build awareness, resilience, and emotional wellbeing among students.</p>
-                </div>
-            </div>
-            
-            <div class="services-cta" data-aos="fade-up" data-aos-delay="600">
-                <a href="https://wa.me/917042649777?text=Hello, I'd like to start my mental wellness journey" class="services-cta-button">
-                    <i class="fas fa-comments"></i>
-                    Start Chatting Now
-                </a>
-            </div>
-        </div>
-    </section>
+            // Start the conversation when the page loads
+            setTimeout(playConversation, 2000);
+        }
 
-    <!-- Mental Health Support Section -->
-    <section class="mental-health-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Get experienced mental health support</h2>
-                <p>We help with anxiety, depression, stress, relationships, and more</p>
-            </div>
-            
-            <div class="conditions-simple">
-                <div class="condition-tags" data-aos="fade-up" data-aos-delay="200">
-                    <span class="condition-tag anxiety">Anxiety</span>
-                    <span class="condition-tag depression">Depression</span>
-                    <span class="condition-tag stress">Stress</span>
-                    <span class="condition-tag relationships">Relationships</span>
-                    <span class="condition-tag sleep">Sleep Issues</span>
-                    <span class="condition-tag trauma">Trauma</span>
-                    <span class="condition-tag general">+ Many More</span>
-                </div>
-            </div>
-            
-            <div class="support-cta" data-aos="fade-up" data-aos-delay="400">
-                <a href="https://wa.me/917042649777?text=I need help with..." class="compact-cta">
-                    <i class="fab fa-whatsapp"></i>
-                    Start your support journey
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Why Choose Section -->
-    <section class="why-choose-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Why Choose Never Alone?</h2>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-heart"></i>
-                    <h3>Human + AI Care</h3>
-                    <p>Combining artificial intelligence with genuine human empathy for comprehensive support.</p>
-                </div>
-                
-                <div class="feature" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-lock"></i>
-                    <h3>Complete Privacy</h3>
-                    <p>Your conversations are encrypted and confidential. We never share your personal information.</p>
-                </div>
-                
-                <div class="feature" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Always Accessible</h3>
-                    <p>Get support through WhatsApp - no apps to download, no complex sign-ups required.</p>
-                </div>
-                
-                <div class="feature" data-aos="fade-up" data-aos-delay="500">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Expert-Backed</h3>
-                    <p>Developed with leading mental health professionals from AIIMS and other top institutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Advisors Section -->
-    <section class="advisors-section" id="advisors">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>AIIMS Delhi Allied Institute Affiliated Professionals</h2>
-                <p>Following allied institute standards for quality mental healthcare</p>
-            </div>
-            
-            <div class="advisors-grid">
-                <a href="advisors/dr-nand-kumar.html" class="advisor-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="advisor-image">
-                        <img src="assets/images/team/nandkumar.png" alt="Dr. Nand Kumar" />
-                    </div>
-                    <div class="advisor-info">
-                        <h3>Dr. Nand Kumar</h3>
-                        <p>Professor, Psychiatry</p>
-                        <span>AIIMS New Delhi</span>
-                    </div>
-                </a>
-                
-                <a href="advisors/dr-sujata-satapathy.html" class="advisor-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="advisor-image">
-                        <img src="assets/images/advisors/sujata.jpeg" alt="Dr. Sujata Satapathy" />
-                    </div>
-                    <div class="advisor-info">
-                        <h3>Dr. Sujata Satapathy</h3>
-                        <p>Professor, Clinical Psychology</p>
-                        <span>AIIMS New Delhi</span>
-                    </div>
-                </a>
-                
-                <a href="advisors/dr-biswa-ranjan-mishra.html" class="advisor-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="advisor-image">
-                        <img src="assets/images/advisors/dr-biswa-ranjan-mishra.jpg" alt="Dr. Biswa Ranjan Mishra" />
-                    </div>
-                    <div class="advisor-info">
-                        <h3>Dr. Biswa Ranjan Mishra</h3>
-                        <p>Professor & Head</p>
-                        <span>AIIMS Bhubaneswar</span>
-                    </div>
-                </a>
-                
-                <a href="advisors/dr-puneet-misra.html" class="advisor-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="advisor-image">
-                        <img src="assets/images/advisors/puneet.jpeg" alt="Dr. Puneet Misra" />
-                    </div>
-                    <div class="advisor-info">
-                        <h3>Dr. Puneet Misra</h3>
-                        <p>Professor</p>
-                        <span>AIIMS New Delhi</span>
-                    </div>
-                </a>
-                
-                <a href="advisors/dr-vijender-singh.html" class="advisor-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="advisor-image">
-                        <img src="assets/images/advisors/dr-vijender-singh.jpg" alt="Dr. Vijender Singh" />
-                    </div>
-                    <div class="advisor-info">
-                        <h3>Dr. Vijender Singh</h3>
-                        <p>Professor & HOD</p>
-                        <span>AIIMS Bhopal</span>
-                    </div>
-                </a>
-                
-                <a href="advisors/dr-monika-agarwal.html" class="advisor-card" data-aos="fade-up" data-aos-delay="700">
-                    <div class="advisor-image">
-                        <img src="assets/images/advisors/Monika.jpeg" alt="Dr. Monika Agarwal" />
-                    </div>
-                    <div class="advisor-info">
-                        <h3>Dr. Monika Agarwal</h3>
-                        <p>Founder & Director</p>
-                        <span>Medbeat.ai</span>
-                    </div>
-                </a>
-                
-                <a href="advisors/dr-gagan-hans.html" class="advisor-card" data-aos="fade-up" data-aos-delay="800">
-                    <div class="advisor-image">
-                        <img src="assets/images/advisors/dr-gagan-hans.jpg" alt="Dr. Gagan Hans" />
-                    </div>
-                    <div class="advisor-info">
-                        <h3>Dr. Gagan Hans</h3>
-                        <p>Additional Professor</p>
-                        <span>AIIMS New Delhi</span>
-                    </div>
-                </a>
-                
-                <a href="advisors/dr-rajinder-dhamija.html" class="advisor-card" data-aos="fade-up" data-aos-delay="900">
-                    <div class="advisor-image">
-                        <img src="assets/images/advisors/rajinder.jpg" alt="Dr. Rajinder K. Dhamija" />
-                    </div>
-                    <div class="advisor-info">
-                        <h3>Dr. Rajinder K. Dhamija</h3>
-                        <p>Director, IHBAS</p>
-                        <span>Professor of Neurology</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-content" data-aos="fade-up">
-                <div class="about-text">
-                    <h2>About Never Alone</h2>
-                    <p>Never Alone delivers mental health support from AIIMS Delhi allied institute, bridging the gap between feeling overwhelmed and getting the right professional care. We understand that taking the first step towards mental wellness can feel daunting.</p>
-                    
-                    <p>That's why we've made it as simple as sending a WhatsApp message. Our platform combines AIIMS Delhi allied institute affiliated professionals with AI technology, following allied institute standards to provide you with immediate, personalized support.</p>
-                    
-                    <div class="stats">
-                        <div class="stat">
-                            <strong>24/7</strong>
-                            <span>Support Available</span>
-                        </div>
-                        <div class="stat">
-                            <strong>100%</strong>
-                            <span>Confidential</span>
-                        </div>
-                        <div class="stat">
-                            <strong>50,000+</strong>
-                            <span>People Supported</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QR Code Call-to-Action Section -->
-    <section class="qr-cta-section">
-        <div class="container">
-            <div class="qr-cta-content" data-aos="fade-up">
-                <div class="qr-message">
-                    <h3>Ready to Take the First Step?</h3>
-                    <p>Your mental wellness journey starts with a simple scan.</p>
-                    <p class="urgency-text">Join <strong>50,000+</strong> people who found their path to better mental health.</p>
-                </div>
-                
-                <div class="qr-code-container">
-                    <div class="qr-code-wrapper">
-                        <img src="assets/images/qr_neverlaone.jpeg" alt="QR Code for WhatsApp - Never Alone Support" class="qr-code-image">
-                        <div class="qr-label">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Scan to Connect on WhatsApp</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instant-support">
-                    <p><strong>Get instant support in 3 simple steps:</strong></p>
-                    <div class="steps-quick">
-                        <span class="step-item">Scan QR</span>
-                        <span class="step-arrow">→</span>
-                        <span class="step-item">Say Hello</span>
-                        <span class="step-arrow">→</span>
-                        <span class="step-item">Start Healing</span>
-                    </div>
-                </div>
-                
-                <div class="trust-final">
-                    <p class="privacy-note">100% Private & Confidential • Available 24/7 • AIIMS Delhi Allied Institute Standards</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <h3>Never Alone</h3>
-                    <p>Your trusted companion for mental wellness, available whenever you need support.</p>
-                    
-                    <div class="contact-info">
-                        <a href="mailto:hello@neveralone.in">
-                            <i class="fas fa-envelope"></i>
-                            hello@neveralone.in
-                        </a>
-                        <a href="https://wa.me/917042649777">
-                            <i class="fab fa-whatsapp"></i>
-                            WhatsApp Support
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Support</h4>
-                        <a href="#how-it-works">How It Works</a>
-                        <a href="#support">Get Help</a>
-                        <a href="tel:1075">Crisis Support</a>
-                    </div>
-                    
-                    <div class="link-group">
-                        <h4>Resources</h4>
-                        <a href="#about">About Us</a>
-                        <a href="/privacy">Privacy Policy</a>
-                        <a href="/terms">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Never Alone. All rights reserved. | Mental Health Support for Everyone</p>
-                <p class="disclaimer">Never Alone provides support and resources but is not a substitute for professional medical care. In emergencies, please contact local emergency services.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <div class="floating-whatsapp">
-        <a href="https://wa.me/917042649777?text=Hello, I need support" aria-label="Contact on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="assets/js/script.js"></script>
+        // Initialize chat animation when page loads
+        document.addEventListener('DOMContentLoaded', initChatAnimation);
+    </script>
 </body>
 </html>
