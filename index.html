@@ -1055,6 +1055,107 @@
             border-radius: 12px 12px 3px 12px;
         }
 
+        /* Video Call Interface */
+        .video-call-interface {
+            background: #1a1a1a;
+            border-radius: 12px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-main {
+            flex: 1;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .doctor-video {
+            width: 180px;
+            height: 135px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .user-video-small {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 60px;
+            height: 45px;
+            background: #2c3e50;
+            border-radius: 8px;
+            border: 1px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #bbb;
+        }
+
+        .video-controls {
+            background: rgba(0,0,0,0.8);
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .video-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-btn.mute {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .video-btn.video {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .video-btn.end {
+            background: #e74c3c;
+            color: white;
+        }
+
+        /* Consultation Image */
+        .consultation-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 34px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .consultation-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         @keyframes typingPulse {
             0%, 60%, 100% { transform: scale(1); opacity: 0.5; }
             30% { transform: scale(1.2); opacity: 1; }
@@ -1242,38 +1343,38 @@
             <!-- Header -->
             <div class="features-header">
                 <h2 class="features-title">Complete Mental Health Care</h2>
-                <p class="features-subtitle">From AI-powered screening to professional consultations, experience comprehensive mental health support designed for modern life.</p>
+                <p class="features-subtitle">Experience the convenience of WhatsApp-based mental health support - from instant screening to professional consultations, all in your pocket.</p>
             </div>
 
             <!-- Features Grid -->
             <div class="features-grid">
-                <!-- AI Screening Feature -->
+                <!-- WhatsApp Convenience Feature -->
                 <div class="feature-demo">
                     <div class="feature-content">
                         <div class="feature-badge">
-                            <i class="fas fa-brain"></i>
-                            AI Screening
+                            <i class="fab fa-whatsapp"></i>
+                            Convenience
                         </div>
-                        <h3 class="feature-demo-title">Smart Mental Health Assessment</h3>
-                        <p class="feature-demo-desc">Our AI analyzes your responses and behavioral patterns to provide personalized mental health insights and recommendations.</p>
+                        <h3 class="feature-demo-title">WhatsApp-Based Support</h3>
+                        <p class="feature-demo-desc">Get mental health support right where you already chat. No new apps to download, no complicated sign-ups - just simple, instant help through WhatsApp.</p>
                         <div class="feature-highlights">
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">5-minute comprehensive screening</span>
+                                <span class="highlight-text">Works on any phone</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Evidence-based assessment tools</span>
+                                <span class="highlight-text">No app downloads needed</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Instant personalized recommendations</span>
+                                <span class="highlight-text">Instant access anytime</span>
                             </div>
                         </div>
                     </div>
@@ -1295,129 +1396,73 @@
                     </div>
                 </div>
 
-                <!-- In-Person Counseling Feature -->
-                <div class="feature-demo">
-                    <div class="feature-content">
-                        <div class="feature-badge">
-                            <i class="fas fa-user-md"></i>
-                            In-Person Counseling
-                        </div>
-                        <h3 class="feature-demo-title">Professional Counseling Sessions</h3>
-                        <p class="feature-demo-desc">Connect with certified counselors at AIIMS Delhi for face-to-face therapy sessions tailored to your specific needs.</p>
-                        <div class="feature-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                                <span class="highlight-text">AIIMS Delhi certified counselors</span>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                                <span class="highlight-text">Personalized therapy sessions</span>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                                <span class="highlight-text">Flexible scheduling options</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="demo-mobile">
-                        <div class="demo-screen">
-                            <div class="demo-header">
-                                <div class="demo-avatar">
-                                    <img src="assets/images/aiims-delhi-logo.png" alt="AIIMS Delhi">
-                                </div>
-                                <div class="demo-info">
-                                    <h4>AIIMS Delhi</h4>
-                                    <p>In-Person Booking</p>
-                                </div>
-                            </div>
-                            <div class="demo-chat" id="counselingDemo">
-                                <!-- Messages will be added here -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Psychiatric Consultations Feature -->
+                <!-- Expert Psychiatric Care Feature -->
                 <div class="feature-demo">
                     <div class="feature-content">
                         <div class="feature-badge">
                             <i class="fas fa-stethoscope"></i>
-                            Psychiatric Consultations
+                            Expert Psychiatric Care
                         </div>
-                        <h3 class="feature-demo-title">Expert Psychiatric Care</h3>
-                        <p class="feature-demo-desc">Access qualified psychiatrists for comprehensive mental health evaluations, medication management, and specialized treatment plans.</p>
+                        <h3 class="feature-demo-title">Online Consultation with Psychiatrists</h3>
+                        <p class="feature-demo-desc">Get expert psychiatric care through secure video calls with MHFI certified psychiatrists. Professional help from the comfort of your home.</p>
                         <div class="feature-highlights">
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Board-certified psychiatrists</span>
+                                <span class="highlight-text">MHFI certified psychiatrists</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Medication management</span>
+                                <span class="highlight-text">Secure video consultations</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Comprehensive treatment plans</span>
+                                <span class="highlight-text">Home comfort</span>
                             </div>
                         </div>
                     </div>
                     <div class="demo-mobile">
                         <div class="demo-screen">
-                            <div class="demo-header">
-                                <div class="demo-avatar">
-                                    <img src="assets/images/aiims-delhi-logo.png" alt="AIIMS Delhi">
-                                </div>
-                                <div class="demo-info">
-                                    <h4>Psychiatric Consultation</h4>
-                                    <p>AIIMS Delhi</p>
-                                </div>
-                            </div>
-                            <div class="demo-chat" id="psychiatricDemo">
-                                <!-- Messages will be added here -->
+                            <div class="consultation-image" id="psychiatricDemo">
+                                <!-- Full consultation image will be added here -->
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Browser Chatbot Feature -->
+                <!-- AI Chatbot for Screening Feature -->
                 <div class="feature-demo">
                     <div class="feature-content">
                         <div class="feature-badge">
                             <i class="fas fa-robot"></i>
-                            AI Chatbot
+                            AI Chatbot for Screening
                         </div>
-                        <h3 class="feature-demo-title">24/7 AI Psychology Support</h3>
-                        <p class="feature-demo-desc">Our advanced AI chatbot provides instant psychological insights and support, available anytime through your browser.</p>
+                        <h3 class="feature-demo-title">Smart Mental Health Assessment</h3>
+                        <p class="feature-demo-desc">Developed with AIIMS Delhi, our AI chatbot asks simple questions about your sleep, stress, and mood to understand your mental health better.</p>
                         <div class="feature-highlights">
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">24/7 availability</span>
+                                <span class="highlight-text">5-minute screening</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Psychology-trained responses</span>
+                                <span class="highlight-text">AIIMS Delhi developed</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Instant emotional support</span>
+                                <span class="highlight-text">Instant results</span>
                             </div>
                         </div>
                     </div>
@@ -1433,8 +1478,9 @@
                         <div class="browser-content">
                             <div class="chatbot-interface">
                                 <div class="chatbot-header">
+                                    <img src="assets/images/aiims-delhi-logo.png" alt="AIIMS Delhi" style="height: 20px; margin-bottom: 5px;">
                                     <div class="chatbot-title">NeverAlone AI Assistant</div>
-                                    <div class="chatbot-subtitle">Your personal mental health companion</div>
+                                    <div class="chatbot-subtitle">Developed with AIIMS Delhi</div>
                                 </div>
                                 <div class="chatbot-messages" id="chatbotDemo">
                                     <!-- Messages will be added here -->
@@ -1646,60 +1692,44 @@
 
         // Features Demo Animations
         function initFeaturesDemos() {
-            // AI Screening Demo
+            // WhatsApp Convenience Demo
             const screeningDemo = document.getElementById('screeningDemo');
-            const screeningFlow = [
-                { type: 'bot', text: "Hi! I'm here to help assess your mental health. This will take about 5 minutes.", delay: 1 },
-                { type: 'user', text: "Okay, I'm ready", delay: 2 },
+            const convenienceFlow = [
+                { type: 'bot', text: "Hi! Welcome to NeverAlone. No downloads needed - just chat here!", delay: 1 },
+                { type: 'user', text: "That's so easy!", delay: 2 },
                 { type: 'typing', delay: 1 },
-                { type: 'bot', text: "Over the past 2 weeks, how often have you felt down, depressed, or hopeless?", delay: 2 },
-                { type: 'user', text: "Several days", delay: 2 },
+                { type: 'bot', text: "Exactly! Works on any phone, anywhere. How can I help you today?", delay: 2 },
+                { type: 'user', text: "I need mental health support", delay: 2 },
                 { type: 'typing', delay: 1.5 },
-                { type: 'bot', text: "How often have you had trouble falling or staying asleep?", delay: 2 },
-                { type: 'user', text: "Nearly every day", delay: 2 },
-                { type: 'typing', delay: 2 },
-                { type: 'bot', text: "Based on your responses, I recommend speaking with a professional. I can connect you with AIIMS Delhi.", delay: 3 }
+                { type: 'bot', text: "I'm here for you. Let me connect you with our services right away.", delay: 2 },
+                { type: 'user', text: "Thank you, this is so convenient", delay: 2 },
+                { type: 'bot', text: "Mental health support should be simple and accessible. That's why we use WhatsApp! 💚", delay: 2.5 }
             ];
 
-            // In-Person Counseling Demo
-            const counselingDemo = document.getElementById('counselingDemo');
-            const counselingFlow = [
-                { type: 'bot', text: "Welcome to AIIMS Delhi counseling services. How can we help you today?", delay: 1 },
-                { type: 'user', text: "I'd like to book an in-person counseling session", delay: 2 },
-                { type: 'typing', delay: 1.5 },
-                { type: 'bot', text: "I'll help you find the right counselor. What type of support are you looking for?", delay: 2 },
-                { type: 'user', text: "Anxiety and stress management", delay: 2 },
-                { type: 'typing', delay: 2 },
-                { type: 'bot', text: "Perfect! Dr. Sharma specializes in anxiety disorders. Available slots:", delay: 2 },
-                { type: 'bot', text: "Tomorrow 2:00 PM\nFriday 10:00 AM\nMonday 4:00 PM", delay: 1.5 },
-                { type: 'user', text: "I'll take Friday 10:00 AM", delay: 2 },
-                { type: 'bot', text: "Confirmed! Dr. Sharma on Friday 10:00 AM at AIIMS Delhi. Location details sent to your phone.", delay: 2 }
-            ];
-
-            // Psychiatric Consultation Demo
+            // Expert Psychiatric Care Demo - Show consultation image
             const psychiatricDemo = document.getElementById('psychiatricDemo');
-            const psychiatricFlow = [
-                { type: 'bot', text: "AIIMS Delhi Psychiatric Services. How may I assist you?", delay: 1 },
-                { type: 'user', text: "I need a psychiatric consultation for medication review", delay: 2 },
-                { type: 'typing', delay: 1.5 },
-                { type: 'bot', text: "I'll connect you with our psychiatry department. Are you currently taking any medications?", delay: 2 },
-                { type: 'user', text: "Yes, antidepressants prescribed 6 months ago", delay: 2 },
-                { type: 'typing', delay: 2 },
-                { type: 'bot', text: "Dr. Patel can review your medication today. Emergency consultation available in 30 minutes.", delay: 2.5 },
-                { type: 'user', text: "That would be great", delay: 1.5 },
-                { type: 'bot', text: "Appointment confirmed. Please bring your current medication list and any recent reports.", delay: 2 }
-            ];
+            
+            function setupConsultationImage() {
+                psychiatricDemo.innerHTML = `
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=600&fit=crop&crop=center" 
+                         alt="Online Psychiatric Consultation" style="width: 100%; height: 100%; object-fit: cover;">
+                `;
+            }
+            
+            setTimeout(setupConsultationImage, 2000);
 
-            // Browser Chatbot Demo
+            // AI Screening Chatbot Demo
             const chatbotDemo = document.getElementById('chatbotDemo');
             const chatbotFlow = [
-                { type: 'bot', text: "Hello! I'm your AI mental health companion. How are you feeling today?", delay: 1 },
-                { type: 'user', text: "I'm feeling overwhelmed with work stress", delay: 2 },
-                { type: 'bot', text: "I understand work stress can be challenging. Can you tell me what specifically is causing the most stress?", delay: 2.5 },
-                { type: 'user', text: "Deadlines and too many meetings", delay: 2 },
-                { type: 'bot', text: "Let's work on some coping strategies. Have you tried time-blocking or the Pomodoro technique?", delay: 2.5 },
-                { type: 'user', text: "No, tell me more", delay: 1.5 },
-                { type: 'bot', text: "Time-blocking involves scheduling specific times for different tasks. This can help reduce overwhelm by creating structure.", delay: 3 }
+                { type: 'bot', text: "Hi! I'll ask you some simple questions to understand your mental health better.", delay: 1 },
+                { type: 'user', text: "Okay, I'm ready", delay: 2 },
+                { type: 'bot', text: "How many hours do you usually sleep each night?", delay: 2 },
+                { type: 'user', text: "About 4-5 hours", delay: 2 },
+                { type: 'bot', text: "How often do you feel stressed during the week?", delay: 2 },
+                { type: 'user', text: "Almost daily", delay: 1.5 },
+                { type: 'bot', text: "On a scale of 1-10, how would you rate your overall mood recently?", delay: 2.5 },
+                { type: 'user', text: "Around 4", delay: 1.5 },
+                { type: 'bot', text: "Based on your answers, I recommend talking to a professional. AIIMS Delhi has specialists who can help.", delay: 3 }
             ];
 
             function animateDemo(container, flow, messageClass = 'demo-message') {
@@ -1765,9 +1795,8 @@
             }
 
             // Start all demos
-            if (screeningDemo) animateDemo(screeningDemo, screeningFlow);
-            if (counselingDemo) animateDemo(counselingDemo, counselingFlow);
-            if (psychiatricDemo) animateDemo(psychiatricDemo, psychiatricFlow);
+            if (screeningDemo) animateDemo(screeningDemo, convenienceFlow);
+            // psychiatricDemo is handled by setupConsultationImage function
             if (chatbotDemo) animateDemo(chatbotDemo, chatbotFlow, 'chatbot-message');
         }
 
