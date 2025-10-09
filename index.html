@@ -654,6 +654,923 @@
             font-weight: 600;
         }
 
+        /* Hero Section Mobile Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                gap: 40px;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .phone-mockup {
+                width: 280px;
+                height: 560px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 60px;
+                min-height: auto;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                order: 1;
+            }
+            
+            .hero-visual {
+                order: 2;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+            }
+            
+            .partnership-logos {
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+            
+            .features-preview {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-bottom: 30px;
+            }
+            
+            .feature-item {
+                padding: 16px 20px;
+                text-align: left;
+                flex-direction: row;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .feature-icon {
+                font-size: 1.3rem;
+                flex-shrink: 0;
+            }
+            
+            .feature-title {
+                font-size: 0.9rem;
+                line-height: 1.3;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .primary-cta {
+                padding: 16px 32px;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .phone-mockup {
+                width: 250px;
+                height: 500px;
+                margin: 0 auto;
+            }
+            
+            .whatsapp-header {
+                padding: 15px 18px 10px;
+            }
+            
+            .doctor-avatar {
+                width: 38px;
+                height: 38px;
+            }
+            
+            .doctor-info h4 {
+                font-size: 14px;
+            }
+            
+            .doctor-info p {
+                font-size: 11px;
+            }
+            
+            .chat-container {
+                padding: 20px 15px;
+                gap: 12px;
+            }
+            
+            .message {
+                font-size: 13px;
+                padding: 12px 15px;
+                max-width: 90%;
+            }
+            
+            .demo-indicator {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 90px 0 40px;
+            }
+            
+            .hero-container {
+                gap: 40px;
+                padding: 0 15px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            
+            .partnership-logos {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            
+            .partnership-text {
+                font-size: 0.85rem;
+                text-align: center;
+            }
+            
+            .logo-item {
+                height: 35px;
+            }
+            
+            .features-preview {
+                gap: 8px;
+                margin-bottom: 25px;
+            }
+            
+            .feature-item {
+                flex-direction: row;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+            }
+            
+            .feature-icon {
+                font-size: 1.1rem;
+                flex-shrink: 0;
+            }
+            
+            .feature-title {
+                font-size: 0.8rem;
+                line-height: 1.2;
+            }
+            
+            .feature-desc {
+                font-size: 0.8rem;
+            }
+            
+            .primary-cta {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+            
+            .secondary-cta {
+                font-size: 0.9rem;
+            }
+            
+            .phone-mockup {
+                width: 220px;
+                height: 440px;
+                border-radius: 35px;
+                padding: 6px;
+            }
+            
+            .phone-screen {
+                border-radius: 29px;
+            }
+            
+            .whatsapp-header {
+                padding: 12px 15px 8px;
+                border-radius: 29px 29px 0 0;
+            }
+            
+            .doctor-avatar {
+                width: 32px;
+                height: 32px;
+                padding: 4px;
+            }
+            
+            .doctor-info h4 {
+                font-size: 13px;
+            }
+            
+            .doctor-info p {
+                font-size: 10px;
+            }
+            
+            .chat-container {
+                padding: 18px 12px;
+                gap: 10px;
+            }
+            
+            .message {
+                font-size: 12px;
+                padding: 10px 12px;
+                border-radius: 15px;
+            }
+            
+            .message.user {
+                border-radius: 15px 15px 3px 15px;
+            }
+            
+            .message.bot {
+                border-radius: 15px 15px 15px 3px;
+            }
+            
+            .appointment-card {
+                padding: 12px;
+                margin: 6px 0;
+            }
+            
+            .appointment-time {
+                font-size: 12px;
+            }
+            
+            .appointment-details {
+                font-size: 11px;
+            }
+            
+            .confirm-button {
+                padding: 8px 16px;
+                font-size: 11px;
+            }
+            
+            .demo-indicator {
+                font-size: 9px;
+                padding: 6px 8px;
+                margin-bottom: 8px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .phone-mockup {
+                width: 200px;
+                height: 400px;
+            }
+            
+            .hero-cta {
+                gap: 12px;
+            }
+            
+            .primary-cta {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .features-preview {
+                gap: 6px;
+                margin-bottom: 20px;
+            }
+            
+            .feature-item {
+                padding: 10px 14px;
+                gap: 10px;
+            }
+            
+            .feature-icon {
+                font-size: 1rem;
+            }
+            
+            .feature-title {
+                font-size: 0.75rem;
+                line-height: 1.1;
+            }
+        }
+
+        /* Features Section Mobile Responsive */
+        @media (max-width: 1024px) {
+            .features-section {
+                padding: 80px 0;
+            }
+            
+            .features-grid {
+                gap: 60px;
+            }
+            
+            .feature-demo {
+                gap: 40px;
+            }
+            
+            .feature-demo-title {
+                font-size: 1.8rem;
+            }
+            
+            .demo-mobile {
+                width: 250px;
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-section {
+                padding: 60px 0;
+            }
+            
+            .features-container {
+                padding: 0 15px;
+            }
+            
+            .features-header {
+                margin-bottom: 50px;
+            }
+            
+            .features-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+            
+            .features-subtitle {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            
+            .features-grid {
+                gap: 50px;
+            }
+            
+            .feature-demo {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .feature-demo:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .feature-content {
+                order: 2;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .demo-mobile {
+                order: 1;
+                width: 220px;
+                height: 440px;
+                margin: 0 auto 10px;
+            }
+            
+            .feature-badge {
+                order: -2;
+                margin-bottom: 10px;
+                font-size: 0.8rem;
+                padding: 6px 12px;
+                justify-content: center;
+                display: inline-flex;
+            }
+            
+            .feature-demo-title {
+                order: -1;
+                margin-bottom: 20px;
+                font-size: 1.6rem;
+            }
+            
+            .feature-demo-desc {
+                order: 3;
+                margin-bottom: 25px;
+                font-size: 1rem;
+            }
+            
+            .feature-highlights {
+                order: 4;
+            }
+            
+            .feature-highlights {
+                gap: 12px;
+                align-items: center;
+            }
+            
+            .highlight-item {
+                justify-content: center;
+                text-align: left;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+            
+            .highlight-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 11px;
+            }
+            
+            .highlight-text {
+                font-size: 0.9rem;
+            }
+            
+            .algorithm-credit {
+                margin-top: 20px;
+                padding: 12px;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .algorithm-logo {
+                height: 25px;
+            }
+            
+            .algorithm-text {
+                font-size: 0.8rem;
+            }
+            
+            .demo-header {
+                padding: 12px 15px 8px;
+            }
+            
+            .demo-avatar {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .demo-info h4 {
+                font-size: 13px;
+            }
+            
+            .demo-info p {
+                font-size: 10px;
+            }
+            
+            .demo-chat {
+                padding: 15px 12px;
+                gap: 10px;
+            }
+            
+            .demo-message {
+                font-size: 12px;
+                padding: 10px 12px;
+                max-width: 85%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-section {
+                padding: 50px 0;
+            }
+            
+            .features-header {
+                margin-bottom: 40px;
+            }
+            
+            .features-title {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+            
+            .features-subtitle {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+            
+            .features-grid {
+                gap: 40px;
+            }
+            
+            .feature-demo {
+                gap: 20px;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .feature-content {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .demo-mobile {
+                order: 1;
+                margin-bottom: 10px;
+                width: 200px;
+                height: 400px;
+                border-radius: 35px;
+                padding: 5px;
+            }
+            
+            .feature-badge {
+                order: -2;
+                font-size: 0.75rem;
+                padding: 5px 10px;
+                margin-bottom: 12px;
+            }
+            
+            .feature-demo-title {
+                order: -1;
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+            
+            .feature-demo-desc {
+                order: 3;
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+            
+            .feature-highlights {
+                order: 4;
+            }
+            
+            .demo-screen {
+                border-radius: 30px;
+            }
+            
+            .highlight-item {
+                max-width: 100%;
+                gap: 10px;
+            }
+            
+            .highlight-icon {
+                width: 18px;
+                height: 18px;
+                font-size: 10px;
+            }
+            
+            .highlight-text {
+                font-size: 0.85rem;
+            }
+            
+            .algorithm-credit {
+                margin-top: 15px;
+                padding: 10px;
+                gap: 6px;
+            }
+            
+            .algorithm-logo {
+                height: 22px;
+            }
+            
+            .algorithm-text {
+                font-size: 0.75rem;
+            }
+            
+            .demo-header {
+                padding: 10px 12px 6px;
+                border-radius: 30px 30px 0 0;
+            }
+            
+            .demo-avatar {
+                width: 28px;
+                height: 28px;
+                padding: 3px;
+            }
+            
+            .demo-info h4 {
+                font-size: 12px;
+            }
+            
+            .demo-info p {
+                font-size: 9px;
+            }
+            
+            .demo-chat {
+                padding: 12px 10px;
+                gap: 8px;
+            }
+            
+            .demo-message {
+                font-size: 11px;
+                padding: 8px 10px;
+                border-radius: 12px;
+                max-width: 90%;
+            }
+            
+            .demo-message.user {
+                border-radius: 12px 12px 3px 12px;
+            }
+            
+            .demo-message.bot {
+                border-radius: 12px 12px 12px 3px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .features-title {
+                font-size: 1.6rem;
+            }
+            
+            .features-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .demo-mobile {
+                width: 180px;
+                height: 360px;
+            }
+            
+            .feature-demo-title {
+                font-size: 1.2rem;
+            }
+            
+            .feature-demo-desc {
+                font-size: 0.85rem;
+            }
+            
+            .highlight-text {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Browser Demo Mobile Responsive */
+        @media (max-width: 1024px) {
+            .browser-demo {
+                max-width: 350px;
+            }
+            
+            .browser-content {
+                padding: 20px;
+                min-height: 280px;
+            }
+            
+            .chatbot-interface {
+                height: 230px;
+                padding: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .browser-demo {
+                max-width: 100%;
+                width: 100%;
+                margin: 20px auto;
+            }
+            
+            .browser-header {
+                padding: 10px 12px;
+            }
+            
+            .browser-dots {
+                gap: 4px;
+            }
+            
+            .browser-dot {
+                width: 8px;
+                height: 8px;
+            }
+            
+            .browser-url {
+                font-size: 11px;
+                padding: 5px 10px;
+                margin-left: 8px;
+            }
+            
+            .browser-content {
+                padding: 18px 15px;
+                min-height: 250px;
+            }
+            
+            .chatbot-interface {
+                height: 200px;
+                padding: 15px;
+                border-radius: 10px;
+            }
+            
+            .chatbot-header {
+                margin-bottom: 15px;
+            }
+            
+            .chatbot-title {
+                font-size: 14px;
+            }
+            
+            .chatbot-subtitle {
+                font-size: 11px;
+            }
+            
+            .chatbot-message {
+                font-size: 11px;
+                padding: 8px 12px;
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .browser-demo {
+                border-radius: 10px;
+                margin: 15px auto;
+            }
+            
+            .browser-header {
+                padding: 8px 10px;
+            }
+            
+            .browser-dot {
+                width: 6px;
+                height: 6px;
+            }
+            
+            .browser-url {
+                font-size: 10px;
+                padding: 4px 8px;
+                margin-left: 6px;
+            }
+            
+            .browser-content {
+                padding: 15px 12px;
+                min-height: 220px;
+            }
+            
+            .chatbot-interface {
+                height: 180px;
+                padding: 12px;
+                border-radius: 8px;
+            }
+            
+            .chatbot-header {
+                margin-bottom: 12px;
+            }
+            
+            .chatbot-title {
+                font-size: 13px;
+            }
+            
+            .chatbot-subtitle {
+                font-size: 10px;
+            }
+            
+            .chatbot-message {
+                font-size: 10px;
+                padding: 7px 10px;
+                border-radius: 10px;
+            }
+            
+            .chatbot-message.bot {
+                border-radius: 10px 10px 10px 2px;
+            }
+            
+            .chatbot-message.user {
+                border-radius: 10px 10px 2px 10px;
+            }
+        }
+
+        /* Video Call Interface Mobile Responsive */
+        @media (max-width: 768px) {
+            .video-call-interface {
+                border-radius: 10px;
+                height: 300px;
+            }
+            
+            .doctor-video {
+                width: 150px;
+                height: 110px;
+                font-size: 11px;
+                border-radius: 10px;
+            }
+            
+            .user-video-small {
+                width: 50px;
+                height: 38px;
+                top: 12px;
+                right: 12px;
+                border-radius: 6px;
+                font-size: 7px;
+            }
+            
+            .video-controls {
+                padding: 10px;
+                gap: 12px;
+            }
+            
+            .video-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-call-interface {
+                height: 250px;
+                border-radius: 8px;
+            }
+            
+            .doctor-video {
+                width: 120px;
+                height: 90px;
+                font-size: 10px;
+                border-radius: 8px;
+            }
+            
+            .user-video-small {
+                width: 40px;
+                height: 30px;
+                top: 10px;
+                right: 10px;
+                border-radius: 5px;
+                font-size: 6px;
+            }
+            
+            .video-controls {
+                padding: 8px;
+                gap: 10px;
+            }
+            
+            .video-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .video-call-interface {
+                height: 220px;
+            }
+            
+            .doctor-video {
+                width: 100px;
+                height: 75px;
+                font-size: 9px;
+            }
+            
+            .user-video-small {
+                width: 35px;
+                height: 26px;
+                top: 8px;
+                right: 8px;
+            }
+            
+            .video-btn {
+                width: 25px;
+                height: 25px;
+                font-size: 10px;
+            }
+        }
+
+        /* Consultation Image Mobile Responsive */
+        @media (max-width: 768px) {
+            .consultation-image {
+                border-radius: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .consultation-image {
+                border-radius: 15px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .consultation-image {
+                border-radius: 12px;
+            }
+        }
+
+        /* Demo Visual Container Mobile Responsive */
+        @media (max-width: 768px) {
+            .demo-visual {
+                margin: 20px auto;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .demo-visual {
+                margin: 15px auto;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .demo-visual {
+                margin: 12px auto;
+                max-width: 220px;
+            }
+        }
+
         @keyframes typingPulse {
             0%, 60%, 100% { transform: scale(1); opacity: 0.5; }
             30% { transform: scale(1.2); opacity: 1; }
@@ -1184,44 +2101,1215 @@
             30% { transform: scale(1.2); opacity: 1; }
         }
 
-        /* Responsive Design */
+        /* Additional Mobile Optimizations for WhatsApp Demo */
         @media (max-width: 768px) {
-            .hero {
-                padding: 100px 0 60px;
+            /* Ensure WhatsApp demo messages are readable */
+            .demo-chat {
+                min-height: 200px;
+            }
+            
+            /* Better spacing for feature highlights on mobile */
+            .feature-highlights {
+                margin-top: 20px;
+            }
+            
+            /* Optimize demo header for mobile */
+            .demo-header {
+                min-height: 60px;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Ensure adequate chat space on small screens */
+            .demo-chat {
+                min-height: 180px;
+                padding: 12px 10px;
+            }
+            
+            /* Better message readability */
+            .demo-message {
+                line-height: 1.5;
+                word-wrap: break-word;
+            }
+            
+            /* Optimize avatar and header for small screens */
+            .demo-header {
+                min-height: 50px;
+                padding: 8px 12px 6px;
+            }
+            
+            .demo-avatar {
+                width: 28px;
+                height: 28px;
+                padding: 3px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            /* Minimum viable chat interface */
+            .demo-chat {
+                min-height: 160px;
+                padding: 10px 8px;
+            }
+            
+            /* Ensure messages don't overflow */
+            .demo-message {
+                max-width: 85%;
+                font-size: 10px;
+                padding: 6px 8px;
+            }
+            
+            /* Compact header for very small screens */
+            .demo-header {
+                min-height: 45px;
+                padding: 6px 10px 4px;
+            }
+        }
+
+        /* University Partners Section Styles */
+        .university-partners-section {
+            overflow: hidden;
+        }
+
+        .universities-carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .universities-carousel {
+            display: flex;
+            animation: slideUniversities 20s linear infinite;
+            gap: 40px;
+            width: fit-content;
+        }
+
+        .university-slide {
+            flex-shrink: 0;
+            width: 250px;
+        }
+
+        .university-card {
+            background: var(--bg-white);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(44, 62, 80, 0.08);
+            border: 1px solid rgba(135, 169, 107, 0.1);
+            transition: all 0.3s ease;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .university-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(44, 62, 80, 0.15);
+            border-color: var(--primary-sage);
+        }
+
+        .university-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .university-logo img {
+            max-width: 90px;
+            max-height: 90px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .fallback-text {
+            color: var(--primary-sage);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .university-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-sage);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .university-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0 0 10px 0;
+        }
+
+        .student-count {
+            color: #4caf50;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: rgba(76, 175, 80, 0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        @keyframes slideUniversities {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause animation on hover */
+        .universities-carousel-container:hover .universities-carousel {
+            animation-play-state: paused;
+        }
+
+        /* Mobile Responsive for University Partners */
+        @media (max-width: 768px) {
+            .university-header h2 {
+                font-size: 2rem;
+                margin-bottom: 15px;
             }
 
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
+            .university-header p {
+                font-size: 1rem;
+                padding: 0 20px;
             }
 
-            .hero-title {
+            .university-slide {
+                width: 200px;
+            }
+
+            .university-card {
+                padding: 20px 15px;
+                height: 240px;
+            }
+
+            .university-logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+
+            .university-logo img {
+                max-width: 60px;
+                max-height: 60px;
+            }
+
+            .university-card h3 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .university-card p {
+                font-size: 0.85rem;
+            }
+
+            .student-count {
+                font-size: 0.75rem;
+                padding: 3px 8px;
+            }
+
+            .universities-carousel {
+                gap: 20px;
+                animation-duration: 15s;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .university-partners-section {
+                padding: 60px 0;
+            }
+
+            .university-header {
+                margin-bottom: 40px;
+            }
+
+            .university-header h2 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .university-header p {
+                font-size: 0.9rem;
+            }
+
+            .university-slide {
+                width: 160px;
+            }
+
+            .university-card {
+                padding: 15px 10px;
+                height: 200px;
+                border-radius: 15px;
+            }
+
+            .university-logo {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 12px;
+            }
+
+            .university-logo img {
+                max-width: 45px;
+                max-height: 45px;
+            }
+
+            .university-card h3 {
+                font-size: 0.9rem;
+                margin-bottom: 4px;
+            }
+
+            .university-card p {
+                font-size: 0.75rem;
+            }
+
+            .student-count {
+                font-size: 0.7rem;
+                padding: 2px 6px;
+            }
+
+            .universities-carousel {
+                gap: 15px;
+                animation-duration: 12s;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .university-header h2 {
+                font-size: 1.4rem;
+                padding: 0 10px;
+            }
+
+            .university-header p {
+                font-size: 0.8rem;
+                padding: 0 15px;
+            }
+
+            .university-slide {
+                width: 140px;
+            }
+
+            .university-card {
+                padding: 12px 8px;
+                height: 180px;
+                border-radius: 12px;
+            }
+
+            .university-logo {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+
+            .university-logo img {
+                max-width: 35px;
+                max-height: 35px;
+            }
+
+            .university-card h3 {
+                font-size: 0.8rem;
+                margin-bottom: 3px;
+            }
+
+            .university-card p {
+                font-size: 0.7rem;
+            }
+
+            .student-count {
+                font-size: 0.65rem;
+                padding: 2px 4px;
+            }
+
+            .universities-carousel {
+                gap: 12px;
+                animation-duration: 10s;
+            }
+        }
+
+        /* About Us Section Styles */
+        .about-us-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #F8F9FA 50%, var(--cream-white) 100%);
+        }
+
+        .about-hero {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .about-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .about-intro {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .about-description {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .about-vision-intro {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* Vision & Mission Grid */
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .vision-card, .mission-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(44, 62, 80, 0.08);
+            border-left: 4px solid var(--primary-sage);
+            transition: transform 0.3s ease;
+        }
+
+        .vision-card:hover, .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vision-icon, .mission-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-sage), #7A9B7A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .vision-card h3, .mission-card h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .vision-card p, .mission-card p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Why We Exist Section */
+        .why-exist-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .why-exist-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .why-intro {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .why-item {
+            background: var(--bg-white);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(44, 62, 80, 0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .why-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(135, 169, 107, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-sage);
+            font-size: 1.5rem;
+        }
+
+        .why-item h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .why-item p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* What Makes Us Different Section */
+        .different-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .different-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .different-intro {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .different-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .different-item {
+            background: var(--bg-white);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(44, 62, 80, 0.06);
+            border-top: 3px solid var(--primary-sage);
+            transition: all 0.3s ease;
+        }
+
+        .different-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(44, 62, 80, 0.12);
+        }
+
+        .different-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .different-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .different-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* Our Pillars Section */
+        .pillars-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .pillars-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+        }
+
+        .pillar-item {
+            background: var(--bg-white);
+            padding: 25px 15px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(44, 62, 80, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(135, 169, 107, 0.15);
+        }
+
+        .pillar-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-sage), #7A9B7A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .pillar-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .pillar-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* How We Work Section */
+        .how-work-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .how-work-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .work-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .work-flow::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-sage), #7A9B7A);
+            z-index: 1;
+        }
+
+        .work-step {
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-sage), #7A9B7A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(135, 169, 107, 0.3);
+        }
+
+        .step-content h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Closing Section */
+        .closing-section {
+            text-align: center;
+            background: var(--bg-white);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(44, 62, 80, 0.08);
+        }
+
+        .closing-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .closing-text {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* About Us Mobile Responsive */
+        @media (max-width: 768px) {
+            .about-us-section {
+                padding: 60px 0;
+            }
+
+            .about-hero {
+                margin-bottom: 60px;
+                padding: 0 15px;
+            }
+
+            .about-title {
                 font-size: 2.5rem;
+                margin-bottom: 20px;
             }
 
-            .hero-subtitle {
+            .about-intro {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+
+            .about-description {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .about-vision-intro {
+                font-size: 1rem;
+            }
+
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+
+            .vision-card, .mission-card {
+                padding: 30px 20px;
+            }
+
+            .vision-icon, .mission-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .vision-card h3, .mission-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .vision-card p, .mission-card p {
+                font-size: 1rem;
+            }
+
+            .why-exist-section, .different-section, .pillars-section, .how-work-section {
+                margin-bottom: 60px;
+            }
+
+            .why-exist-section h2, .different-section h2, .pillars-section h2, .how-work-section h2 {
+                font-size: 2rem;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .different-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .work-flow {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .work-flow::before {
+                display: none;
+            }
+
+            .closing-section {
+                padding: 40px 20px;
+            }
+
+            .closing-section h2 {
+                font-size: 2rem;
+            }
+
+            .closing-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-us-section {
+                padding: 40px 0;
+            }
+
+            .about-hero {
+                margin-bottom: 40px;
+                padding: 0 10px;
+            }
+
+            .about-title {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .about-intro {
+                font-size: 1rem;
+            }
+
+            .about-description {
+                font-size: 0.95rem;
+            }
+
+            .about-vision-intro {
+                font-size: 0.9rem;
+            }
+
+            .vision-mission-grid {
+                margin-bottom: 40px;
+            }
+
+            .vision-card, .mission-card {
+                padding: 25px 15px;
+            }
+
+            .vision-icon, .mission-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .vision-card h3, .mission-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .vision-card p, .mission-card p {
+                font-size: 0.9rem;
+            }
+
+            .why-exist-section, .different-section, .pillars-section, .how-work-section {
+                margin-bottom: 40px;
+            }
+
+            .why-exist-section h2, .different-section h2, .pillars-section h2, .how-work-section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+            }
+
+            .why-intro, .different-intro {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+
+            .why-item, .different-item, .pillar-item {
+                padding: 20px 15px;
+            }
+
+            .why-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .different-icon, .pillar-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .different-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .step-content h4 {
+                font-size: 1rem;
+            }
+
+            .step-content p {
+                font-size: 0.9rem;
+            }
+
+            .closing-section {
+                padding: 30px 15px;
+            }
+
+            .closing-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .closing-text {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .about-title {
+                font-size: 1.8rem;
+            }
+
+            .about-intro, .about-description {
+                font-size: 0.85rem;
+            }
+
+            .about-vision-intro {
+                font-size: 0.8rem;
+            }
+
+            .vision-card h3, .mission-card h3 {
                 font-size: 1.1rem;
             }
 
-            .features-preview {
+            .why-exist-section h2, .different-section h2, .pillars-section h2, .how-work-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .why-item h4, .different-item h4, .pillar-item h4 {
+                font-size: 1rem;
+            }
+
+            .why-item p, .different-item p, .pillar-item p {
+                font-size: 0.85rem;
+            }
+
+            .closing-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .closing-text {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Advisory Committee Styles within About Us */
+        .advisory-committee-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .advisory-committee-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .advisory-layout {
+            margin-top: 0;
+        }
+
+        .advisory-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .chairman-card {
+            grid-row: span 2;
+        }
+
+        .team-card.advisor-card {
+            padding: 20px;
+            background-color: var(--bg-white);
+            border-radius: 15px;
+            border: 1px solid rgba(135, 169, 107, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(44, 62, 80, 0.06);
+        }
+
+        .team-card.advisor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.12);
+            border-color: var(--primary-sage);
+        }
+
+        .chairman-card .team-card.advisor-card {
+            padding: 25px;
+            border: 2px solid var(--primary-sage);
+        }
+
+        .team-image {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .chairman-card .team-image {
+            width: 110px;
+            height: 110px;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            text-align: center;
+        }
+
+        .team-category-label {
+            background-color: var(--primary-sage);
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .team-name {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .chairman-card .team-name {
+            font-size: 1.2rem;
+        }
+
+        .team-name a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .team-name a:hover {
+            color: var(--primary-sage);
+        }
+
+        .team-role {
+            font-size: 0.8rem;
+            color: var(--primary-sage);
+            margin-bottom: 3px;
+            font-weight: 500;
+        }
+
+        .team-expertise {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .team-expertise a {
+            color: var(--primary-sage);
+            text-decoration: none;
+        }
+
+        .team-expertise a:hover {
+            text-decoration: underline;
+        }
+
+        /* Advisory Committee Mobile Responsive */
+        @media (max-width: 768px) {
+            .advisory-committee-section {
+                margin-bottom: 60px;
+            }
+
+            .advisory-committee-section h2 {
+                font-size: 2rem;
+            }
+
+            .advisory-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .chairman-card {
+                grid-column: span 2;
+                grid-row: auto;
+            }
+
+            .team-card.advisor-card {
+                padding: 15px;
+            }
+
+            .chairman-card .team-card.advisor-card {
+                padding: 20px;
+            }
+
+            .team-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .chairman-card .team-image {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .advisory-committee-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .advisory-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
-            .phone-mockup {
-                width: 250px;
-                height: 500px;
+            .chairman-card {
+                grid-column: span 1;
             }
 
-            .hero-cta {
-                justify-content: center;
-                flex-wrap: wrap;
+            .team-card.advisor-card {
+                padding: 15px 12px;
             }
 
-            .partnership-logos {
-                justify-content: center;
+            .team-image {
+                width: 50px;
+                height: 50px;
             }
 
+            .chairman-card .team-image {
+                width: 70px;
+                height: 70px;
+            }
+
+            .team-name {
+                font-size: 0.9rem;
+            }
+
+            .chairman-card .team-name {
+                font-size: 1rem;
+            }
+
+            .team-role {
+                font-size: 0.75rem;
+            }
+
+            .team-expertise {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .advisory-committee-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .team-card.advisor-card {
+                padding: 12px 10px;
+            }
+
+            .team-image {
+                width: 45px;
+                height: 45px;
+            }
+
+            .chairman-card .team-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .team-name {
+                font-size: 0.8rem;
+            }
+
+            .team-role {
+                font-size: 0.7rem;
+            }
+
+            .team-expertise {
+                font-size: 0.65rem;
+            }
         }
     </style>
 </head>
@@ -1279,7 +3367,7 @@
                     <span class="highlight">Neveralone</span> Core
                 </h1>
                 <p class="hero-subtitle">
-                    Mental health support that fits in your pocket. Get personalized care through WhatsApp, AI-powered screening, and expert consultations.
+                    Mental health support that fits in your pocket. Access personalized care through WhatsApp with a quick wellness check and expert consultations - anytime, anywhere.
                 </p>
 
                 <!-- Partnership Logos -->
@@ -1365,8 +3453,8 @@
         <div class="features-container">
             <!-- Header -->
             <div class="features-header">
-                <h2 class="features-title">Complete Mental Health Care</h2>
-                <p class="features-subtitle">Experience the convenience of WhatsApp-based mental health support - from instant screening to professional consultations, all in your pocket.</p>
+                <h2 class="features-title">Your Pocket Wellness Companion</h2>
+                <p class="features-subtitle">Experience the convenience of WhatsApp-based support from instant screening to professional consultations, all in your pocket.</p>
             </div>
 
             <!-- Features Grid -->
@@ -1379,7 +3467,7 @@
                             Convenience
                         </div>
                         <h3 class="feature-demo-title">WhatsApp-Based Support</h3>
-                        <p class="feature-demo-desc">Get mental health support right where you already chat. No new apps to download, no complicated sign-ups - just simple, instant help through WhatsApp.</p>
+                        <p class="feature-demo-desc">Get mental wellness support right where you already chat. No new apps to download, no complicated sign-ups - just simple, instant help through WhatsApp.</p>
                         <div class="feature-highlights">
                             <div class="highlight-item">
                                 <div class="highlight-icon">
@@ -1425,35 +3513,29 @@
                     <div class="feature-content">
                         <div class="feature-badge">
                             <i class="fas fa-stethoscope"></i>
-                            Expert Psychiatric Care
+                            Expert Care from Psychologists & Psychiatrists
                         </div>
-                        <h3 class="feature-demo-title">Online Consultation with Psychiatrists</h3>
-                        <p class="feature-demo-desc">Get expert psychiatric care through secure video calls with certified psychiatrists. Professional help from the comfort of your home.</p>
+                        <h3 class="feature-demo-title">Expert Care from Psychologists & Psychiatrists</h3>
+                        <p class="feature-demo-desc">Get trusted care for your mental wellbeing — from therapy sessions to medical consultations, all through private, secure video calls.</p>
                         <div class="feature-highlights">
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Certified psychiatrists</span>
+                                <span class="highlight-text">Verified professionals</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Secure video consultations</span>
+                                <span class="highlight-text">Confidential care</span>
                             </div>
                             <div class="highlight-item">
                                 <div class="highlight-icon">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <span class="highlight-text">Home comfort</span>
+                                <span class="highlight-text">Accessible from your home</span>
                             </div>
-                        </div>
-                        
-                        <!-- MHFI Collaboration Credit -->
-                        <div class="algorithm-credit">
-                            <img src="https://mhfi.in/wp-content/uploads/2023/12/Untitled-3-1.png" alt="MHFI" class="algorithm-logo">
-                            <span class="algorithm-text">In collaboration with Mental Health Foundation of India</span>
                         </div>
                     </div>
                     <div class="demo-mobile">
@@ -1839,120 +3921,92 @@
         document.addEventListener('DOMContentLoaded', initFeaturesDemos);
     </script>
 
-    <!-- Advisors Section -->
-    <section class="team-section" id="advisors">
+
+    <!-- Universities That Champion Mental Wellness Section -->
+    <section class="university-partners-section" style="padding: 80px 0; background: linear-gradient(135deg, var(--bg-light) 0%, #F8F9FA 100%);">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-                <h2>Our Advisory Committee</h2>
+            <div class="university-header" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--text-dark); margin-bottom: 20px; font-family: 'Playfair Display', serif;">
+                    Universities That Champion Mental Wellness with <span style="color: var(--primary-sage);">Never Alone</span>
+                </h2>
+                <p style="font-size: 1.2rem; color: var(--text-light); max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                    Never Alone is partnered by top institutions to support student mental wellbeing in their Campus
+                </p>
             </div>
             
-            <!-- Advisory Committee Layout: Uniform Grid System -->
-            <div class="advisory-layout" style="margin-top: 50px;">
-                
-                <!-- Uniform Advisory Grid -->
-                <div class="advisory-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; align-items: start;" data-aos="fade-up" data-aos-duration="800">
-                    
-                    <!-- Chairman Card - First Column -->
-                    <div class="chairman-card" style="grid-row: span 2;">
-                        <div class="team-card advisor-card" data-advisor="dr-nand-kumar" style="padding: 5px; background-color: var(--white-color); border-radius: 12px; border: 1px solid var(--primary-color); height: 100%; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="team-image" style="width: 110px; height: 110px; margin: 0 auto 15px;">
-                                <img src="assets/images/team/nandkumar.png" alt="Dr. Nand Kumar" />
+            <!-- Sliding Universities Carousel -->
+            <div class="universities-carousel-container">
+                <div class="universities-carousel">
+                    <!-- AIIMS Delhi -->
+                    <div class="university-slide">
+                        <div class="university-card">
+                            <div class="university-logo">
+                                <img src="assets/images/aiims-delhi-logo.png" alt="AIIMS Delhi" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'fallback-text\'>AIIMS<br>DELHI</span>';">
                             </div>
-                            <div class="team-info" style="text-align: center; min-width: 180px;">
-                                <p class="team-category-label" style="background-color: var(--primary-color); color: var(--white-color); font-size: 0.7rem; padding: 3px 8px; font-weight: 600; margin-bottom: 10px;">Chairman</p>
-                                <h4 class="team-name" style="font-size: 1.1rem; margin-bottom: 5px; min-width: 100px; display: inline-block;"><a href="advisors/dr-nand-kumar.html" style="text-decoration: none; color: inherit;">Dr. Nand Kumar</a></h4>
-                                <p class="team-role" style="font-size: 0.8rem; color: var(--accent-color); margin-bottom: 3px;">Professor, Psychiatry</p>
-                                <p class="team-expertise" style="font-size: 0.75rem;">AIIMS New Delhi</p>
+                            <h3>AIIMS</h3>
+                            <p>New Delhi</p>
+                        </div>
+                    </div>
+                    
+                    <!-- AIIMS Bhubaneswar -->
+                    <div class="university-slide">
+                        <div class="university-card">
+                            <div class="university-logo">
+                                <img src="assets/images/aiims-bhu-logo.svg" alt="AIIMS Bhubaneswar" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'fallback-text\'>AIIMS<br>BBSR</span>';">
                             </div>
+                            <h3>AIIMS</h3>
+                            <p>Bhubaneswar</p>
                         </div>
                     </div>
                     
-                    <!-- Row 1 Advisors -->
-                    <div class="team-card advisor-card" data-advisor="dr-gagan-hans" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
-                        <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
-                            <img src="assets/images/advisors/dr-gagan-hans.jpg" alt="Dr. Gagan Hans" />
-                        </div>
-                        <div class="team-info" style="text-align: center;">
-                            <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;"><a href="advisors/dr-gagan-hans.html" style="text-decoration: none; color: inherit;">Dr. Gagan Hans</a></h4>
-                            <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Additional Professor</p>
-                            <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS New Delhi</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-card advisor-card" data-advisor="dr-biswa-ranjan-mishra" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
-                        <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
-                            <img src="assets/images/advisors/dr-biswa-ranjan-mishra.jpg" alt="Dr. Biswa Ranjan Mishra" />
-                        </div>
-                        <div class="team-info" style="text-align: center;">
-                            <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;"><a href="advisors/dr-biswa-ranjan-mishra.html" style="text-decoration: none; color: inherit;">Dr. Biswa Ranjan Mishra</a></h4>
-                            <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Professor & Head</p>
-                            <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS Bhubaneswar</p>
+                    <!-- IHBAS -->
+                    <div class="university-slide">
+                        <div class="university-card">
+                            <div class="university-logo">
+                                <img src="assets/images/logos/ihbas-logo.png" alt="IHBAS" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'fallback-text\'>IHBAS</span>';">
+                            </div>
+                            <h3>IHBAS</h3>
+                            <p>Shahdara, New Delhi</p>
                         </div>
                     </div>
                     
-                    <div class="team-card advisor-card" data-advisor="dr-puneet-misra" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
-                        <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
-                            <img src="assets/images/advisors/puneet.jpeg" alt="Dr. Puneet Misra" />
-                        </div>
-                        <div class="team-info" style="text-align: center;">
-                            <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;"><a href="advisors/dr-puneet-misra.html" style="text-decoration: none; color: inherit;">Dr. Puneet Misra</a></h4>
-                            <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Professor</p>
-                            <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS New Delhi</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-card advisor-card" data-advisor="dr-vijender-singh" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
-                        <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
-                            <img src="assets/images/advisors/dr-vijender-singh.jpg" alt="Dr. Vijender Singh" />
-                        </div>
-                        <div class="team-info" style="text-align: center;">
-                            <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;"><a href="advisors/dr-vijender-singh.html" style="text-decoration: none; color: inherit;">Dr. Vijender Singh</a></h4>
-                            <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Professor & HOD</p>
-                            <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS Bhopal</p>
+                    <!-- Galgotias University -->
+                    <div class="university-slide">
+                        <div class="university-card">
+                            <div class="university-logo">
+                                <img src="assets/images/galgotia-logo.jpg" alt="Galgotias University" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'fallback-text\'>GALGOTIAS<br>UNIVERSITY</span>';">
+                            </div>
+                            <h3>Galgotias University</h3>
+                            <p>Greater Noida, U.P.</p>
+                            <span class="student-count">Trusted by 50,000+ Students</span>
                         </div>
                     </div>
                     
-                    <!-- Row 2 Advisors -->
-                    <div class="team-card advisor-card" data-advisor="dr-sujata-satapathy" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
-                        <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
-                            <img src="assets/images/advisors/sujata.jpeg" alt="Dr. Sujata Satapathy" />
-                        </div>
-                        <div class="team-info" style="text-align: center;">
-                            <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;"><a href="advisors/dr-sujata-satapathy.html" style="text-decoration: none; color: inherit;">Dr. Sujata Satapathy</a></h4>
-                            <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Professor, Clinical Psychology</p>
-                            <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">AIIMS New Delhi</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-card advisor-card" data-advisor="dr-monika-agarwal" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
-                        <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
-                            <img src="assets/images/advisors/Monika.jpeg" alt="Dr. Monika Agarwal" />
-                        </div>
-                        <div class="team-info" style="text-align: center;">
-                            <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;"><a href="advisors/dr-monika-agarwal.html" style="text-decoration: none; color: inherit;">Dr. Monika Agarwal</a></h4>
-                            <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Founder & Director</p>
-                            <p class="team-expertise" style="font-size: 0.65rem; margin: 0;"><a href="https://medbeat.ai" target="_blank" style="color: var(--primary-color); text-decoration: none;">Medbeat.ai</a></p>
+                    <!-- Duplicate slides for seamless loop -->
+                    <div class="university-slide">
+                        <div class="university-card">
+                            <div class="university-logo">
+                                <img src="assets/images/aiims-delhi-logo.png" alt="AIIMS Delhi" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'fallback-text\'>AIIMS<br>DELHI</span>';">
+                            </div>
+                            <h3>AIIMS</h3>
+                            <p>New Delhi</p>
                         </div>
                     </div>
                     
-                    <div class="team-card advisor-card" data-advisor="dr-rajinder-dhamija" style="padding: 12px; background-color: var(--white-color); border-radius: 10px; border: 1px solid #e2e8f0;">
-                        <div class="team-image" style="width: 60px; height: 60px; margin: 0 auto 8px;">
-                            <img src="assets/images/advisors/rajinder.jpg" alt="Dr. Rajinder K. Dhamija" />
-                        </div>
-                        <div class="team-info" style="text-align: center;">
-                            <h4 class="team-name" style="font-size: 0.9rem; margin-bottom: 3px; line-height: 1.2;"><a href="advisors/dr-rajinder-dhamija.html" style="text-decoration: none; color: inherit;">Dr. Rajinder K. Dhamija</a></h4>
-                            <p class="team-role" style="font-size: 0.7rem; color: var(--accent-color); margin-bottom: 1px;">Director, IHBAS</p>
-                            <p class="team-expertise" style="font-size: 0.65rem; margin: 0;">Professor of Neurology</p>
+                    <div class="university-slide">
+                        <div class="university-card">
+                            <div class="university-logo">
+                                <img src="assets/images/aiims-bhu-logo.svg" alt="AIIMS Bhubaneswar" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'fallback-text\'>AIIMS<br>BBSR</span>';">
+                            </div>
+                            <h3>AIIMS</h3>
+                            <p>Bhubaneswar</p>
                         </div>
                     </div>
-                    
-                    <!-- Empty slot for symmetry -->
-                    <div></div>
-                    
                 </div>
             </div>
         </div>
     </section>
+
 
     <style>
         /* Advisory Section Mobile Responsive */
